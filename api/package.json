@@ -1,0 +1,27 @@
+{
+  "name": "angular2-timesheet-api",
+  "version": "1.0.0",
+  "description": "Angular2 Timesheet API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development node server.js",
+    "dev": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js --ignore datastore  server.js"
+  },
+  "author": "OPI",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.15.1",
+    "connect-nedb-session": "0.0.3",
+    "cookie-parser": "1.4.3",
+    "express": "4.14.0",
+    "lodash": "4.13.1",
+    "nedb": "1.8.0",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0",
+    "q": "1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "1.9.2"
+  }
+}

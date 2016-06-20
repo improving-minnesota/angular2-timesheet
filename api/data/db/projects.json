@@ -1,0 +1,5 @@
+{"name":"Project1","description":"This is your first project","_id":"H5nnDZxIgjeHymuo"}
+{"name":"Project3","description":"This is the third project","_id":"cW7pZdlyHduQdyPc","deleted":true}
+{"name":"Jonny's Awesome Project","description":"Awesome","_id":"eeWrBQi9aUH57tMw"}
+{"name":"Project2","description":"This is your second project","_id":"kU8Ce2ThgkVRHFc3"}
+{"$$indexCreated":{"fieldName":"name","unique":true,"sparse":false}}
