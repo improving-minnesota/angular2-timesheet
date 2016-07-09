@@ -2,13 +2,26 @@
 <md-card class="demo-card demo-basic">
   <md-toolbar color="primary">Login</md-toolbar>
   <md-card-content>
-    <form>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
       <div>
-        <md-input placeholder="Username"></md-input>
-        <md-input placeholder="Password" type="password"></md-input>
+        <md-input placeholder="Username"
+                  required
+                  [(ngModel)]="command.username"
+                  name="username"
+                  dividerColor="warm"
+                  #username="ngModel">
+        </md-input>
+        <div [hidden]="username.valid || username.pristine" class="alert">
+          Username is required
+        </div>
+        <md-input placeholder="Password"
+                  [(ngModel)]="command.password"
+                  ngControl="password"  name="password"
+                  type="password"></md-input>
       </div>
+
       <div>
-        <button md-raised-button color="primary" (click)="login()">Login</button>
+        <button type="submit" md-raised-button color="primary">Login</button>
       </div>
     </form>
   </md-card-content>

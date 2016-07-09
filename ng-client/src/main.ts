@@ -9,18 +9,16 @@ import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 import {LocalStorage} from './app/auth/localStorage';
 import {IdentityService} from './app/auth/identity.service';
 
+import {AUTH_PROVIDERS} from './app/auth/index';
+
 if (environment.production) {
   enableProdMode();
 }
 
-import { provideRouter, RouterConfig } from '@angular/router';
-
-
 bootstrap(AppComponent, [
   APP_ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
-  LocalStorage,
-  IdentityService,
+  AUTH_PROVIDERS,
   disableDeprecatedForms(),
   provideForms()
 ]).then(
@@ -32,7 +30,7 @@ bootstrap(AppComponent, [
     storage.getItem("authToken").subscribe((value) => {
       if(value) {
         identity.update(JSON.parse(value));
-      }
+      } 
     })
   },
   error => console.log(error)

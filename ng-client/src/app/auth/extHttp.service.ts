@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {ResponseHandler} from "./responseHandler.service";
 import {IdentityService} from "./identity.service"
 import {Http, Headers, RequestOptions, RequestOptionsArgs, Response, RequestMethod, Request} from '@angular/http';
-import {Subject, Observable} from 'rxjs';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ExtHttp {
