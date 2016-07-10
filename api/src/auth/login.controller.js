@@ -5,7 +5,7 @@ module.exports = {
     security.sendCurrentUser(req, res, next);
   },
 
-  create: function (req, res, next) {
+  login: function (req, res, next) {
     security.login(req, res, next);
   }
 };

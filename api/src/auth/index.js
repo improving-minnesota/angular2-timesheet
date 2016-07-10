@@ -4,7 +4,7 @@ let router = require('express').Router();
 
 router.route('/login')
     .get(loginController.index)
-    .post(loginController.create);
+    .post(loginController.login);
 
 router.route('/logout')
     .post(logoutController.create);
