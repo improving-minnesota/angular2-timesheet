@@ -7,6 +7,8 @@ export interface StorageBackend {
   removeItem(key: string): any;
 }
 
+export const AUTH_TOKEN_NAME = 'authToken';
+
 @Injectable()
 export class LocalStorage {
   storageBackend: StorageBackend;
@@ -46,8 +48,6 @@ export class LocalStorage {
       });
     }
   }
-
-
 
   // Init storage by DOM object outside of server rendering
   initStorage(storageBackend: StorageBackend):void {
