@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginService.login(this.command).subscribe((user:User) => {
       if(user.authenticated) {
-        this.router.navigateByUrl('/home/timesheets');
+        this.router.navigateByUrl('/home/projects');
       } else {
         // TODO: Handle authentication error
       }
