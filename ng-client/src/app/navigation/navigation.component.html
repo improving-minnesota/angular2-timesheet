@@ -1,7 +1,12 @@
-<section>
-  <button md-button (click)="go('/home/projects')">Projects</button>
-  <button md-button (click)="go('/home/employees')">Employees</button>
-  <button md-button (click)="go('/home/timesheets')">Timesheets</button>
-  <button md-button (click)="logout()">Logout</button>
-</section>
+<div class="nav-toolbar">
+  <md-toolbar color="primary">
+    <button md-button (click)="go('/home/projects')">Projects</button>
+    <button md-button (click)="go('/home/employees')">Employees</button>
+    <button md-button (click)="go('/home/timesheets')">Timesheets</button>
+
+    <span class="nav-fill-remaining"></span>
+
+    <button md-button (click)="logout()">Logout</button>
+  </md-toolbar>
+</div>
 <router-outlet></router-outlet>

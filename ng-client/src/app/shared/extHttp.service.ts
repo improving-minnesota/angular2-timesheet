@@ -37,11 +37,11 @@ export class ExtHttp {
     return this._request(RequestMethod.Get, url, null, options);
   }
 
-  public post(url: string, body: string, options?: RequestOptionsArgs) {
+  public post(url: string, body: any, options?: RequestOptionsArgs) {
     return this._request(RequestMethod.Post, url, JSON.stringify(body), options);
   }
 
-  public put(url: string, body: string, options?: RequestOptionsArgs) {
+  public put(url: string, body: any, options?: RequestOptionsArgs) {
     return this._request(RequestMethod.Put, url, JSON.stringify(body), options);
   }
 
