@@ -6,8 +6,7 @@ import {ComponentRef} from '@angular/core';
 
 import { AppComponent, environment } from './app/';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
-import {LocalStorage} from './app/auth/localStorage';
-import {IdentityService} from './app/auth/identity.service';
+import {LocalStorage, IdentityService} from './app/auth';
 
 import {AUTH_PROVIDERS} from './app/auth/index';
 
@@ -30,7 +29,7 @@ bootstrap(AppComponent, [
     storage.getItem("authToken").subscribe((value) => {
       if(value) {
         identity.update(JSON.parse(value));
-      } 
+      }
     })
   },
   error => console.log(error)
