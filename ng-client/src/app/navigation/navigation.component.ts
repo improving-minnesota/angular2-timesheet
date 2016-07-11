@@ -18,6 +18,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  go(path){
+    this.router.navigateByUrl(path);
+  }
 
   logout() {
     this.identityService.clear();
