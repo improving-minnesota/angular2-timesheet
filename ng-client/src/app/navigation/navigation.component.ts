@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {MdButton} from '@angular2-material/button/button';
+import {MdToolbar} from '@angular2-material/toolbar/toolbar';
 import {IdentityService, LocalStorage} from '../auth';
 
 @Component({
   moduleId: module.id,
-  directives: [ROUTER_DIRECTIVES, MdButton],
+  directives: [ROUTER_DIRECTIVES, MdButton, MdToolbar],
   providers: [LocalStorage, IdentityService],
   selector: 'app-navigation',
   templateUrl: 'navigation.component.html',

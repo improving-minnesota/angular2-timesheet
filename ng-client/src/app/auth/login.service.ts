@@ -19,7 +19,7 @@ export class LoginService {
         password: command.password
       };
 
-      this.http.post('/auth/login', JSON.stringify(body)).subscribe((response) => {
+      this.http.post('/auth/login', body).subscribe((response) => {
         const data = response.json();
 
         const name = new Name(data.user.firstName, data.user.lastName);
@@ -27,7 +27,7 @@ export class LoginService {
           data.authenticated,
           data.user._id);
 
-        this.storage.setItem(AUTH_TOKEN_NAME, user).subscribe();
+        this.storage.setItem(AUTH_TOKEN_NAME, JSON.stringify(user)).subscribe();
         this.identityService.update(user);
 
         observer.next(user);

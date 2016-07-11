@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {ExtHttp} from './ExtHttp.service';
+import {ExtHttp} from './extHttp.service';
 
 @Injectable()
 export class ProjectService {
