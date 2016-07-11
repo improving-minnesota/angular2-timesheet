@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {ResponseHandler} from "./responseHandler.service";
-import {IdentityService} from "./identity.service"
+import {ResponseHandler, IdentityService} from "../auth";
 import {Http, Headers, RequestOptions, RequestOptionsArgs, Response, RequestMethod, Request} from '@angular/http';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
@@ -39,11 +38,11 @@ export class ExtHttp {
   }
 
   public post(url: string, body: string, options?: RequestOptionsArgs) {
-    return this._request(RequestMethod.Post, url, body, options);
+    return this._request(RequestMethod.Post, url, JSON.stringify(body), options);
   }
 
   public put(url: string, body: string, options?: RequestOptionsArgs) {
-    return this._request(RequestMethod.Put, url, body, options);
+    return this._request(RequestMethod.Put, url, JSON.stringify(body), options);
   }
 
   public delete(url: string, options?: RequestOptionsArgs) {
