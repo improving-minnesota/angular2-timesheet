@@ -4,46 +4,34 @@
 var express = require('express'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
-    db = require('../../src/services/db');
+    db = require('../../src/services/db'),
+    debug = require('debug')('at:security-initializer');
 
 module.exports = function () {
+  console.log(' * Configuring Application Security');
 
-    console.log(' * Configuring Application Security');
-
-    passport.serializeUser(function (user, done) {
-        return done(null, user._id);
-    });
-
-    passport.deserializeUser(function (id, done) {
-        db.findOne('users', {_id: id})
-            .then(function (user) {
-                return done(null, user);
-            })
-            .fail(function (err) {
-                return done(err, null);
-            });
-    });
-
-    passport.use(new LocalStrategy({
-            usernameField: 'username',
-            passwordField: 'password'
-        },
-        function (username, password, done) {
-
-            db.findOne('users', {username: username})
-                .then(function (user) {
-
-                    if (user.password === password) {
-                        return done(null, user);
-                    }
-
-                    console.log("returning false : " + password + ", " + user.password);
-                    return done(null, false);
-                })
-                .fail(function (err) {
-                    return done(err);
-                });
+  function verify(username, password, done) {
+    debug('Verifying credentials');
+    db.findOne('users', {username: username})
+      .then(function (user) {
+        if (user.password === password) {
+          return done(null, sanitizeUser(user));
         }
-    ));
-    
+
+        return done(null, false);
+      })
+      .fail(function (err) {
+        return done(err);
+      });
+  }
+
+  function sanitizeUser(user) {
+    let { _id, username, email, admin, firstName, lastName } = user;
+
+    return {
+      _id, username, email, admin, firstName, lastName
+    };
+  }
+
+  passport.use(new LocalStrategy(verify));
 };
