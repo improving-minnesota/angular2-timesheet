@@ -5,6 +5,8 @@ import {Observable} from "rxjs/Observable";
 import {LoginCommand, IdentityService, User, Name, LocalStorage, AUTH_TOKEN_NAME} from './index';
 import {ExtHttp} from '../shared';
 
+import jwtDecode from 'jwt-decode';
+
 @Injectable()
 export class LoginService {
 
@@ -20,12 +22,13 @@ export class LoginService {
       };
 
       this.http.post('/auth/login', body).subscribe((response) => {
-        const data = response.json();
+        const token = response.json();
+        const userToken = jwtDecode(token);
 
-        const name = new Name(data.user.firstName, data.user.lastName);
-        const user = new User(name,
-          data.authenticated,
-          data.user._id);
+        console.log(JSON.stringify(userToken));
+
+        const name = new Name(userToken.firstName, userToken.lastName);
+        const user = new User(name, true, userToken._id);
 
         this.storage.setItem(AUTH_TOKEN_NAME, JSON.stringify(user)).subscribe();
         this.identityService.update(user);

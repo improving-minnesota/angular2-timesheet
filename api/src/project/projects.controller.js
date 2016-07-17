@@ -1,12 +1,13 @@
 const db = require('../services/db');
+const debug = require('debug')('at:projects.controller');
 
 module.exports = {
   index: function (req, res, next) {
-    
     var query = req.query;
 
+    debug('Listing projects');
+
     if (query.page) {
-      
       db.page('projects', query)
         .then(function (projects) {
           res.json(projects);
@@ -15,7 +16,6 @@ module.exports = {
           res.status(500).json(err);
         });
     } else {
-      
       db.find('projects', query)
         .then(function (projects) {
           res.json(projects);
