@@ -5,10 +5,12 @@ import {Observable} from "rxjs/Observable";
 import {LoginCommand, IdentityService, User, Name, LocalStorage, AUTH_TOKEN_NAME} from './index';
 import {ExtHttp} from '../shared';
 
-import jwtDecode from 'jwt-decode';
+import {JwtHelper} from 'angular2-jwt';
 
 @Injectable()
 export class LoginService {
+
+  jwtHelper: JwtHelper = new JwtHelper();
 
   constructor(private http:ExtHttp, private identityService:IdentityService, private storage:LocalStorage) {
   }
@@ -23,19 +25,20 @@ export class LoginService {
 
       this.http.post('/auth/login', body).subscribe((response) => {
         const token = response.json();
-        const userToken = jwtDecode(token);
-
-        console.log(JSON.stringify(userToken));
-
-        const name = new Name(userToken.firstName, userToken.lastName);
-        const user = new User(name, true, userToken._id);
-
-        this.storage.setItem(AUTH_TOKEN_NAME, JSON.stringify(user)).subscribe();
-        this.identityService.update(user);
-
-        observer.next(user);
+        observer.next(this.loadUser(token));
       });
     });
+  }
+
+  public loadUser(token:string):User {
+    const userToken = this.jwtHelper.decodeToken(token);
+
+    const name = new Name(userToken.firstName, userToken.lastName);
+    const user = new User(name, true, token);
+
+    this.storage.setItem(AUTH_TOKEN_NAME, token);
+    this.identityService.update(user);
+    return user;
   }
 
 }

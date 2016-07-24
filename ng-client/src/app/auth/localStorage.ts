@@ -7,45 +7,33 @@ export interface StorageBackend {
   removeItem(key: string): any;
 }
 
-export const AUTH_TOKEN_NAME = 'authToken';
+export const AUTH_TOKEN_NAME = 'id_token';
 
 @Injectable()
 export class LocalStorage {
   storageBackend: StorageBackend;
 
-  getItem(key):Observable<any> {
+  getItem(key):any {
     if (this.storageBackend) {
-      return Observable.create((observer) => {
-        observer.next(this.storageBackend.getItem(key));
-      });
+      return this.storageBackend.getItem(key);
     } else {
-      return Observable.create((observer) => {
-        observer.next('');
-      });
+      return '';
     }
   }
 
-  setItem(key, value):Observable<any> {
+  setItem(key, value):any {
     if (this.storageBackend) {
-      return Observable.create((observer) => {
-        observer.next(this.storageBackend.setItem(key, value));
-      });
+      return this.storageBackend.setItem(key, value);
     } else {
-      return Observable.create((observer) => {
-        observer.next('');
-      });
+      return '';
     }
   }
 
-  removeItem(key):Observable<any> {
+  removeItem(key):any {
     if (this.storageBackend) {
-      return Observable.create((observer) => {
-        observer.next(this.storageBackend.removeItem(key));
-      });
+      return this.storageBackend.removeItem(key);
     } else {
-      return Observable.create((observer) => {
-        observer.next('');
-      });
+      return ''
     }
   }
 

@@ -6,19 +6,19 @@
  * User Configuration.
  **********************************************************************************************/
 /** Map relative paths to URLs. */
-const map: any = {
-  '@angular2-material': 'vendor/@angular2-material'
+const map:any = {
+  '@angular2-material': 'vendor/@angular2-material',
+  'angular2-jwt': 'vendor/angular2-jwt'
 };
 
 /** User packages configuration. */
-const packages: any = {
-};
+const packages:any = {};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
  **********************************************************************************************/
-const barrels: string[] = [
+const barrels:string[] = [
   // Angular specific barrels.
   '@angular/core',
   '@angular/common',
@@ -47,13 +47,13 @@ const barrels: string[] = [
   /** @cli-barrel */
 ];
 
-const cliSystemConfigPackages: any = {};
-barrels.forEach((barrelName: string) => {
-  cliSystemConfigPackages[barrelName] = { main: 'index' };
+const cliSystemConfigPackages:any = {};
+barrels.forEach((barrelName:string) => {
+  cliSystemConfigPackages[barrelName] = {main: 'index'};
 });
 
 /** Type declaration for ambient System. */
-declare var System: any;
+declare var System:any;
 
 // Apply the CLI SystemJS configuration.
 System.config({
@@ -79,5 +79,10 @@ materialPkgs.forEach((pkg) => {
   packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
 
+/** User packages configuration. */
+packages['angular2-jwt'] = {
+  main: 'angular2-jwt.js'
+};
+
 // Apply the user's configuration.
-System.config({ map, packages });
+System.config({map, packages});
