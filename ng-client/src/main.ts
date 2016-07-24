@@ -8,8 +8,11 @@ import { AppComponent, environment } from './app/';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 import {LocalStorage, IdentityService, AUTH_TOKEN_NAME} from './app/auth';
 
-import {AUTH_PROVIDERS} from './app/auth';
+import {APP_AUTH_PROVIDERS} from './app/auth';
 import {APP_PROVIDERS} from './app/shared';
+
+import {AUTH_PROVIDERS, JwtHelper} from 'angular2-jwt';
+import {LoginService} from "./app/auth/login.service";
 
 if (environment.production) {
   enableProdMode();
@@ -19,6 +22,7 @@ bootstrap(AppComponent, [
   APP_ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
   AUTH_PROVIDERS,
+  APP_AUTH_PROVIDERS,
   APP_PROVIDERS,
   disableDeprecatedForms(),
   provideForms()
@@ -27,13 +31,13 @@ bootstrap(AppComponent, [
     //Look for the user:
     let identity: IdentityService = appRef.injector.get(IdentityService);
     let storage: LocalStorage = appRef.injector.get(LocalStorage);
+    let loginService: LoginService = appRef.injector.get(LoginService);
     storage.initStorage(window.localStorage);
 
-    storage.getItem(AUTH_TOKEN_NAME).subscribe((value) => {
-      if(value) {
-        identity.update(JSON.parse(value));
-      }
-    })
+    const token = storage.getItem(AUTH_TOKEN_NAME);
+    if(token) {
+      loginService.loadUser(token);
+    }
   },
   error => console.log(error)
 );

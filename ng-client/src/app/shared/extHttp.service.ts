@@ -6,7 +6,8 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ExtHttp {
-  private urlRoot:String;
+  private HEADER_PREFIX:string = 'Bearer ';
+  private urlRoot:string;
   process: Subject<any> = new Subject<any>();
   constructor(private _http: Http,
               private serverHandler: ResponseHandler, private identityService:IdentityService) {
@@ -20,6 +21,10 @@ export class ExtHttp {
 
   }
 
+  private _generateToken(): string {
+    return this.HEADER_PREFIX + this.identityService.user.token;
+  }
+
   private _createAuthHeaders(): Headers {
     let headers = new Headers({
       'Accept': 'application/json',
@@ -27,7 +32,7 @@ export class ExtHttp {
     });
 
     if(this.identityService.user) {
-      headers.set('Authorization', this.identityService.user.token);
+      headers.set('Authorization', this._generateToken());
     }
 
     return headers;
