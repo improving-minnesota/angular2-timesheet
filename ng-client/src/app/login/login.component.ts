@@ -8,14 +8,14 @@ import {MdButton} from '@angular2-material/button/button';
 import {MdCard} from '@angular2-material/card/card';
 import {MdToolbar} from '@angular2-material/toolbar/toolbar';
 
-import {LoginCommand, LoginService, User} from '../auth';
+import {LoginCommand, LoginService, User, IdentityService} from '../auth';
 
 @Component({
   moduleId: module.id,
   selector: 'app-login',
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css'],
-  providers: [LoginService],
+  providers: [],
   directives: [
     MdCard,
     MdButton,
@@ -27,21 +27,25 @@ import {LoginCommand, LoginService, User} from '../auth';
 export class LoginComponent implements OnInit {
 
   private command: LoginCommand;
+  private error:boolean;
 
-  constructor(private router:Router, private loginService:LoginService) {}
+  constructor(private router:Router, private loginService:LoginService, private identityService:IdentityService) {}
 
   ngOnInit() {
     this.command = new LoginCommand();
+    this.error = false;
+    this.identityService.identityDispatch.subscribe((user:User) => {
+      if(user.authenticated == false) {
+        this.error = true;
+      } else {
+        this.router.navigateByUrl('/home/projects');
+      }
+    });
   }
 
   login() {
-    this.loginService.login(this.command).subscribe((user:User) => {
-      if(user.authenticated) {
-        this.router.navigateByUrl('/home/projects');
-      } else {
-        // TODO: Handle authentication error
-      }
-    });
+    this.error = false;
+    this.loginService.login(this.command).subscribe();
   }
 
 }

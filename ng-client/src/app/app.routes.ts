@@ -18,7 +18,8 @@ export const routes: RouterConfig = [
   { path: 'login', component: LoginComponent },
   {
     path: '',
-    redirectTo: '/home/projects'
+    redirectTo: '/home/projects',
+    pathMatch: 'full'
   }
 ];
 

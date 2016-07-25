@@ -29,7 +29,6 @@ bootstrap(AppComponent, [
 ]).then(
   (appRef: ComponentRef<any>) => {
     //Look for the user:
-    let identity: IdentityService = appRef.injector.get(IdentityService);
     let storage: LocalStorage = appRef.injector.get(LocalStorage);
     let loginService: LoginService = appRef.injector.get(LoginService);
     storage.initStorage(window.localStorage);
