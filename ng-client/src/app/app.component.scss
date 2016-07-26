@@ -1,0 +1,6 @@
+@import "app.colors";
+
+:host /deep/ .alert {
+  color: $app-warn;
+  padding: 10px;
+}

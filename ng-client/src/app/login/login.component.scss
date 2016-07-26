@@ -1,0 +1,13 @@
+@import "../app.colors";
+
+.alert-container {
+  height: 60px;
+}
+
+.alert-content {
+  padding: 10px;
+  background-color: $app-warn-background;
+  color: $app-warn;
+}
+
+

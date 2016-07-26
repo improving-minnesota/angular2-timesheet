@@ -14,6 +14,9 @@ module.exports = function () {
     debug('Verifying credentials');
     db.findOne('users', {username: username})
       .then(function (user) {
+        if(!user) {
+          return done(null, false);
+        }
         if (user.password === password) {
           return done(null, sanitizeUser(user));
         }
