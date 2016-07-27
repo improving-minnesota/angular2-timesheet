@@ -2,7 +2,7 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {IdentityService} from'./identity.service';
-import {LocalStorage} from'./localStorage';
+import {LocalStorage, AUTH_TOKEN_NAME} from'./localStorage';
 
 @Injectable()
 export class ResponseHandler {
@@ -10,7 +10,7 @@ export class ResponseHandler {
 
   private logout(): any {
     this.identity.clear();
-    this.storage.removeItem("authToken");
+    this.storage.removeItem(AUTH_TOKEN_NAME);
     this.router.navigateByUrl('/login');
   }
 

@@ -10,7 +10,8 @@ export class ExtHttp {
   private urlRoot:string;
   process: Subject<any> = new Subject<any>();
   constructor(private _http: Http,
-              private serverHandler: ResponseHandler, private identityService:IdentityService) {
+              private serverHandler:ResponseHandler,
+              private identityService:IdentityService) {
     this.urlRoot = 'https://production.com';
 
     let host = window.location.hostname;

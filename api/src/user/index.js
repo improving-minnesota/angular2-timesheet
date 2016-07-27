@@ -3,33 +3,33 @@
 const usersController = require('./users.controller')
 const timesheetsController = require('./timesheets.controller')
 const timeunitsController = require('./timeunits.controller')
-const router = require('express').Router();
+const router = require('express').Router()
 
-router.route('/users')
+router.route('/')
     .get(usersController.index)
-    .post(usersController.create);
+    .post(usersController.create)
 
-router.route('/users/:userId')
+router.route('/:userId')
     .get(usersController.show)
     .put(usersController.update)
-    .delete(usersController.destroy);
+    .delete(usersController.destroy)
 
-router.route('/users/:userId/timesheets')
+router.route('/:userId/timesheets')
     .get(timesheetsController.index)
     .post(timesheetsController.create);
 
-router.route('/users/:userId/timesheets/:timesheetId')
+router.route('/:userId/timesheets/:timesheetId')
     .get(timesheetsController.show)
     .put(timesheetsController.update)
-    .delete(timesheetsController.destroy);
+    .delete(timesheetsController.destroy)
 
-router.route('/users/:userId/timesheets/:timesheetId/timeunits')
+router.route('/:userId/timesheets/:timesheetId/timeunits')
     .get(timeunitsController.index)
     .post(timeunitsController.create);
 
-router.route('/users/:userId/timesheets/:timesheetId/timeunits/:timeunitId')
+router.route('/:userId/timesheets/:timesheetId/timeunits/:timeunitId')
     .get(timeunitsController.show)
     .put(timeunitsController.update)
-    .delete(timeunitsController.destroy);
+    .delete(timeunitsController.destroy)
 
 module.exports = router;

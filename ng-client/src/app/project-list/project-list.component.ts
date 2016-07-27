@@ -8,11 +8,11 @@ import {ProjectService} from '../shared';
   templateUrl: 'project-list.component.html',
   styleUrls: ['project-list.component.css'],
   directives: [MD_LIST_DIRECTIVES],
-  providers: [ProjectService]
+  providers: []
 })
 export class ProjectListComponent implements OnInit {
 
-  projects;
+  projects:any[];
 
   constructor(private projectService:ProjectService) {
     this.projects = [];

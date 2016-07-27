@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 import {Observable} from "rxjs/Observable";
 
-import {LoginCommand, IdentityService, User, Name, LocalStorage, AUTH_TOKEN_NAME} from './index';
+import {LoginCommand, IdentityService, User, Name, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
 import {ExtHttp} from '../shared';
 
 import {JwtHelper} from 'angular2-jwt';
@@ -34,7 +34,7 @@ export class LoginService {
     const userToken = this.jwtHelper.decodeToken(token);
 
     const name = new Name(userToken.firstName, userToken.lastName);
-    const user = new User(name, true, token);
+    const user = new User({name:name, authenticated:true, token:token, id:userToken._id});
 
     this.storage.setItem(AUTH_TOKEN_NAME, token);
     this.identityService.update(user);

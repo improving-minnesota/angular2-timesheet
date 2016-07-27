@@ -1,0 +1,14 @@
+<h2>Timesheets</h2>
+<div class="timeseehts">
+  <div>
+    <md-nav-list>
+      <md-list-item *ngFor="let timesheet of timesheets" (click)="openTimesheet(timesheet)">
+        <h3 md-line>{{timesheet.name}}</h3>
+        <p md-line>{{timesheet.description}}</p>
+        <p md-line class="secondary-text">
+          {{timesheet.beginDate | date:format}} - {{timesheet.endDate | date:format}}
+        </p>
+      </md-list-item>
+    </md-nav-list>
+  </div>
+</div>

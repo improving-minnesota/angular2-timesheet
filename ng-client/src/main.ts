@@ -12,7 +12,7 @@ import {APP_AUTH_PROVIDERS} from './app/auth';
 import {APP_PROVIDERS} from './app/shared';
 
 import {AUTH_PROVIDERS, JwtHelper} from 'angular2-jwt';
-import {LoginService} from "./app/auth/login.service";
+import {LoginService} from "./app/shared";
 
 if (environment.production) {
   enableProdMode();
@@ -22,8 +22,8 @@ bootstrap(AppComponent, [
   APP_ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
   AUTH_PROVIDERS,
-  APP_AUTH_PROVIDERS,
   APP_PROVIDERS,
+  APP_AUTH_PROVIDERS,
   disableDeprecatedForms(),
   provideForms()
 ]).then(

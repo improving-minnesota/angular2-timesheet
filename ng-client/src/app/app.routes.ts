@@ -1,5 +1,5 @@
 import { provideRouter, RouterConfig } from '@angular/router';
-import { TimesheetsComponent } from './timesheets';
+import { TimesheetListComponent } from './timesheet-list';
 import { LoginComponent } from './login';
 import { NavigationComponent } from './navigation'
 import { ProjectListComponent } from './project-list'
@@ -12,7 +12,7 @@ export const routes: RouterConfig = [
     children: [
       { path: 'projects', component: ProjectListComponent },
       { path: 'employees', component: EmployeeListComponent },
-      { path: 'timesheets', component: TimesheetsComponent }
+      { path: 'timesheets', component: TimesheetListComponent }
     ]
   },
   { path: 'login', component: LoginComponent },

@@ -8,14 +8,24 @@ export class Name {
   };
 }
 
+export interface UserData {
+  name: Name;
+  token: string;
+  id: string;
+  authenticated: boolean;
+}
+
 export class User {
   name: Name;
   token: string;
+  id: string;
   authenticated: boolean;
-  constructor(name:Name, authenticated:boolean, token?: string) {
-    this.name = name;
-    this.token = token;
-    this.authenticated = authenticated;
+
+  constructor(userData:UserData) {
+    this.name = userData.name;
+    this.token = userData.token;
+    this.authenticated = userData.authenticated;
+    this.id = userData.id;
   }
 
 }

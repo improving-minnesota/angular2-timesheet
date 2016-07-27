@@ -44,6 +44,7 @@ const barrels:string[] = [
   'app/project',
   'app/project-list',
   'app/employee-list',
+  'app/timesheet-list',
   /** @cli-barrel */
 ];
 
