@@ -9,7 +9,13 @@ export class IdentityService {
   private _dispatch: Subject<User>;
 
   private createBlankUser() :User {
-    return new User(new Name('', ''), false);
+    const userData = {
+      name: new Name('', ' '),
+      authenticated: false,
+      token: '',
+      id: ''
+    };
+    return new User(userData);
   }
 
   constructor() {

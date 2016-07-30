@@ -1,10 +1,11 @@
 const bodyParser = require('body-parser')
 const express = require('express')
-const jwt = require('express-jwt');
+const jwt = require('express-jwt')
 const passport = require('passport')
 
 const auth = require('./src/auth')
 const project = require('./src/project')
+const user = require('./src/user')
 const security = require('./src/services/security')
 
 let app = new express()
@@ -16,10 +17,10 @@ config()
 
 // Add CORS Filter
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-XSRF-TOKEN");
-  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-  next();
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-XSRF-TOKEN")
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+  next()
 });
 
 app.use(passport.initialize());
@@ -41,5 +42,6 @@ app.get('/ping', (req, res) => {
 
 app.use('/auth', auth)
 app.use('/projects', project)
+app.use('/users', user)
 
 let server = app.listen(4000, () => console.log('Express server is listening on ' + server.address().port))

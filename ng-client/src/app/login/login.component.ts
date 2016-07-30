@@ -8,7 +8,8 @@ import {MdButton} from '@angular2-material/button/button';
 import {MdCard} from '@angular2-material/card/card';
 import {MdToolbar} from '@angular2-material/toolbar/toolbar';
 
-import {LoginCommand, LoginService, User, IdentityService} from '../auth';
+import {LoginCommand, User, IdentityService} from '../auth';
+import {LoginService} from '../shared';
 
 @Component({
   moduleId: module.id,
