@@ -16,4 +16,19 @@ export class TimesheetService {
     });
   }
 
+  getTimesheet(user:User, timesheetId:string):Observable<any> {
+    return Observable.create((observer) => {
+      this.http.get(`/users/${user.id}/timesheets/${timesheetId}`).subscribe((response) => {
+        observer.next(response.json());
+      });
+    });
+  }
+
+  getTimeunits(user:User, timesheetId:string):Observable<any> {
+    return Observable.create((observer) => {
+      this.http.get(`/users/${user.id}/timesheets/${timesheetId}/timeunits`).subscribe((response) => {
+        observer.next(response.json());
+      });
+    });
+  }
 }

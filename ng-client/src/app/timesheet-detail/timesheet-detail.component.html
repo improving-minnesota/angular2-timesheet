@@ -1,0 +1,28 @@
+<div *ngIf="!timesheetLoaded || !timeUnitsLoaded">
+  <md-progress-circle mode="indeterminate"></md-progress-circle>
+</div>
+<div *ngIf="timesheetLoaded || timeUnitsLoaded">
+  <md-card>
+    <md-card-subtitle>Timesheet Details</md-card-subtitle>
+    <md-card-title>{{timesheet.name}} </md-card-title>
+    <md-card-content>
+      <p>{{timesheet.beginDate | date:format}} - {{timesheet.endDate | date:format}}</p>
+      <p>{{timesheet.description}}</p>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button (click)="edit()">Edit</button>
+      <button md-button (click)="cancel()">Cancel</button>
+    </md-card-actions>
+  </md-card>
+</div>
+
+<div class="timeunits">
+  <md-list>
+    <md-list-item><button md-button (click)="logTime()">Log Time</button></md-list-item>
+    <md-list-item *ngFor="let unit of timeUnits">
+      <h3 md-line>{{unit.hoursWorked}} Hours: {{unit.project}}</h3>
+      <p md-line class="secondary-text">{{unit.dateWorked | date: dateFormat}}</p>
+    </md-list-item>
+  </md-list>
+</div>
+
