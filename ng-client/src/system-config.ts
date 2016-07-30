@@ -45,6 +45,7 @@ const barrels:string[] = [
   'app/project-list',
   'app/employee-list',
   'app/timesheet-list',
+  'app/timesheet-detail',
   /** @cli-barrel */
 ];
 
@@ -73,7 +74,8 @@ const materialPkgs:string[] = [
   'card',
   'toolbar',
   'input',
-  'list'
+  'list',
+  'progress-circle'
 ];
 
 materialPkgs.forEach((pkg) => {
