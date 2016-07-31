@@ -1,6 +1,14 @@
-<h2>Projects</h2>
 <div class="projects">
   <md-list>
+    <md-list-item>
+      <div class="header">
+        Projects
+        <!--<span class="fill-remaining"></span>-->
+        <button md-fab>
+          <md-icon color="accent" (click)="add()">add</md-icon>
+        </button>
+      </div>
+    </md-list-item>
     <md-list-item *ngFor="let project of projects">
       <h3 md-line>{{project.name}}</h3>
       <p md-line class="demo-secondary-text">{{project.description}}</p>
