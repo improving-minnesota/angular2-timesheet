@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {Project} from "../shared";
 import { NgForm } from '@angular/forms';
+import {Router} from "@angular/router";
+
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
 import {MdButton} from '@angular2-material/button/button';
 import {MdCard} from '@angular2-material/card/card';
-import {MdToolbar} from '@angular2-material/toolbar/toolbar';
-import {ProjectService} from "../shared";
-import {Router} from "@angular/router";
+
+import {ProjectService, Project} from "../shared";
+
 
 @Component({
   moduleId: module.id,
@@ -16,7 +17,6 @@ import {Router} from "@angular/router";
   directives: [
     MdCard,
     MdButton,
-    MdToolbar,
     MD_INPUT_DIRECTIVES,
     NgForm
   ]
