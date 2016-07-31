@@ -48,6 +48,7 @@ const barrels:string[] = [
   'app/timesheet-detail',
   'app/project-new',
   'app/employee-new',
+  'app/timesheet-new',
   /** @cli-barrel */
 ];
 
@@ -64,6 +65,7 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    'moment': 'vendor/moment',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages
@@ -89,6 +91,10 @@ materialPkgs.forEach((pkg) => {
 /** User packages configuration. */
 packages['angular2-jwt'] = {
   main: 'angular2-jwt.js'
+};
+
+packages['moment'] = {
+  main: 'moment.js'
 };
 
 // Apply the user's configuration.
