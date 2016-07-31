@@ -2,6 +2,7 @@ export * from './extHttp.service';
 export * from './project.service';
 export * from './timesheet.service';
 export * from './login.service';
+export * from './Project';
 
 import {ExtHttp} from './extHttp.service';
 import {ProjectService} from './project.service';

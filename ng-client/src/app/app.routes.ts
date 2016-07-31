@@ -5,13 +5,15 @@ import { NavigationComponent } from './navigation'
 import { ProjectListComponent } from './project-list'
 import { EmployeeListComponent } from './employee-list'
 import {TimesheetDetailComponent} from "./timesheet-detail";
+import {ProjectNewComponent} from "./project-new/project-new.component";
 
 export const routes: RouterConfig = [
   {
     path: 'home',
     component: NavigationComponent,
     children: [
-      { path: 'projects', component: ProjectListComponent },
+      { path: 'projects', component: ProjectListComponent, pathMatch: 'full'},
+      { path: 'projects/new', component: ProjectNewComponent, pathMatch: 'full'},
       { path: 'employees', component: EmployeeListComponent },
       { path: 'timesheets', component: TimesheetListComponent, pathMatch: 'full' },
       { path: 'timesheets/:id', component: TimesheetDetailComponent }

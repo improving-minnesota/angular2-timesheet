@@ -6,11 +6,10 @@
     border: 1px solid rgba(0, 0, 0, 0.12);
     width: 350px;
     margin: 20px 20px 0 0;
-
   }
 
   md-icon {
-    color: rgba(0, 0, 0, 0.12);
+    margin-left: auto;
   }
 
   [md-list-icon] {
@@ -19,10 +18,15 @@
   }
 }
 
-h2 {
-  margin-top: 20px;
-  display: block;
+.header {
+  font-size: large;
+  font-weight: 600;
+
+  .fill-remaining {
+    flex: 1 1 auto;
+  }
 }
+
 .secondary-text {
   color: rgba(0, 0, 0, 0.54);
 }
