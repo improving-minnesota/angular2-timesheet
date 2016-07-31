@@ -14,7 +14,8 @@ export const routes: RouterConfig = [
     children: [
       { path: 'projects', component: ProjectListComponent, pathMatch: 'full'},
       { path: 'projects/new', component: ProjectNewComponent, pathMatch: 'full'},
-      { path: 'employees', component: EmployeeListComponent },
+      { path: 'employees', component: EmployeeListComponent, pathMatch: 'full'},
+      { path: 'employees/new', component: EmployeeListComponent },
       { path: 'timesheets', component: TimesheetListComponent, pathMatch: 'full' },
       { path: 'timesheets/:id', component: TimesheetDetailComponent }
     ]
