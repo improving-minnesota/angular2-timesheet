@@ -1,3 +1,18 @@
-## Timesheetz In Angular 2
+# Timesheetz In Angular 2
 
-Total WIP
+WIP
+
+## Install and Run
+
+### API
+
+    cd api
+    npm install
+    npm start
+
+### Client
+    cd ng-client
+    npm Install
+    npm start
+
+    
