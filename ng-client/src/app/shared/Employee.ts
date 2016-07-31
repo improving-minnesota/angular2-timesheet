@@ -1,10 +1,11 @@
 export interface EmployeeData {
   _id?:string;
-  username:string;
-  email:string;
-  admin:boolean;
-  firstName:string;
-  lastName:string;
+  username?:string;
+  email?:string;
+  admin?:boolean;
+  firstName?:string;
+  lastName?:string;
+  password?:string;
 }
 
 export class Employee {
@@ -14,6 +15,7 @@ export class Employee {
   admin:boolean;
   firstName:string;
   lastName:string;
+  password:string;
 
   constructor(private data:EmployeeData) {
     this._id = data._id;
@@ -22,6 +24,7 @@ export class Employee {
     this.admin = data.admin;
     this.firstName = data.firstName;
     this.lastName = data.lastName;
+    this.password = data.password;
   }
 
 }

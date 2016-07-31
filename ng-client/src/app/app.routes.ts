@@ -6,6 +6,7 @@ import { ProjectListComponent } from './project-list'
 import { EmployeeListComponent } from './employee-list'
 import {TimesheetDetailComponent} from "./timesheet-detail";
 import {ProjectNewComponent} from "./project-new/project-new.component";
+import {EmployeeNewComponent} from "./employee-new/employee-new.component";
 
 export const routes: RouterConfig = [
   {
@@ -15,7 +16,7 @@ export const routes: RouterConfig = [
       { path: 'projects', component: ProjectListComponent, pathMatch: 'full'},
       { path: 'projects/new', component: ProjectNewComponent, pathMatch: 'full'},
       { path: 'employees', component: EmployeeListComponent, pathMatch: 'full'},
-      { path: 'employees/new', component: EmployeeListComponent },
+      { path: 'employees/new', component: EmployeeNewComponent },
       { path: 'timesheets', component: TimesheetListComponent, pathMatch: 'full' },
       { path: 'timesheets/:id', component: TimesheetDetailComponent }
     ]
