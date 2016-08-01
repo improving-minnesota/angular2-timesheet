@@ -5,14 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development node server.js",
-    "dev": "DEBUG=at:* NODE_ENV=development nodemon --ignore datastore server.js"
+    "start": "cross-env NODE_ENV=development node server.js",
+    "dev": "cross-env DEBUG=at:* NODE_ENV=development nodemon --ignore datastore server.js"
   },
   "author": "OPI",
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.15.1",
     "cookie-parser": "1.4.3",
+    "cross-env": "2.0.0",
     "debug": "2.2.0",
     "express": "4.14.0",
     "express-jwt": "3.4.0",
