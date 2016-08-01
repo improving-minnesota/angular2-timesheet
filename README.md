@@ -2,6 +2,11 @@
 
 WIP
 
+## Prerequisites 
+
+    Node 6.x.x (node -v)
+    npm 3.x.x (npm -v)
+
 ## Install and Run
 
 ### API
