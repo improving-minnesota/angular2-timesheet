@@ -8,7 +8,7 @@ export class IdentityService {
   private _user: User;
   private _dispatch: Subject<User>;
 
-  private createBlankUser() :User {
+  private createBlankUser(): User {
     const userData = {
       name: new Name('', ' '),
       authenticated: false,

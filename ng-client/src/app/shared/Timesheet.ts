@@ -1,21 +1,21 @@
 export interface TimesheetData {
-  _id?:string;
-  name?:string;
-  beginDate?:Date;
-  endDate?:Date;
-  description?:string;
-  user_id?:string;
+  _id?: string;
+  name?: string;
+  beginDate?: Date;
+  endDate?: Date;
+  description?: string;
+  user_id?: string;
 }
 
 export class Timesheet {
-  _id:string;
-  name:string;
-  beginDate:Date;
-  endDate:Date;
-  description:string;
-  user_id:string;
+  _id: string;
+  name: string;
+  beginDate: Date;
+  endDate: Date;
+  description: string;
+  user_id: string;
 
-  constructor(private data:TimesheetData) {
+  constructor(private data: TimesheetData) {
     this._id = data._id;
     this.name = data.name;
     this.beginDate = data.beginDate;

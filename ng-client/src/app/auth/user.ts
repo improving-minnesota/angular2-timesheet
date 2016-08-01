@@ -1,5 +1,5 @@
 export class Name {
-  constructor(private _first:string, private _last:string){};
+  constructor(private _first: string, private _last: string) {};
   public get first(): string {
     return this._first;
   };
@@ -21,7 +21,7 @@ export class User {
   id: string;
   authenticated: boolean;
 
-  constructor(userData:UserData) {
+  constructor(userData: UserData) {
     this.name = userData.name;
     this.token = userData.token;
     this.authenticated = userData.authenticated;

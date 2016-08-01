@@ -12,7 +12,7 @@ describe('Project Service', () => {
   beforeEachProviders(() => [ProjectService]);
 
   it('should ...',
-    inject([ProjectService], (service:ProjectService) => {
+    inject([ProjectService], (service: ProjectService) => {
       expect(service).toBeTruthy();
     }));
 });

@@ -23,7 +23,7 @@ export class ResponseHandler {
   }
 
   public handle500(): any {
-    //todo: do something here
+    // todo: do something here
   }
 
 }

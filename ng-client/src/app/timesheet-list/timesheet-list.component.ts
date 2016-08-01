@@ -3,8 +3,8 @@ import {MD_LIST_DIRECTIVES} from '@angular2-material/list/list';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button/button';
 import {MD_ICON_DIRECTIVES, MdIconRegistry} from '@angular2-material/icon/icon';
 import {TimesheetService, Timesheet} from '../shared';
-import {IdentityService} from "../auth";
-import {Router} from "@angular/router";
+import {IdentityService} from '../auth';
+import {Router} from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -16,12 +16,12 @@ import {Router} from "@angular/router";
 })
 export class TimesheetListComponent implements OnInit {
 
-  timesheets:Timesheet[];
-  format:string;
+  timesheets: Timesheet[];
+  format: string;
 
-  constructor(private timesheetService:TimesheetService,
-              private identityService:IdentityService,
-              private router:Router) {
+  constructor(private timesheetService: TimesheetService,
+              private identityService: IdentityService,
+              private router: Router) {
     this.timesheets = [];
     this.format = 'MM/dd/yy';
   }
@@ -30,7 +30,7 @@ export class TimesheetListComponent implements OnInit {
   ngOnInit() {
     this.timesheetService.getTimesheets(this.identityService.user).subscribe((timesheets) => {
       this.timesheets = timesheets;
-    })
+    });
   }
 
   openTimesheet(timesheet) {

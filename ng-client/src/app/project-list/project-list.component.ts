@@ -3,8 +3,8 @@ import {MD_LIST_DIRECTIVES} from '@angular2-material/list/list';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button/button';
 import {MD_ICON_DIRECTIVES, MdIconRegistry} from '@angular2-material/icon/icon';
 import {ProjectService} from '../shared';
-import {Router} from "@angular/router";
-import {Project} from "../shared";
+import {Router} from '@angular/router';
+import {Project} from '../shared';
 
 @Component({
   moduleId: module.id,
@@ -16,9 +16,9 @@ import {Project} from "../shared";
 })
 export class ProjectListComponent implements OnInit {
 
-  projects:Project[];
+  projects: Project[];
 
-  constructor(private projectService:ProjectService, private router:Router) {
+  constructor(private projectService: ProjectService, private router: Router) {
     this.projects = [];
   }
 

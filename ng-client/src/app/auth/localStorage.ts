@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 
 export interface StorageBackend {
   getItem(key: string): any;
@@ -13,7 +12,7 @@ export const AUTH_TOKEN_NAME = 'id_token';
 export class LocalStorage {
   storageBackend: StorageBackend;
 
-  getItem(key):any {
+  getItem(key): any {
     if (this.storageBackend) {
       return this.storageBackend.getItem(key);
     } else {
@@ -21,7 +20,7 @@ export class LocalStorage {
     }
   }
 
-  setItem(key, value):any {
+  setItem(key, value): any {
     if (this.storageBackend) {
       return this.storageBackend.setItem(key, value);
     } else {
@@ -29,16 +28,16 @@ export class LocalStorage {
     }
   }
 
-  removeItem(key):any {
+  removeItem(key): any {
     if (this.storageBackend) {
       return this.storageBackend.removeItem(key);
     } else {
-      return ''
+      return '';
     }
   }
 
   // Init storage by DOM object outside of server rendering
-  initStorage(storageBackend: StorageBackend):void {
+  initStorage(storageBackend: StorageBackend): void {
     this.storageBackend = storageBackend;
   }
 }
