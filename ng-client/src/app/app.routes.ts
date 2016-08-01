@@ -1,13 +1,13 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { TimesheetListComponent } from './timesheet-list';
 import { LoginComponent } from './login';
-import { NavigationComponent } from './navigation'
-import { ProjectListComponent } from './project-list'
-import { EmployeeListComponent } from './employee-list'
-import {TimesheetDetailComponent} from "./timesheet-detail";
-import {ProjectNewComponent} from "./project-new/project-new.component";
-import {EmployeeNewComponent} from "./employee-new/employee-new.component";
-import {TimesheetNewComponent} from "./timesheet-new/timesheet-new.component";
+import { NavigationComponent } from './navigation';
+import { ProjectListComponent } from './project-list';
+import { EmployeeListComponent } from './employee-list';
+import {TimesheetDetailComponent} from './timesheet-detail';
+import {ProjectNewComponent} from './project-new/project-new.component';
+import {EmployeeNewComponent} from './employee-new/employee-new.component';
+import {TimesheetNewComponent} from './timesheet-new/timesheet-new.component';
 
 export const routes: RouterConfig = [
   {

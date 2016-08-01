@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 import {IdentityService} from '../auth';
 import {TimesheetService} from '../shared';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list/list';
@@ -15,16 +15,16 @@ import {MD_PROGRESS_CIRCLE_DIRECTIVES} from '@angular2-material/progress-circle'
   directives: [MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_PROGRESS_CIRCLE_DIRECTIVES]
 })
 export class TimesheetDetailComponent implements OnInit {
-  timesheet:any;
-  timeUnits:any[];
-  timesheetLoaded:boolean;
-  timeUnitsLoaded:boolean;
-  dateFormat:string;
+  timesheet: any;
+  timeUnits: any[];
+  timesheetLoaded: boolean;
+  timeUnitsLoaded: boolean;
+  dateFormat: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private identityService:IdentityService,
-              private timesheetService:TimesheetService) {
+              private identityService: IdentityService,
+              private timesheetService: TimesheetService) {
     this.timesheetLoaded = false;
     this.timeUnitsLoaded = false;
     this.dateFormat = 'MM/dd/yy';
@@ -42,7 +42,7 @@ export class TimesheetDetailComponent implements OnInit {
 
       this.timesheetService.getTimeunits(this.identityService.user, timesheetId)
         .subscribe((timeUnits) => {
-          this.timeUnits = timeUnits
+          this.timeUnits = timeUnits;
           this.timeUnitsLoaded = true;
         });
     });
@@ -57,7 +57,7 @@ export class TimesheetDetailComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigateByUrl('/home/timesheets')
+    this.router.navigateByUrl('/home/timesheets');
   }
 
 

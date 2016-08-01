@@ -1,22 +1,22 @@
 import {Injectable} from '@angular/core';
-import {ResponseHandler, IdentityService} from "../auth";
-import {Http, Headers, RequestOptions, RequestOptionsArgs, Response, RequestMethod, Request} from '@angular/http';
+import {ResponseHandler, IdentityService} from '../auth';
+import {Http, Headers, RequestOptions, RequestOptionsArgs, RequestMethod, Request} from '@angular/http';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ExtHttp {
-  private HEADER_PREFIX:string = 'Bearer ';
-  private urlRoot:string;
+  private HEADER_PREFIX: string = 'Bearer ';
+  private urlRoot: string;
   process: Subject<any> = new Subject<any>();
   constructor(private _http: Http,
-              private serverHandler:ResponseHandler,
-              private identityService:IdentityService) {
+              private serverHandler: ResponseHandler,
+              private identityService: IdentityService) {
     this.urlRoot = 'https://production.com';
 
     let host = window.location.hostname;
 
-    if(host == 'localhost'){
+    if (host === 'localhost') {
       this.urlRoot = 'http://localhost:4000';
     }
 
@@ -32,7 +32,7 @@ export class ExtHttp {
       'Content-Type': 'application/json'
     });
 
-    if(this.identityService.user) {
+    if (this.identityService.user) {
       headers.set('Authorization', this._generateToken());
     }
 
@@ -88,7 +88,7 @@ export class ExtHttp {
                 observer.error(err);
                 break;
             }
-          })
-    })
+          });
+    });
   }
 }

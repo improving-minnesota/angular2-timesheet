@@ -14,12 +14,12 @@ import {IdentityService, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private identityService:IdentityService, private storage: LocalStorage, private router:Router) {}
+  constructor(private identityService: IdentityService, private storage: LocalStorage, private router: Router) {}
 
   ngOnInit() {
   }
 
-  go(path){
+  go(path) {
     this.router.navigateByUrl(path);
   }
 

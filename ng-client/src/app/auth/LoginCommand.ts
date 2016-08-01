@@ -1,5 +1,5 @@
 export class LoginCommand {
-  constructor(private _username:string = '', private _password:string = '') {
+  constructor(private _username = '', private _password = '') {
   }
 
   get username() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
 
 import { NgForm } from '@angular/forms';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
@@ -28,15 +28,15 @@ import {LoginService} from '../shared';
 export class LoginComponent implements OnInit {
 
   private command: LoginCommand;
-  private error:boolean;
+  private error: boolean;
 
-  constructor(private router:Router, private loginService:LoginService, private identityService:IdentityService) {}
+  constructor(private router: Router, private loginService: LoginService, private identityService: IdentityService) {}
 
   ngOnInit() {
     this.command = new LoginCommand();
     this.error = false;
-    this.identityService.identityDispatch.subscribe((user:User) => {
-      if(user.authenticated == false) {
+    this.identityService.identityDispatch.subscribe((user: User) => {
+      if (user.authenticated === false) {
         this.error = true;
       } else {
         this.router.navigateByUrl('/home/projects');

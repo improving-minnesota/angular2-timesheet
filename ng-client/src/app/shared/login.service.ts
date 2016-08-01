@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 
 import {LoginCommand, IdentityService, User, Name, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
 import {ExtHttp} from '../shared';
@@ -12,10 +12,10 @@ export class LoginService {
 
   jwtHelper: JwtHelper = new JwtHelper();
 
-  constructor(private http:ExtHttp, private identityService:IdentityService, private storage:LocalStorage) {
+  constructor(private http: ExtHttp, private identityService: IdentityService, private storage: LocalStorage) {
   }
 
-  login(command:LoginCommand):Observable<User> {
+  login(command: LoginCommand): Observable<User> {
 
     return Observable.create((observer) => {
       const body = {
@@ -30,11 +30,11 @@ export class LoginService {
     });
   }
 
-  public loadUser(token:string):User {
+  public loadUser(token: string): User {
     const userToken = this.jwtHelper.decodeToken(token);
 
     const name = new Name(userToken.firstName, userToken.lastName);
-    const user = new User({name:name, authenticated:true, token:token, id:userToken._id});
+    const user = new User({name: name, authenticated: true, token: token, id: userToken._id});
 
     this.storage.setItem(AUTH_TOKEN_NAME, token);
     this.identityService.update(user);
