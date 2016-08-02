@@ -51,6 +51,7 @@ const barrels: string[] = [
   'app/timesheet-new',
   'app/time-units',
   'app/timesheet',
+  'app/timesheet-entry'
   /** @cli-barrel */
 ];
 

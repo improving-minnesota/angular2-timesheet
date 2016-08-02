@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { TimeUnitsComponent } from './time-units.component';
+import { TimesheetEntryComponent } from './timesheet-entry.component';
 
-describe('Component: TimeUnits', () => {
+describe('Component: TimesheetEntry', () => {
   it('should create an instance', () => {
-    // let component = new TimeUnitsComponent();
+    // let component = new TimesheetEntryComponent();
     // expect(component).toBeTruthy();
   });
 });
