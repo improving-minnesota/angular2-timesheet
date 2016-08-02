@@ -1,0 +1,48 @@
+<h2>Log Time</h2>
+<md-card>
+  <md-card-content>
+    <form (ngSubmit)="logTime()" #entryForm="ngForm">
+
+      <div>
+        <label for="entry-project">Project</label>
+        <select name="selectedProject" id="entry-project" [(ngModel)]="selectedProject" required>
+          <option *ngFor="let project of projects" [ngValue]="project">{{project.name}}</option>
+        </select>
+      </div>
+      <!-- <div [hidden]="selectedProject.valid || selectedProject.pristine" class="alert">
+        Project is required
+      </div> -->
+
+      <!-- Date Worked -->
+      <md-input class="input-full-width"
+                placeholder="Date Worked (mm/dd/yyyy)"
+                required
+                [(ngModel)]="timeUnit.dateWorked"
+                name="dateWorked"
+                dividerColor="warm"
+                [formControl]="dateWorked">
+      </md-input>
+      <div [hidden]="dateWorked.valid || dateWorked.pristine" class="alert">
+        Date is required
+      </div>
+
+      <!-- Hours Worked -->
+      <md-input class="input-full-width"
+                placeholder="Hours"
+                required
+                [(ngModel)]="timeUnit.hoursWorked"
+                name="hoursWorked"
+                dividerColor="warm"
+                #hoursWorked="ngModel">
+      </md-input>
+      <div [hidden]="hoursWorked.valid || hoursWorked.pristine" class="alert">
+        Date is required
+      </div>
+
+      <div class="timesheet-entry-time-controls">
+        <button type="submit" md-raised-button color="primary" [disabled]="!entryForm.valid">Save</button>
+        <button md-raised-button color="secondary">Cancel</button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>

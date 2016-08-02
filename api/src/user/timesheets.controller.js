@@ -1,4 +1,5 @@
 const db = require('../services/db')
+const debug = require('debug')('at:timesheets.controller')
 const _ = require('lodash')
 
 module.exports = {
@@ -31,6 +32,7 @@ module.exports = {
   },
 
   create: function (req, res, next) {
+    debug('Creating time unit');
     var userId = req.params.userId
 
     var newTimesheet = req.body
@@ -39,6 +41,7 @@ module.exports = {
     db.insert('timesheets', newTimesheet)
       .then(function (){
         res.json(newTimesheet)
+        debug('Time unit created successfully');
       })
       .fail(function (err) {
         res.status(500).json(err)
