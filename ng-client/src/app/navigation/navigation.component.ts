@@ -3,11 +3,11 @@ import {ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {MdButton} from '@angular2-material/button/button';
 import {MdToolbar} from '@angular2-material/toolbar/toolbar';
 import {IdentityService, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
+import {LoginService} from '../shared/login.service';
 
 @Component({
   moduleId: module.id,
   directives: [ROUTER_DIRECTIVES, MdButton, MdToolbar],
-  providers: [],
   selector: 'app-navigation',
   templateUrl: 'navigation.component.html',
   styleUrls: ['navigation.component.css']

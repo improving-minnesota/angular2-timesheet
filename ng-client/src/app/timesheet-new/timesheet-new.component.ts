@@ -16,7 +16,7 @@ import * as moment from 'moment';
   selector: 'app-timesheet-new',
   templateUrl: 'timesheet-new.component.html',
   styleUrls: ['timesheet-new.component.css'],
-  providers: [],
+  providers: [TimesheetService],
   directives: [
     MdCard,
     MdButton,

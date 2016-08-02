@@ -21,7 +21,8 @@ import {Employee, EmployeeService} from '../shared';
     MD_INPUT_DIRECTIVES,
     MD_CHECKBOX_DIRECTIVES,
     NgForm
-  ]
+  ],
+  providers: [EmployeeService]
 })
 export class EmployeeNewComponent implements OnInit {
 

@@ -14,6 +14,7 @@ import {Timesheet} from '../shared/Timesheet';
   selector: 'app-timesheet',
   templateUrl: 'timesheet.component.html',
   styleUrls: ['timesheet.component.css'],
+  providers: [TimesheetService],
   directives: [TimeUnitsComponent, TimesheetDetailComponent, MD_PROGRESS_CIRCLE_DIRECTIVES]
 })
 export class TimesheetComponent implements OnInit {
