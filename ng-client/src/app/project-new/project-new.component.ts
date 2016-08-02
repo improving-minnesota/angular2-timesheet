@@ -19,7 +19,8 @@ import {ProjectService, Project} from '../shared';
     MdButton,
     MD_INPUT_DIRECTIVES,
     NgForm
-  ]
+  ],
+  providers: [ProjectService]
 })
 export class ProjectNewComponent implements OnInit {
 

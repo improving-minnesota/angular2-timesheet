@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
   templateUrl: 'timesheet-list.component.html',
   styleUrls: ['timesheet-list.component.css'],
   directives: [MD_LIST_DIRECTIVES, MD_ICON_DIRECTIVES, MD_BUTTON_DIRECTIVES],
-  providers: [MdIconRegistry]
+  providers: [MdIconRegistry, TimesheetService]
 })
 export class TimesheetListComponent implements OnInit {
 
