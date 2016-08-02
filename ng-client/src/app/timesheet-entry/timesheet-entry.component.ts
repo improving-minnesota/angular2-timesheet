@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { NgForm, FormControl, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
+import {NgForm, FormControl, REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
 
-import { MD_INPUT_DIRECTIVES } from '@angular2-material/input/input';
-import { MdButton } from '@angular2-material/button/button';
-import { MdCard } from '@angular2-material/card/card';
+import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
+import {MdButton} from '@angular2-material/button/button';
+import {MdCard} from '@angular2-material/card/card';
 
 import * as moment from 'moment';
 
-import { IdentityService } from '../auth';
-import { Project, ProjectService, TimeUnit, TimeUnitService } from '../shared';
+import {IdentityService} from '../auth';
+import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
 
 @Component({
   moduleId: module.id,
@@ -28,16 +28,16 @@ import { Project, ProjectService, TimeUnit, TimeUnitService } from '../shared';
   ]
 })
 export class TimesheetEntryComponent implements OnInit {
-  projects:Project[];
-  selectedProject:Project;
-  timeUnit:TimeUnit;
-  dateWorked:FormControl;
+  projects: Project[];
+  selectedProject: Project;
+  timeUnit: TimeUnit;
+  dateWorked: FormControl;
 
-  constructor(private identityService:IdentityService,
-              private projectService:ProjectService,
+  constructor(private identityService: IdentityService,
+              private projectService: ProjectService,
               private route: ActivatedRoute,
               private router: Router,
-              private timeUnitService:TimeUnitService) {
+              private timeUnitService: TimeUnitService) {
     this.timeUnit = new TimeUnit({});
   }
 
