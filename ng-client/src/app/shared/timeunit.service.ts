@@ -7,9 +7,9 @@ import {TimeUnit} from './TimeUnit';
 @Injectable()
 export class TimeUnitService {
 
-  constructor(private http:ExtHttp) {}
+  constructor(private http: ExtHttp) {}
 
-  create(user:User, timeUnit:TimeUnit):Observable<any> {
+  create(user: User, timeUnit: TimeUnit): Observable<any> {
     return Observable.create((observer) => {
       this.http.post(`/users/${user.id}/timesheets/${timeUnit.timesheet_id}/timeunits`, timeUnit).subscribe((response) => {
         observer.next(response.json());
@@ -17,7 +17,7 @@ export class TimeUnitService {
     });
   }
 
-  get(user:User, timesheetId:string, timeUnitId:string):Observable<any> {
+  get(user: User, timesheetId: string, timeUnitId: string): Observable<any> {
     return Observable.create((observer) => {
       this.http.get(`/users/${user.id}/timesheets/${timesheetId}/timeunits/${timeUnitId}`).subscribe((response) => {
         observer.next(response.json());
@@ -25,7 +25,7 @@ export class TimeUnitService {
     });
   }
 
-  save(user:User, timeUnit:TimeUnit):Observable<any> {
+  save(user: User, timeUnit: TimeUnit): Observable<any> {
     return Observable.create((observer) => {
       this.http.put(`/users/${user.id}/timesheets/${timeUnit.timesheet_id}/timeunits/${timeUnit._id}`, timeUnit).subscribe((response) => {
         observer.next(response.json());
@@ -33,7 +33,7 @@ export class TimeUnitService {
     });
   }
 
-  delete(user:User, timeUnit:TimeUnit):Observable<any> {
+  delete(user: User, timeUnit: TimeUnit): Observable<any> {
     return Observable.create((observer) => {
       this.http.delete(`/users/${user.id}/timesheets/${timeUnit.timesheet_id}/timeunits/${timeUnit._id}`).subscribe((response) => {
         observer.next(response.json());
