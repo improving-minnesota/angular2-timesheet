@@ -7,7 +7,6 @@ import {IdentityService} from '../auth';
 import {Router} from '@angular/router';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-timesheet-list',
   templateUrl: 'timesheet-list.component.html',
   styleUrls: ['timesheet-list.component.css'],

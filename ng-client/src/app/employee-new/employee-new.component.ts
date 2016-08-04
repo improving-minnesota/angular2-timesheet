@@ -10,7 +10,6 @@ import {MdToolbar} from '@angular2-material/toolbar/toolbar';
 import {Employee, EmployeeService} from '../shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-employee-new',
   templateUrl: 'employee-new.component.html',
   styleUrls: ['employee-new.component.css'],

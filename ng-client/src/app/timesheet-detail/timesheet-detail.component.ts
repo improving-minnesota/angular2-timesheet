@@ -7,7 +7,6 @@ import {Router} from '@angular/router';
 import {Timesheet} from '../shared/Timesheet';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-timesheet-detail',
   templateUrl: 'timesheet-detail.component.html',
   styleUrls: ['timesheet-detail.component.css'],
