@@ -7,7 +7,7 @@ import {MD_CARD_DIRECTIVES} from '@angular2-material/card/card';
 @Component({
   selector: 'app-time-units',
   templateUrl: 'time-units.component.html',
-  styleUrls: ['time-units.component.css'],
+  styleUrls: ['time-units.component.scss'],
   directives: [MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES]
 })
 export class TimeUnitsComponent implements OnInit {

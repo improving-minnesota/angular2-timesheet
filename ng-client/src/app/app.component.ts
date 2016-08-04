@@ -5,7 +5,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
   directives: [ROUTER_DIRECTIVES],
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  styleUrls: ['app.component.scss']
 })
 
 export class AppComponent {
