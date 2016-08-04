@@ -12,10 +12,9 @@ import {IdentityService} from '../auth';
 import * as moment from 'moment';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-timesheet-new',
   templateUrl: 'timesheet-new.component.html',
-  styleUrls: ['timesheet-new.component.css'],
+  styleUrls: ['timesheet-new.component.scss'],
   providers: [TimesheetService],
   directives: [
     MdCard,

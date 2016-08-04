@@ -4,10 +4,11 @@
 module.exports = function (config) {
   config.set({
     basePath: '..',
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'angular-cli'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher')
+      require('karma-chrome-launcher'),
+      require('angular-cli/plugins/karma')
     ],
     customLaunchers: {
       // chrome setup for travis CI using chromium
@@ -34,7 +35,10 @@ module.exports = function (config) {
       // Vendor packages might include spec files. We don't want to use those.
       'dist/vendor/**/*.spec.js'
     ],
-    preprocessors: {},
+    preprocessors: {
+      './src/test.ts': ['angular-cli']
+    },
+    angularCliConfig: './angular-cli.json',
     reporters: ['progress'],
     port: 9876,
     colors: true,

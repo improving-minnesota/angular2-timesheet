@@ -6,10 +6,9 @@ import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button/button';
 import {MD_ICON_DIRECTIVES, MdIconRegistry} from '@angular2-material/icon/icon';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-employee-list',
   templateUrl: 'employee-list.component.html',
-  styleUrls: ['employee-list.component.css'],
+  styleUrls: ['employee-list.component.scss'],
   directives: [MD_LIST_DIRECTIVES, MD_ICON_DIRECTIVES, MD_BUTTON_DIRECTIVES],
   providers: [MdIconRegistry, EmployeeService]
 })

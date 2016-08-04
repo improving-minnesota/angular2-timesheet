@@ -7,10 +7,9 @@ import {IdentityService} from '../auth';
 import {Router} from '@angular/router';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-timesheet-list',
   templateUrl: 'timesheet-list.component.html',
-  styleUrls: ['timesheet-list.component.css'],
+  styleUrls: ['timesheet-list.component.scss'],
   directives: [MD_LIST_DIRECTIVES, MD_ICON_DIRECTIVES, MD_BUTTON_DIRECTIVES],
   providers: [MdIconRegistry, TimesheetService]
 })
