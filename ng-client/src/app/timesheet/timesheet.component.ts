@@ -10,7 +10,6 @@ import {TimesheetService} from '../shared';
 import {Timesheet} from '../shared/Timesheet';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-timesheet',
   templateUrl: 'timesheet.component.html',
   styleUrls: ['timesheet.component.scss'],

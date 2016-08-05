@@ -5,7 +5,6 @@ import {MdToolbar} from '@angular2-material/toolbar/toolbar';
 import {IdentityService, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
 
 @Component({
-  moduleId: module.id,
   directives: [ROUTER_DIRECTIVES, MdButton, MdToolbar],
   selector: 'app-navigation',
   templateUrl: 'navigation.component.html',
