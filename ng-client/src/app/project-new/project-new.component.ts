@@ -13,7 +13,7 @@ import {ProjectService, Project} from '../shared';
   moduleId: module.id,
   selector: 'app-project-new',
   templateUrl: 'project-new.component.html',
-  styleUrls: ['project-new.component.css'],
+  styleUrls: ['project-new.component.scss'],
   directives: [
     MdCard,
     MdButton,

@@ -13,7 +13,7 @@ import {Employee, EmployeeService} from '../shared';
   moduleId: module.id,
   selector: 'app-employee-new',
   templateUrl: 'employee-new.component.html',
-  styleUrls: ['employee-new.component.css'],
+  styleUrls: ['employee-new.component.scss'],
   directives: [
     MdCard,
     MdButton,

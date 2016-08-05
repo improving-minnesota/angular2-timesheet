@@ -13,7 +13,7 @@ import {Timesheet} from '../shared/Timesheet';
   moduleId: module.id,
   selector: 'app-timesheet',
   templateUrl: 'timesheet.component.html',
-  styleUrls: ['timesheet.component.css'],
+  styleUrls: ['timesheet.component.scss'],
   providers: [TimesheetService],
   directives: [TimeUnitsComponent, TimesheetDetailComponent, MD_PROGRESS_CIRCLE_DIRECTIVES]
 })

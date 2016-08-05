@@ -15,7 +15,7 @@ import {LoginService} from '../shared';
   moduleId: module.id,
   selector: 'app-login',
   templateUrl: 'login.component.html',
-  styleUrls: ['login.component.css'],
+  styleUrls: ['login.component.scss'],
   directives: [
     MdCard,
     MdButton,
