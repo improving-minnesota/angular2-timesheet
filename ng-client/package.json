@@ -4,6 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "prestart": "rm -rf ./tmp",
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
