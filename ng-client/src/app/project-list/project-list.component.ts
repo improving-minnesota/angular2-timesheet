@@ -7,7 +7,6 @@ import {Router} from '@angular/router';
 import {Project} from '../shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-project-list',
   templateUrl: 'project-list.component.html',
   styleUrls: ['project-list.component.scss'],

@@ -5,7 +5,6 @@ import {MD_LIST_DIRECTIVES} from '@angular2-material/list/list';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card/card';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-time-units',
   templateUrl: 'time-units.component.html',
   styleUrls: ['time-units.component.scss'],

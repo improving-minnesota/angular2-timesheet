@@ -12,7 +12,6 @@ import {IdentityService} from '../auth';
 import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
 
 @Component({
-  moduleId: module.id,
   templateUrl: 'timesheet-entry.component.html',
   styleUrls: ['timesheet-entry.component.scss'],
   directives: [

@@ -7,7 +7,7 @@ import { EmployeeListComponent } from './employee-list';
 import { ProjectNewComponent } from './project-new/project-new.component';
 import { EmployeeNewComponent } from './employee-new/employee-new.component';
 import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
-import { TimesheetComponent } from "./timesheet/timesheet.component";
+import { TimesheetComponent } from './timesheet/timesheet.component';
 import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
 
 export const routes: RouterConfig = [
