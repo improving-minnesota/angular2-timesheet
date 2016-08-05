@@ -14,7 +14,7 @@ import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
 @Component({
   moduleId: module.id,
   templateUrl: 'timesheet-entry.component.html',
-  styleUrls: ['timesheet-entry.component.css'],
+  styleUrls: ['timesheet-entry.component.scss'],
   directives: [
     MD_INPUT_DIRECTIVES,
     MdButton,

@@ -10,7 +10,7 @@ import {Timesheet} from '../shared/Timesheet';
   moduleId: module.id,
   selector: 'app-timesheet-detail',
   templateUrl: 'timesheet-detail.component.html',
-  styleUrls: ['timesheet-detail.component.css'],
+  styleUrls: ['timesheet-detail.component.scss'],
   directives: [MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES, MD_BUTTON_DIRECTIVES]
 })
 export class TimesheetDetailComponent implements OnInit {

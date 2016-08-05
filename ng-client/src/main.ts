@@ -40,4 +40,3 @@ bootstrap(AppComponent, [
   },
   error => console.log(error)
 );
-
