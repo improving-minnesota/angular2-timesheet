@@ -50,7 +50,7 @@
     "karma-coverage": "1.0.0",
     "karma-jasmine": "0.3.8",
     "protractor": "3.3.0",
-    "rimraf": "^2.5.4",
+    "rimraf": "2.5.4",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "2.0.0"
