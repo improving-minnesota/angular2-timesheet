@@ -1,58 +1,47 @@
 <h2>New Timesheet</h2>
-<md-card>
-  <md-card-content>
-    <form (ngSubmit)="save()" #timesheetForm="ngForm">
-      <div>
+<div>
+  <md-card>
+    <md-card-content>
+      <form (ngSubmit)="save()" [formGroup]="form">
         <md-input class="input-full-width"
                   placeholder="Name"
-                  required
-                  [(ngModel)]="timesheet.name"
-                  name="name"
                   dividerColor="warm"
-                  #name="ngModel">
+                  formControlName="name">
         </md-input>
         <div [hidden]="name.valid || name.pristine" class="alert">
           Name is required
         </div>
+
         <md-input class="input-full-width"
                   placeholder="Description"
-                  required
-                  [(ngModel)]="timesheet.description"
-                  name="description"
                   dividerColor="warm"
-                  #description="ngModel">
+                  formControlName="description">
         </md-input>
         <div [hidden]="description.valid || description.pristine" class="alert">
           Description is required
         </div>
+
         <md-input class="input-full-width"
                   placeholder="Begin Date (mm/dd/yyyy)"
-                  required
-                  [(ngModel)]="timesheet.beginDate"
-                  name="beginDate"
-                  [formControl]="beginDate"
-                  dividerColor="warm"
-                  >
+                  formControlName="beginDate">
         </md-input>
         <div [hidden]="beginDate.valid || beginDate.pristine" class="alert">
-          Begin date is required in the format: 'mm/dd/yyyy
+          Begin date is required in the format: 'mm/dd/yyyy'
         </div>
+
         <md-input class="input-full-width"
                   placeholder="End Date (mm/dd/yyyy)"
-                  required
-                  [(ngModel)]="timesheet.endDate"
-                  name="endDate"
-                  [formControl]="endDate"
-                  dividerColor="warm"
-                  >
+                  formControlName="endDate">
         </md-input>
         <div [hidden]="endDate.valid || endDate.pristine" class="alert">
-          End date is required in the format: 'mm/dd/yyyy
+          Begin date is required in the format: 'mm/dd/yyyy'
         </div>
-      </div>
-      <div>
-        <button [disabled]="!timesheetForm.valid" type="submit" md-raised-button color="primary">Save</button>
-      </div>
-    </form>
-  </md-card-content>
-</md-card>
+
+        <div>
+          <button [disabled]="!form.valid" type="submit" md-raised-button color="primary">Save</button>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
+
