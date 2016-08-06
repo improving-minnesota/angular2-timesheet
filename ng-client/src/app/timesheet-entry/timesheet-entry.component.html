@@ -1,11 +1,11 @@
 <h2>Log Time</h2>
 <md-card>
   <md-card-content>
-    <form (ngSubmit)="logTime()" #entryForm="ngForm">
+    <form (ngSubmit)="logTime()" [formGroup]="form">
 
       <div>
         <label for="entry-project">Project</label>
-        <select name="selectedProject" id="entry-project" [(ngModel)]="selectedProject" required>
+        <select name="selectedProject" id="entry-project" formControlName="selectedProject">
           <option *ngFor="let project of projects" [ngValue]="project">{{project.name}}</option>
         </select>
       </div>
@@ -16,32 +16,27 @@
       <!-- Date Worked -->
       <md-input class="input-full-width"
                 placeholder="Date Worked (mm/dd/yyyy)"
-                required
-                [(ngModel)]="timeUnit.dateWorked"
-                name="dateWorked"
-                dividerColor="warm"
-                [formControl]="dateWorked">
+                formControlName="dateWorked"
+                dividerColor="warm">
       </md-input>
       <div [hidden]="dateWorked.valid || dateWorked.pristine" class="alert">
-        Date is required
+        Date is required in the format: 'mm/dd/yyyy'
       </div>
 
       <!-- Hours Worked -->
-      <md-input class="input-full-width"
+      <md-input type="number"
+                class="input-full-width"
                 placeholder="Hours"
-                required
-                [(ngModel)]="timeUnit.hoursWorked"
-                name="hoursWorked"
-                dividerColor="warm"
-                #hoursWorked="ngModel">
+                formControlName="hoursWorked"
+                dividerColor="warm">
       </md-input>
       <div [hidden]="hoursWorked.valid || hoursWorked.pristine" class="alert">
-        Date is required
+        Hours worked is required and must be between 1 and 24
       </div>
 
       <div class="timesheet-entry-time-controls">
-        <button type="submit" md-raised-button color="primary" [disabled]="!entryForm.valid">Save</button>
-        <button md-raised-button color="secondary">Cancel</button>
+        <button type="submit" md-raised-button color="primary" [disabled]="!form.valid">Save</button>
+        <button md-raised-button color="secondary" (click)="cancel()">Cancel</button>
       </div>
     </form>
   </md-card-content>

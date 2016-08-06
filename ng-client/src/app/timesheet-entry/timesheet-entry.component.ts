@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {NgForm, FormControl, REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
+import {FormControl, REACTIVE_FORM_DIRECTIVES, Validators, FormGroup} from '@angular/forms';
 
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
 import {MdButton} from '@angular2-material/button/button';
@@ -18,7 +18,6 @@ import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
     MD_INPUT_DIRECTIVES,
     MdButton,
     MdCard,
-    NgForm,
     REACTIVE_FORM_DIRECTIVES
   ],
   providers: [
@@ -27,17 +26,18 @@ import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
   ]
 })
 export class TimesheetEntryComponent implements OnInit {
+  timesheetId: string;
   projects: Project[];
-  selectedProject: Project;
-  timeUnit: TimeUnit;
+  form: FormGroup;
+  selectedProject: FormControl;
   dateWorked: FormControl;
+  hoursWorked: FormControl;
 
   constructor(private identityService: IdentityService,
               private projectService: ProjectService,
               private route: ActivatedRoute,
               private router: Router,
               private timeUnitService: TimeUnitService) {
-    this.timeUnit = new TimeUnit({});
   }
 
   ngOnInit() {
@@ -46,7 +46,7 @@ export class TimesheetEntryComponent implements OnInit {
     });
 
     this.route.params.subscribe((params) => {
-      this.timeUnit.timesheet_id = params['id'];
+      this.timesheetId = params['id'];
     });
 
     function validateDateWorked(control: FormControl) {
@@ -56,15 +56,35 @@ export class TimesheetEntryComponent implements OnInit {
       return m.isValid() ? null : {value: false};
     }
 
+    function validateHours(control: FormControl) {
+      return (control.value > 0 && control.value <= 24) ? null : {value: false};
+    }
+
     this.dateWorked = new FormControl('', validateDateWorked);
+    this.hoursWorked = new FormControl('', [Validators.required, validateHours]);
+    this.selectedProject = new FormControl('', Validators.required);
+    this.form = new FormGroup({
+      selectedProject: this.selectedProject,
+      hoursWorked: this.hoursWorked,
+      dateWorked: this.dateWorked
+    });
+  }
+
+  cancel(): boolean {
+    this.router.navigateByUrl(`/home/timesheets/${this.timesheetId}`);
+    return false;
   }
 
   logTime() {
-    this.timeUnit.project_id = this.selectedProject._id;
-    this.timeUnit.project = this.selectedProject.name;
+    const timeUnit = new TimeUnit({
+      dateWorked: this.dateWorked.value,
+      hoursWorked: this.hoursWorked.value,
+      timesheet_id: this.timesheetId,
+      project_id: this.selectedProject.value._id
+    });
 
-    this.timeUnitService.create(this.identityService.user, this.timeUnit).subscribe((result) => {
-      this.router.navigateByUrl(`/home/timesheets/${this.timeUnit.timesheet_id}`);
+    this.timeUnitService.create(this.identityService.user, timeUnit).subscribe((result) => {
+      this.router.navigateByUrl(`/home/timesheets/${this.timesheetId}`);
     });
   }
 }
