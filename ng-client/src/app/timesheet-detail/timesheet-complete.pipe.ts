@@ -21,9 +21,11 @@ export class TimesheetCompletePipe implements PipeTransform {
 
     let hoursWorked = 0;
 
-    for (let unit of timesheet.timeUnits) {
-      console.log('unit', unit);
-      hoursWorked += unit.hoursWorked;
+    if(totalHours > 0) {
+      for (let unit of timesheet.timeUnits) {
+        console.log('unit', unit);
+        hoursWorked += unit.hoursWorked;
+      }
     }
 
     let percentage = hoursWorked / totalHours * 100;
