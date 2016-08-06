@@ -54,6 +54,7 @@ module.exports = {
 
     db.findOne('timesheets', {user_id: userId, _id: id})
       .then(function (timesheet) {
+        console.log('responding with', timesheet);
         res.json(timesheet)
       })
       .fail(function (err) {

@@ -1,7 +1,7 @@
-<div *ngIf="!timesheetLoaded || !timeUnitsLoaded">
+<div *ngIf="!loaded">
   <md-progress-circle mode="indeterminate"></md-progress-circle>
 </div>
-<div *ngIf="timesheetLoaded && timeUnitsLoaded">
+<div *ngIf="loaded">
   <app-timesheet-detail
     [timesheet]="timesheet"
     [dateFormat]="dateFormat"

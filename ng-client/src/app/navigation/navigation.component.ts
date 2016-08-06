@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {MdButton} from '@angular2-material/button/button';
 import {MdToolbar} from '@angular2-material/toolbar/toolbar';
 import {IdentityService, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
+import {User} from '../auth/user';
 
 @Component({
   directives: [ROUTER_DIRECTIVES, MdButton, MdToolbar],
@@ -12,9 +13,14 @@ import {IdentityService, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private identityService: IdentityService, private storage: LocalStorage, private router: Router) {}
+  user: User;
+
+  constructor(private identityService: IdentityService, private storage: LocalStorage, private router: Router) {
+  }
 
   ngOnInit() {
+    this.user = this.identityService.user;
+    this.identityService.identityDispatch.subscribe((user) => this.user = user);
   }
 
   go(path) {

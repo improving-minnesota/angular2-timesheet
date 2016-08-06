@@ -22,8 +22,7 @@ export class TimesheetComponent implements OnInit {
 
   // TODO: make this a timeUnit[] when that class is created
   timeUnits: any[];
-  timesheetLoaded: boolean;
-  timeUnitsLoaded: boolean;
+  loaded: boolean;
   dateFormat: string;
 
   constructor(private route: ActivatedRoute,
@@ -32,23 +31,25 @@ export class TimesheetComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.timesheetLoaded = false;
-    this.timeUnitsLoaded = false;
+    this.loaded = false;
     this.dateFormat = 'MM/dd/yy';
 
     this.route.params.subscribe((params) => {
       const timesheetId = params['id'];
 
-      this.timesheetService.getTimesheet(this.identityService.user, timesheetId)
-        .subscribe((timesheet) => {
+      let timesheetObservable = this.timesheetService.getTimesheet(this.identityService.user, timesheetId);
+
+      timesheetObservable.subscribe((timesheet) => {
           this.timesheet = timesheet;
-          this.timesheetLoaded = true;
         });
 
-      this.timesheetService.getTimeunits(this.identityService.user, timesheetId)
+      this.timesheetService.getTimeUnits(this.identityService.user, timesheetId)
         .subscribe((timeUnits) => {
           this.timeUnits = timeUnits;
-          this.timeUnitsLoaded = true;
+          timesheetObservable.subscribe(() => {
+            this.timesheet.timeUnits = this.timeUnits;
+            this.loaded = true;
+          });
         });
     });
   }

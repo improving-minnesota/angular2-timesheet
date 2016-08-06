@@ -1,3 +1,4 @@
+import {TimeUnit} from './TimeUnit';
 export interface TimesheetData {
   _id?: string;
   name?: string;
@@ -14,8 +15,9 @@ export class Timesheet {
   endDate: Date;
   description: string;
   user_id: string;
+  timeUnits: TimeUnit[];
 
-  constructor(private data: TimesheetData) {
+  constructor(data: TimesheetData) {
     this._id = data._id;
     this.name = data.name;
     this.beginDate = data.beginDate;
