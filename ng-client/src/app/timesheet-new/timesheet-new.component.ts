@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {NgForm, FORM_DIRECTIVES, FormControl, REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, REACTIVE_FORM_DIRECTIVES, Validators, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
@@ -20,22 +20,20 @@ import * as moment from 'moment';
     MdCard,
     MdButton,
     MD_INPUT_DIRECTIVES,
-    FORM_DIRECTIVES,
     REACTIVE_FORM_DIRECTIVES,
-    NgForm
   ]
 })
 export class TimesheetNewComponent implements OnInit {
 
-  timesheet: Timesheet;
   endDate: FormControl;
   beginDate: FormControl;
+  name: FormControl;
+  description: FormControl;
+  form: FormGroup;
 
   constructor(private timesheetService: TimesheetService,
               private identityService: IdentityService,
               private router: Router) {
-    this.timesheet = new Timesheet({user_id: identityService.user.id});
-
   }
 
   ngOnInit() {
@@ -46,10 +44,22 @@ export class TimesheetNewComponent implements OnInit {
 
     this.endDate = new FormControl('', validateDate);
     this.beginDate = new FormControl('', validateDate);
+    this.name = new FormControl('', Validators.required);
+    this.description = new FormControl('', Validators.required);
+    this.form = new FormGroup({
+      name: this.name,
+      description: this.description,
+      beginDate: this.beginDate,
+      endDate: this.endDate
+    });
+
   }
 
-  save(data: NgForm) {
-    this.timesheetService.save(this.identityService.user, this.timesheet)
+  save() {
+    let timesheet = new Timesheet(this.form.value);
+    timesheet.user_id = this.identityService.user.id;
+
+   this.timesheetService.save(this.identityService.user, timesheet)
       .subscribe(() => this.router.navigate(['/home/timesheets']));
   }
 }
