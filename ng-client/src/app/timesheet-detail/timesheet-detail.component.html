@@ -5,6 +5,7 @@
     <md-card-content>
       <p>{{timesheet.beginDate | date:dateFormat}} - {{timesheet.endDate | date:dateFormat}}</p>
       <p>{{timesheet.description}}</p>
+      <p>{{timesheet | timesheetComplete}}</p>
     </md-card-content>
     <md-card-actions>
       <button md-button (click)="edit()">Edit</button>

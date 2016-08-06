@@ -25,6 +25,7 @@ import * as moment from 'moment';
 })
 export class TimesheetNewComponent implements OnInit {
 
+  private DATE_FORMAT: string = 'MM/DD/YYYY';
   endDate: FormControl;
   beginDate: FormControl;
   name: FormControl;
@@ -37,13 +38,13 @@ export class TimesheetNewComponent implements OnInit {
   }
 
   ngOnInit() {
-    function validateDate(control: FormControl) {
-      let m = moment(control.value, 'MM/DD/YYYY', true);
+    let validateDate = (control: FormControl) =>  {
+      let m = moment(control.value, this.DATE_FORMAT, true);
       return m.isValid() ? null : {value: false};
-    }
+    };
 
-    this.endDate = new FormControl('', validateDate);
     this.beginDate = new FormControl('', validateDate);
+    this.endDate = new FormControl('', validateDate);
     this.name = new FormControl('', Validators.required);
     this.description = new FormControl('', Validators.required);
     this.form = new FormGroup({
@@ -56,10 +57,15 @@ export class TimesheetNewComponent implements OnInit {
   }
 
   save() {
-    let timesheet = new Timesheet(this.form.value);
-    timesheet.user_id = this.identityService.user.id;
+    let data = this.form.value;
 
-   this.timesheetService.save(this.identityService.user, timesheet)
+    data.beginDate = moment(data.beginDate, this.DATE_FORMAT).toDate();
+    data.endDate = moment(data.endDate, this.DATE_FORMAT).toDate();
+    data.user_id = this.identityService.user.id;
+
+    let timesheet = new Timesheet(data);
+
+    this.timesheetService.save(this.identityService.user, timesheet)
       .subscribe(() => this.router.navigate(['/home/timesheets']));
   }
 }

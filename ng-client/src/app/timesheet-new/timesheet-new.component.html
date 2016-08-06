@@ -25,7 +25,7 @@
                   placeholder="Begin Date (mm/dd/yyyy)"
                   formControlName="beginDate">
         </md-input>
-        <div [hidden]="beginDate.valid || beginDate.pristine" class="alert">
+        <div [hidden]="beginDate.valid || beginDate.pristine" class="alert" type="date">
           Begin date is required in the format: 'mm/dd/yyyy'
         </div>
 

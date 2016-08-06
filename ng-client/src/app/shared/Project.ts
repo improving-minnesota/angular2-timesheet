@@ -9,7 +9,7 @@ export class Project {
   name: string;
   description: string;
 
-  constructor(private data: ProjectData) {
+  constructor(data: ProjectData) {
     this._id = data._id;
     this.name = data.name;
     this.description = data.description;

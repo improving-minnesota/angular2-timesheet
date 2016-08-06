@@ -26,6 +26,8 @@ import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
   ]
 })
 export class TimesheetEntryComponent implements OnInit {
+
+  private DATE_FORMAT: string = 'MM/DD/YYYY';
   timesheetId: string;
   projects: Project[];
   form: FormGroup;
@@ -49,12 +51,12 @@ export class TimesheetEntryComponent implements OnInit {
       this.timesheetId = params['id'];
     });
 
-    function validateDateWorked(control: FormControl) {
-      let m = moment(control.value, 'MM/DD/YYYY', true);
+    let validateDateWorked = (control: FormControl) => {
+      let m = moment(control.value, this.DATE_FORMAT, true);
 
       // TODO: Ensure that date is in range.
       return m.isValid() ? null : {value: false};
-    }
+    };
 
     function validateHours(control: FormControl) {
       return (control.value > 0 && control.value <= 24) ? null : {value: false};
@@ -77,7 +79,7 @@ export class TimesheetEntryComponent implements OnInit {
 
   logTime() {
     const timeUnit = new TimeUnit({
-      dateWorked: this.dateWorked.value,
+      dateWorked:  moment(this.dateWorked.value, this.DATE_FORMAT).toDate(),
       hoursWorked: this.hoursWorked.value,
       timesheet_id: this.timesheetId,
       project_id: this.selectedProject.value._id

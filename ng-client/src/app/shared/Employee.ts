@@ -17,7 +17,7 @@ export class Employee {
   lastName: string;
   password: string;
 
-  constructor(private data: EmployeeData) {
+  constructor(data: EmployeeData) {
     this._id = data._id;
     this.username = data.username;
     this.email = data.email;
