@@ -4,3 +4,13 @@
   color: $app-warn;
   padding: 10px;
 }
+
+:host /deep/ .ts-strong {
+  font-weight: 800;
+}
+
+:host /deep/ .ts-subtext {
+  font-weight: 200;
+  font-size: small;
+  color: $app-light-grey;
+}

@@ -10,7 +10,7 @@
       </div>
     </md-list-item>
     <md-list-item *ngFor="let employee of employees">
-      <h3 md-line>{{employee.username}}</h3>
+      <p md-line><span [employee]="employee"></span></p>
       <p md-line>{{employee.firstName}} {{employee.lastName}}</p>
       <p md-line class="demo-secondary-text">{{employee.email}}</p>
     </md-list-item>
