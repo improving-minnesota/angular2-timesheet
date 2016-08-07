@@ -12,9 +12,38 @@ import {
 
 import { TimesheetEntryComponent } from './timesheet-entry.component';
 
-describe('Component: TimesheetEntry', () => {
-  it('should create an instance', () => {
-    // let component = new TimesheetEntryComponent();
-    // expect(component).toBeTruthy();
-  });
-});
+// class ProjectService {
+//   getProducts():Observable<Project[]> {
+//     return [];
+//   }
+// }
+//
+// class TimeUnitService {
+//   create(user:User, timeUnit: TimeUnit):Observable<any> {
+//     return new TimeUnit({});
+//   }
+// }
+
+// describe.only('Component: TimesheetEntry', () => {
+//   let tcb;
+//
+//   beforeEachProviders(() => [
+//     provide(ProjectService, { useClass: ProjectServiceMock }),
+//     provide(TimeUnitService, { useClass: TimeUnitService }),
+//     TimeSheetEntryComponent
+//   ]);
+//
+//   beforeEach(inject([TestComponentBuilder], _tcb => {
+//     tcb = _tcb
+//   }));
+//
+//   it('should create an instance', () => {
+//     tcb.createAsync(TimeSheetEntryComponent))
+//       .then((fixture) => {
+//         let timesheetEntry = fixture.componentInstance;
+//         let element = fixture.nativeElement;
+//
+//
+//       });
+//   });
+// });

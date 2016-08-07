@@ -48,5 +48,4 @@ export class LoginService {
     this.identityService.update(user);
     return user;
   }
-
 }

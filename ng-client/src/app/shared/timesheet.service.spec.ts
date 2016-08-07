@@ -9,10 +9,10 @@ import {
 import { TimesheetService } from './timesheet.service';
 
 describe('TimesheetService Service', () => {
-  beforeEachProviders(() => [TimesheetService]);
-
-  it('should ...',
-      inject([TimesheetService], (service: TimesheetService) => {
-    expect(service).toBeTruthy();
-  }));
+  // beforeEachProviders(() => [TimesheetService]);
+  //
+  // it('should ...',
+  //     inject([TimesheetService], (service: TimesheetService) => {
+  //   expect(service).toBeTruthy();
+  // }));
 });
