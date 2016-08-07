@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {ExtHttp} from './extHttp.service';
-import {User} from '../auth';
-import {TimeUnit} from './TimeUnit';
+import { Observable } from 'rxjs/Observable';
+
+import { ExtHttp } from './extHttp.service';
+import { TimeUnit } from './TimeUnit';
+import { User } from '../auth';
 
 @Injectable()
 export class TimeUnitService {
-
   constructor(private http: ExtHttp) {}
 
   create(user: User, timeUnit: TimeUnit): Observable<any> {

@@ -10,7 +10,7 @@ export class IdentityService {
 
   private createBlankUser(): User {
     const userData = {
-      name: new Name('', ' '),
+      name: new Name('', ''),
       authenticated: false,
       token: '',
       id: ''

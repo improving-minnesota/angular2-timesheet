@@ -20,7 +20,10 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.identityService.user;
-    this.identityService.identityDispatch.subscribe((user) => this.user = user);
+    this.identityService.identityDispatch.subscribe((user) => {
+      this.user = user;
+      console.log('ok, doing something');
+    });
   }
 
   go(path) {
