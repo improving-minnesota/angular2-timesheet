@@ -5,7 +5,5 @@ import { EmployeeDirective } from './employee.directive';
 
 describe('Directive: Employee', () => {
   it('should create an instance', () => {
-    //let directive = new Employee();
-    //expect(directive).toBeTruthy();
   });
 });

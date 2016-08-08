@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm, NgModel } from '@angular/forms';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { MD_INPUT_DIRECTIVES } from '@angular2-material/input/input';

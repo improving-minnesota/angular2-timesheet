@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {ExtHttp} from './extHttp.service';
-import {Project} from './Project';
+import { Observable } from 'rxjs/Observable';
+import { ExtHttp } from './extHttp.service';
+import { Project } from './Project';
 
 @Injectable()
 export class ProjectService {
@@ -23,5 +23,4 @@ export class ProjectService {
       });
     });
   }
-
 }
