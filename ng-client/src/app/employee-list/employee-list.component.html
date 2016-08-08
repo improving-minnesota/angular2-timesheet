@@ -5,14 +5,14 @@
         Employees
         <!--<span class="fill-remaining"></span>-->
         <button md-fab>
-          <md-icon color="accent" (click)="add()">add</md-icon>
+          <md-icon color="accent" (click)="add()" class="add-employee">add</md-icon>
         </button>
       </div>
     </md-list-item>
-    <md-list-item *ngFor="let employee of employees">
+    <md-list-item *ngFor="let employee of employees" class="employee-list-item">
       <p md-line><span [employee]="employee"></span></p>
-      <p md-line>{{employee.firstName}} {{employee.lastName}}</p>
-      <p md-line class="demo-secondary-text">{{employee.email}}</p>
+      <p md-line class="employee-list-item-name">{{employee.firstName}} {{employee.lastName}}</p>
+      <p md-line class="demo-secondary-text employee-list-item-email">{{employee.email}}</p>
     </md-list-item>
   </md-list>
 </div>
