@@ -35,9 +35,8 @@ describe('Component: EmployeeList', () => {
       getDefaultFontSetClass: jasmine.createSpy('getDefaultFontSetClass')
     };
     mdIconRegistryProvider = {
-      provide: MdIconRegistry, useFactory: () => {
-        return mdIconRegistry;
-      }
+      provide: MdIconRegistry,
+      useFactory: () => mdIconRegistry
     };
 
     employeeService = {
@@ -45,9 +44,8 @@ describe('Component: EmployeeList', () => {
     };
 
     employeeServiceProvider = {
-      provide: EmployeeService, useFactory: () => {
-        return employeeService;
-      }
+      provide: EmployeeService,
+      useFactory: () => employeeService
     };
 
     router = {
@@ -55,9 +53,8 @@ describe('Component: EmployeeList', () => {
     };
 
     routerProvider = {
-      provide: Router, useFactory: () => {
-        return router;
-      }
+      provide: Router,
+      useFactory: () => router
     };
   });
 

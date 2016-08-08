@@ -1,17 +1,8 @@
-/* tslint:disable:no-unused-variable */
-
-import { provide } from '@angular/core';
-
+/* tslint:disable:max-line-length */
 import {
   addProviders,
   inject
 } from '@angular/core/testing';
-
-import {
-  HTTP_PROVIDERS,
-  Http,
-  RequestOptionsArgs
-} from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -26,53 +17,69 @@ import {
 
 import { ExtHttp } from './extHttp.service';
 
-class ExtHttpMock {
-  post(url: string, body: any, options?: RequestOptionsArgs) {}
-}
-
 describe('Login Service', () => {
-  let service: LoginService;
-  let extHttp: ExtHttpMock;
-  let identityService: IdentityService;
-  let storage: LocalStorage;
+  let service;
+  let extHttp;
+  let extHttpProvider;
+  let identityService;
+  let identityServiceProvider;
+  let localStorage;
+  let localStorageProvider;
   let jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJqb2huIiwibGFzdE5hbWUiOiJkb2UiLCJfaWQiOiIxIn0.A6gUhsto3HuGg7hD9ydE_rsGE9ulhDgMoHkL8jlLRj8';
 
+  beforeEach(() => {
+    extHttp = {
+      post: jasmine.createSpy('post')
+    };
+    extHttpProvider = {
+      provide: ExtHttp,
+      useFactory: () => extHttp
+    };
+
+    identityService = {
+      update: jasmine.createSpy('update')
+    };
+    identityServiceProvider = {
+      provide: IdentityService,
+      useFactory: () => identityService
+    };
+
+    localStorage = {
+      setItem: jasmine.createSpy('setItem')
+    };
+    localStorageProvider = {
+      provide: LocalStorage,
+      useFactory: () => localStorage
+    };
+  });
+
   beforeEach(() => addProviders([
-    provide(ExtHttp, {useClass: ExtHttpMock}),
-    HTTP_PROVIDERS,
-    IdentityService,
-    LocalStorage,
+    extHttpProvider,
+    identityServiceProvider,
+    localStorageProvider,
     LoginService
   ]));
 
-  beforeEach(
-      inject([Http, ExtHttp, IdentityService, LocalStorage, LoginService], (_http, _extHttp, _identityService, _storage, _service) => {
-    extHttp = _extHttp;
-    identityService = _identityService;
-    storage = _storage;
+  beforeEach(inject([LoginService], (_service) => {
     service = _service;
   }));
 
   it('should successfully authenticate a user', (done) => {
-    spyOn(extHttp, 'post')
-      .and.callFake(() => {
-        return new Observable((obs) => {
-          obs.next({
-            json: () => {
-              return jwtToken;
-            }
-          });
+    extHttp.post.and.callFake(() => {
+      return new Observable((obs) => {
+        obs.next({
+          json: () => {
+            return jwtToken;
+          }
         });
       });
-
-    spyOn(storage, 'setItem');
-    spyOn(identityService, 'update');
+    });
 
     let command = new LoginCommand('user', 'password');
 
     service.login(command)
       .subscribe((user) => {
-        expect(storage.setItem).toHaveBeenCalledWith(AUTH_TOKEN_NAME, jwtToken);
+        expect(localStorage.setItem).toHaveBeenCalledWith(AUTH_TOKEN_NAME, jwtToken);
         expect(identityService.update).toHaveBeenCalledWith(jasmine.any(Object));
 
         expect(user.name.first).toEqual('john');
