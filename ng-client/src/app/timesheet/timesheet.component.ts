@@ -22,7 +22,6 @@ export class TimesheetComponent implements OnInit {
   timesheet: Timesheet;
   timesheetId: string;
 
-  // TODO: make this a timeUnit[] when that class is created
   timeUnits: TimeUnit[];
   loaded: boolean;
   dateFormat: string;
