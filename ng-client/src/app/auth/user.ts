@@ -27,5 +27,4 @@ export class User {
     this.authenticated = userData.authenticated;
     this.id = userData.id;
   }
-
 }

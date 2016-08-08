@@ -2,12 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 import {MD_PROGRESS_CIRCLE_DIRECTIVES} from '@angular2-material/progress-circle/progress-circle';
-
+;
 import {TimeUnitsComponent} from '../time-units/time-units.component';
 import {TimesheetDetailComponent} from '../timesheet-detail/timesheet-detail.component';
 import {IdentityService} from '../auth';
 import {TimesheetService} from '../shared';
 import {Timesheet} from '../shared/Timesheet';
+import {TimeUnit} from '../shared/TimeUnit';
 
 @Component({
   selector: 'app-timesheet',
@@ -19,9 +20,10 @@ import {Timesheet} from '../shared/Timesheet';
 export class TimesheetComponent implements OnInit {
 
   timesheet: Timesheet;
+  timesheetId: string;
 
   // TODO: make this a timeUnit[] when that class is created
-  timeUnits: any[];
+  timeUnits: TimeUnit[];
   loaded: boolean;
   dateFormat: string;
 
@@ -35,15 +37,15 @@ export class TimesheetComponent implements OnInit {
     this.dateFormat = 'MM/dd/yy';
 
     this.route.params.subscribe((params) => {
-      const timesheetId = params['id'];
+      this.timesheetId = params['id'];
 
-      let timesheetObservable = this.timesheetService.getTimesheet(this.identityService.user, timesheetId);
+      let timesheetObservable = this.timesheetService.getTimesheet(this.identityService.user, this.timesheetId);
 
       timesheetObservable.subscribe((timesheet) => {
           this.timesheet = timesheet;
         });
 
-      this.timesheetService.getTimeUnits(this.identityService.user, timesheetId)
+      this.timesheetService.getTimeUnits(this.identityService.user, this.timesheetId)
         .subscribe((timeUnits) => {
           this.timeUnits = timeUnits;
           timesheetObservable.subscribe(() => {
