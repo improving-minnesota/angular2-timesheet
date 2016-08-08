@@ -1,7 +1,9 @@
+/* tslint:disable:no-unused-variable */
+
 import { provide } from '@angular/core';
 
 import {
-  beforeEachProviders,
+  addProviders,
   inject
 } from '@angular/core/testing';
 
@@ -25,9 +27,7 @@ import {
 import { ExtHttp } from './extHttp.service';
 
 class ExtHttpMock {
-  post(url: string, body: any, options?: RequestOptionsArgs) {
-
-  }
+  post(url: string, body: any, options?: RequestOptionsArgs) {}
 }
 
 describe('Login Service', () => {
@@ -37,13 +37,13 @@ describe('Login Service', () => {
   let storage: LocalStorage;
   let jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJqb2huIiwibGFzdE5hbWUiOiJkb2UiLCJfaWQiOiIxIn0.A6gUhsto3HuGg7hD9ydE_rsGE9ulhDgMoHkL8jlLRj8';
 
-  beforeEachProviders(() => [
+  beforeEach(() => addProviders([
     provide(ExtHttp, {useClass: ExtHttpMock}),
     HTTP_PROVIDERS,
     IdentityService,
     LocalStorage,
     LoginService
-  ]);
+  ]));
 
   beforeEach(
       inject([Http, ExtHttp, IdentityService, LocalStorage, LoginService], (_http, _extHttp, _identityService, _storage, _service) => {
