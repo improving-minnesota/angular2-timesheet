@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import {Router} from '@angular/router';
+import { NgForm, NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
 
-import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
-import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox/checkbox';
-import {MdButton} from '@angular2-material/button/button';
-import {MdCard} from '@angular2-material/card/card';
-import {MdToolbar} from '@angular2-material/toolbar/toolbar';
-import {Employee, EmployeeService} from '../shared';
+import { MD_INPUT_DIRECTIVES } from '@angular2-material/input/input';
+import { MD_CHECKBOX_DIRECTIVES } from '@angular2-material/checkbox/checkbox';
+import { MdButton } from '@angular2-material/button/button';
+import { MdCard } from '@angular2-material/card/card';
+import { MdToolbar } from '@angular2-material/toolbar/toolbar';
+import { Employee, EmployeeService } from '../shared';
 
 @Component({
   selector: 'app-employee-new',
@@ -23,7 +23,7 @@ import {Employee, EmployeeService} from '../shared';
   ],
   providers: [EmployeeService]
 })
-export class EmployeeNewComponent implements OnInit {
+export class EmployeeNewComponent {
 
   employee: Employee;
 
@@ -31,10 +31,7 @@ export class EmployeeNewComponent implements OnInit {
     this.employee = new Employee({});
   }
 
-  ngOnInit() {
-  }
-
   save() {
-    this.employeeService.save(this.employee).subscribe(() => this.router.navigate(['/home/employees']));
+    this.employeeService.save(this.employee).subscribe(() => this.router.navigateByUrl('/home/employees'));
   }
 }

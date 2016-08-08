@@ -30,7 +30,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   add() {
-    this.router.navigate(['/home/employees/new']);
+    this.router.navigateByUrl('/home/employees/new');
   }
 
 }
