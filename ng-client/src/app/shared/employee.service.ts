@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {ExtHttp} from './extHttp.service';
-import {Employee} from './Employee';
+import { Observable } from 'rxjs/Observable';
+import { ExtHttp } from './extHttp.service';
+import { Employee } from './Employee';
 
 @Injectable()
 export class EmployeeService {
