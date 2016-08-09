@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES, Router} from '@angular/router';
-import {MdButton} from '@angular2-material/button/button';
-import {MdToolbar} from '@angular2-material/toolbar/toolbar';
-import {IdentityService, LocalStorage, AUTH_TOKEN_NAME} from '../auth';
-import {User} from '../auth/user';
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
+import { MdButton } from '@angular2-material/button/button';
+import { MdToolbar } from '@angular2-material/toolbar/toolbar';
+import { IdentityService, LocalStorage, AUTH_TOKEN_NAME } from '../auth';
+import { User } from '../auth/user';
 
 @Component({
   directives: [ROUTER_DIRECTIVES, MdButton, MdToolbar],

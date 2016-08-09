@@ -44,9 +44,8 @@ describe('Component: EmployeeNew', () => {
     };
 
     employeeServiceProvider = {
-      provide: EmployeeService, useFactory: () => {
-        return employeeService;
-      }
+      provide: EmployeeService,
+      useFactory: () => employeeService
     };
 
     route = {
@@ -54,9 +53,8 @@ describe('Component: EmployeeNew', () => {
     };
 
     routerProvider = {
-      provide: Router, useFactory: () => {
-        return route;
-      }
+      provide: Router,
+        useFactory: () => route
     };
   });
 
@@ -83,8 +81,8 @@ describe('Component: EmployeeNew', () => {
   //     done();
   //   });
   // });
-  //
-  // it('should attempt to save new employee', () => {
-  //
-  // });
+
+  it('should attempt to save new employee', () => {
+
+  });
 });
