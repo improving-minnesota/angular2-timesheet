@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {ExtHttp} from './extHttp.service';
-import {User} from '../auth';
-import {Timesheet} from './Timesheet';
-import {TimeUnit} from './TimeUnit';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { ExtHttp } from './extHttp.service';
+import { User } from '../auth';
+import { Timesheet } from './Timesheet';
+import { TimeUnit } from './TimeUnit';
 
 @Injectable()
 export class TimesheetService {
