@@ -4,7 +4,7 @@ import * as moment from 'moment';
 
 @Pipe({name: 'timesheetComplete'})
 export class TimesheetCompletePipe implements PipeTransform {
-  transform(timesheet: Timesheet, exponent: string): string {
+  transform(timesheet: Timesheet): string {
     let current = moment(timesheet.beginDate);
     let end = moment(timesheet.endDate);
 
