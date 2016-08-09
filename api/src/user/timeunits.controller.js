@@ -1,15 +1,27 @@
-var Q = require('q'),
-  db = require('../services/db'),
-  _ = require('lodash');
+const db = require('../services/db');
+const  _ = require('lodash');
+const async = require('async')
 
 module.exports = {
   index: function (req, res, next) {
     var timesheetId = req.params.timesheetId;
     var query = _.extend({timesheet_id: timesheetId}, req.query);
-    
+
     db.find('timeunits', query)
       .then(function (timeunits) {
-        res.json(timeunits);
+        var funcs = timeunits.map((timeunit) => {
+          return (cb) => {
+            db.findOne('projects', {_id: timeunit.project_id})
+                .then((project) => {
+                  timeunit.project = project.name;
+                  cb();
+                });
+          }
+        })
+
+        async.parallel(funcs, ()=> {
+          res.json(timeunits);
+        })
       });
   },
 
@@ -29,7 +41,11 @@ module.exports = {
 
     db.findOne('timeunits', {_id: id})
       .then(function (timeunit) {
-        res.json(timeunit);
+        db.findOne('projects', {_id: timeunit.project_id})
+          .then((project) => {
+            timeunit.project = project.name;
+            res.json(timeunit);
+          });
       })
       .fail(function (err) {
         res.status(500).json(err);
