@@ -1,12 +1,4 @@
-/* tslint:disable:no-unused-variable */
-
-import { provide } from '@angular/core';
-import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
-  async, inject
-} from '@angular/core/testing';
+import { addProviders, inject } from '@angular/core/testing';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -15,38 +7,59 @@ import { TimeUnit } from './TimeUnit';
 import { TimeUnitService } from './timeunit.service';
 import { Name, User } from '../auth';
 
-describe('TimesheetService Service', () => {
-  // let service: TimeUnitService;
-  //
-  // beforeEachProviders(() => [
-  //   ExtHttp,
-  //   TimeUnitService
-  // ]);
-  //
-  // beforeEach(inject([TimeUnitService], (_service) => {
-  //   service = _service;
-  // }));
-  //
-  // it('should should create a persist new TimeUnit', () => {
-  //     spyOn(ExtHttp, 'post').and.stub();
-  //
-  //   let user: User = new User({
-  //     name: new Name('mickey', 'mouse'),
-  //     token: 'token',
-  //     id: '1',
-  //     authenticated: true
-  //   });
-  //   let timeUnit: TimeUnit = new TimeUnit({
-  //     dateWorked: new Date(),
-  //     hoursWorked: 8,
-  //     project_id: '1',
-  //     project: 'The Project',
-  //     timesheet_id: '1'
-  //   });
-  //
-  //   service.create(user, timeUnit)
-  //     .subscribe((response) => {
-  //       expect(response.id).toBe(1);
-  //     });
-  // });
+describe('TimeUnitService Service', () => {
+  let service;
+  let extHttp;
+  let extHttpProvider;
+
+  beforeEach(() => {
+    extHttp = {
+      post: jasmine.createSpy('post'),
+      get: jasmine.createSpy('get')
+    };
+    extHttpProvider = {
+      provide: ExtHttp,
+      useFactory: () => extHttp
+    };
+  });
+
+  beforeEach(() => addProviders([
+    extHttpProvider,
+    TimeUnitService
+  ]));
+
+  beforeEach(inject([TimeUnitService], (_service) => {
+    service = _service;
+  }));
+
+  it('should make http call to svae timeunit provided user and timeunit', (done) => {
+    let user = new User({
+      name: new Name('John', 'Doe'),
+      token: 'token',
+      authenticated: true,
+      id: '1'
+    });
+
+    let timeUnit = new TimeUnit({
+      timesheet_id: '2'
+    });
+    let returnedTimeUnit = new TimeUnit({});
+
+    extHttp.post.and.callFake(() => {
+      return Observable.create((obs) => {
+        obs.next({
+          json: () => returnedTimeUnit
+        });
+      });
+    });
+
+    service.create(user, timeUnit)
+      .subscribe((_timeUnit) => {
+        expect(extHttp.post).toHaveBeenCalledTimes(1);
+        expect(extHttp.post).toHaveBeenCalledWith('/users/1/timesheets/2/timeunits', timeUnit);
+        expect(_timeUnit).toEqual(returnedTimeUnit);
+
+        done();
+      });
+  });
 });

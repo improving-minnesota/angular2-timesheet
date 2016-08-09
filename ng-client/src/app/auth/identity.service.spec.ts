@@ -1,6 +1,4 @@
-import {
-  addProviders, inject
-} from '@angular/core/testing';
+import { addProviders, inject } from '@angular/core/testing';
 
 import { IdentityService } from './identity.service';
 import { Name, User } from './user';
