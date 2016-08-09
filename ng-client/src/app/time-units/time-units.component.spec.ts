@@ -1,14 +1,9 @@
-/* tslint:disable:no-unused-variable */
-
 import { By } from '@angular/platform-browser';
 
 import { Component} from '@angular/core';
 
 import {
-  beforeEach, addProviders,
-  ddescribe, describe, xdescribe,
-  expect, it, xit,
-  async, inject,
+  inject,
   TestComponentBuilder, fakeAsync
 } from '@angular/core/testing';
 
@@ -18,7 +13,7 @@ import { TimeUnitsComponent } from './time-units.component';
 import { TimeUnit } from '../shared/TimeUnit';
 
 describe('Component: TimeUnits', () => {
-  let builder: TestComponentBuilder;
+  let builder;
   let router;
   let routerProvider;
 
@@ -28,9 +23,8 @@ describe('Component: TimeUnits', () => {
     };
 
     routerProvider = {
-      provide: Router, useFactory: () => {
-        return router;
-      }
+      provide: Router,
+      useFactory: () => router
     };
   });
 
