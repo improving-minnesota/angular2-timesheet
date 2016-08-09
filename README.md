@@ -1,7 +1,5 @@
 # Timesheetz In Angular 2
 
-WIP
-
 ## Prerequisites 
 
     Node 6.x.x (node -v)
