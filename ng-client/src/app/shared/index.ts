@@ -11,7 +11,3 @@ export * from './timeunit.service';
 
 import {ExtHttp} from './extHttp.service';
 import {LoginService} from './login.service';
-
-export const APP_PROVIDERS = [
-  ExtHttp, LoginService
-];
