@@ -6,7 +6,9 @@ import { Project } from './Project';
 @Injectable()
 export class ProjectService {
 
-  constructor(private http: ExtHttp) {}
+  constructor(private http: ExtHttp) {
+    console.log('instantiating ProjectService', http)
+  }
 
   getProjects(): Observable<Project[]> {
     return Observable.create((observer) => {

@@ -1,6 +1,6 @@
 
 # NgClient
-## WIP client for Angular 2 Timesheet 
+## Angular 2 Timesheet 
 
 Uses node 6.2.2
 

@@ -1,4 +1,5 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { ModuleWithProviders }  from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { TimesheetListComponent } from './timesheet-list';
 import { LoginComponent } from './login';
 import { NavigationComponent } from './navigation';
@@ -10,7 +11,7 @@ import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
 
-export const routes: RouterConfig = [
+const appRoutes: Routes = [
   {
     path: 'home',
     component: NavigationComponent,
@@ -33,6 +34,4 @@ export const routes: RouterConfig = [
   }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
-];
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

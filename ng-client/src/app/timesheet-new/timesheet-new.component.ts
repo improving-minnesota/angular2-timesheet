@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, REACTIVE_FORM_DIRECTIVES, Validators, FormGroup} from '@angular/forms';
+import {FormControl, Validators, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
-
-import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
-import {MdButton} from '@angular2-material/button/button';
-import {MdCard} from '@angular2-material/card/card';
 
 import {Timesheet, TimesheetService} from '../shared';
 import {IdentityService} from '../auth';
@@ -15,13 +11,7 @@ import * as moment from 'moment';
   selector: 'app-timesheet-new',
   templateUrl: 'timesheet-new.component.html',
   styleUrls: ['timesheet-new.component.scss'],
-  providers: [TimesheetService],
-  directives: [
-    MdCard,
-    MdButton,
-    MD_INPUT_DIRECTIVES,
-    REACTIVE_FORM_DIRECTIVES,
-  ]
+  providers: [TimesheetService]
 })
 export class TimesheetNewComponent implements OnInit {
 

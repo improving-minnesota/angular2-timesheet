@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormControl, REACTIVE_FORM_DIRECTIVES, Validators, FormGroup} from '@angular/forms';
-
-import {MD_INPUT_DIRECTIVES} from '@angular2-material/input/input';
-import {MdButton} from '@angular2-material/button/button';
-import {MdCard} from '@angular2-material/card/card';
+import {FormControl, Validators, FormGroup} from '@angular/forms';
 
 import * as moment from 'moment';
 
@@ -13,17 +9,7 @@ import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
 
 @Component({
   templateUrl: 'timesheet-entry.component.html',
-  styleUrls: ['timesheet-entry.component.scss'],
-  directives: [
-    MD_INPUT_DIRECTIVES,
-    MdButton,
-    MdCard,
-    REACTIVE_FORM_DIRECTIVES
-  ],
-  providers: [
-    ProjectService,
-    TimeUnitService
-  ]
+  styleUrls: ['timesheet-entry.component.scss']
 })
 export class TimesheetEntryComponent implements OnInit {
 
