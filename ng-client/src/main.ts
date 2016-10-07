@@ -3,18 +3,16 @@ import './polyfills.ts';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
-
-//TODO: Need to make the main app a module
 import { AppModule } from './app/';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+  platformBrowserDynamic().bootstrapModule(AppModule);
 
 
-//TODO: Need to figur eout how to wire up if the dependency injecdtion hack still works
+//TODO: Need to figure out how to wire up if the dependency injection hack still works
 
 //bootstrap(AppComponent, [
 //  APP_ROUTER_PROVIDERS,
