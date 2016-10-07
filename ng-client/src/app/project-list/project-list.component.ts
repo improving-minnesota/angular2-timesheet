@@ -6,7 +6,8 @@ import { ProjectService } from '../shared';
 @Component({
   selector: 'app-project-list',
   templateUrl: 'project-list.component.html',
-  styleUrls: ['project-list.component.scss']
+  styleUrls: ['project-list.component.scss'],
+  providers: [ProjectService]
 })
 export class ProjectListComponent implements OnInit {
 

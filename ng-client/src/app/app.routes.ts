@@ -11,6 +11,8 @@ import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
 
+
+//TODO: should each component define it's own route?
 const appRoutes: Routes = [
   {
     path: 'home',

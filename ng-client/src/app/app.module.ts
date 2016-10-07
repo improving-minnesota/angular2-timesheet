@@ -15,7 +15,6 @@ import {TimesheetNewModule} from './timesheet-new'
 import {TimesheetModule} from './timesheet'
 import {TimesheetEntryModule} from './timesheet-entry'
 import {LoginModule} from './login'
-//import {SharedModule} from './shared'
 import {ExtHttp} from './shared/extHttp.service';
 import {ResponseHandler} from './auth/responseHandler.service';
 
@@ -38,7 +37,6 @@ import {ResponseHandler} from './auth/responseHandler.service';
     TimesheetModule,
     TimesheetEntryModule,
     LoginModule
-    //SharedModule
   ],
   providers: [ExtHttp, ResponseHandler],
   bootstrap: [AppComponent]
