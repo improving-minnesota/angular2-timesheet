@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { ExtHttp } from './extHttp.service';
+import { ExtHttp } from '../shared/extHttp.service';
 import { Project } from './Project';
 
 @Injectable()
 export class ProjectService {
 
-  constructor(private http: ExtHttp) {
-    console.log('instantiating ProjectService', http)
-  }
+  constructor(private http: ExtHttp) {}
 
   getProjects(): Observable<Project[]> {
     return Observable.create((observer) => {

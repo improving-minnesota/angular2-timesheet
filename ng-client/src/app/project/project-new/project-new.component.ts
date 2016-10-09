@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
-import {ProjectService, Project} from '../shared';
-
+import { ProjectService } from '../project.service';
+import { Project } from '../Project';
 
 @Component({
   selector: 'app-project-new',
   templateUrl: 'project-new.component.html',
-  styleUrls: ['project-new.component.scss'],
-  providers: []
+  styleUrls: ['project-new.component.scss']
 })
 export class ProjectNewComponent implements OnInit {
 
