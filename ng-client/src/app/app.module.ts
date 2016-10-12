@@ -6,8 +6,7 @@ import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
 import {NavigationModule} from './navigation'
-import {ProjectListModule} from './project-list'
-import {ProjectNewModule} from './project-new'
+import {ProjectModule} from './project'
 import {EmployeeListModule} from './employee-list'
 import {EmployeeNewModule} from './employee-new'
 import {TimesheetListModule} from './timesheet-list'
@@ -24,12 +23,10 @@ import {ResponseHandler} from './auth/responseHandler.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     routing,
     NavigationModule,
-    ProjectListModule,
-    ProjectNewModule,
+    ProjectModule,
     EmployeeListModule,
     EmployeeNewModule,
     TimesheetListModule,

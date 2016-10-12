@@ -6,7 +6,7 @@ import { LocalStorage, AUTH_TOKEN_NAME } from'./localStorage';
 
 @Injectable()
 export class ResponseHandler {
-  constructor(private router: Router, private identity: IdentityService, private storage: LocalStorage) { }
+  constructor(private router: Router, private identity: IdentityService, private storage: LocalStorage) {}
 
   private logout(): any {
     this.identity.clear();

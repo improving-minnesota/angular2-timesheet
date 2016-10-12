@@ -5,7 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MdInputModule, MdCardModule, MdButtonModule} from '@angular/material';
 
 import {TimesheetEntryComponent} from './timesheet-entry.component'
-import {ProjectService, TimeUnitService} from '../shared';
+import {TimeUnitService} from '../shared';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import {ProjectService, TimeUnitService} from '../shared';
   imports: [
     CommonModule, ReactiveFormsModule, MdInputModule, MdButtonModule, MdCardModule
   ],
-  providers: [ProjectService, TimeUnitService],
+  providers: [TimeUnitService],
   bootstrap: [TimesheetEntryComponent]
 })
 export class TimesheetEntryModule { }

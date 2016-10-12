@@ -5,7 +5,8 @@ import {FormControl, Validators, FormGroup} from '@angular/forms';
 import * as moment from 'moment';
 
 import {IdentityService} from '../auth';
-import {Project, ProjectService, TimeUnit, TimeUnitService} from '../shared';
+import {Project, ProjectService} from '../project';
+import {TimeUnit, TimeUnitService} from '../shared';
 
 @Component({
   templateUrl: 'timesheet-entry.component.html',
