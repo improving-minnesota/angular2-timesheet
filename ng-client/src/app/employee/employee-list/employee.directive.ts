@@ -1,5 +1,5 @@
 import {Directive, Input, ElementRef} from '@angular/core';
-import {Employee} from '../shared/Employee';
+import {Employee} from '../Employee';
 
 @Directive({selector: '[employee]'})
 export class EmployeeDirective {
