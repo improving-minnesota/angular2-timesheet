@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 
-import {Timesheet, TimesheetService} from '../shared';
-import {IdentityService} from '../auth';
+import {Timesheet} from '../Timesheet';
 
 import * as moment from 'moment';
+import {TimesheetService} from '../timesheet.service';
+import {IdentityService} from '../../auth';
 
 @Component({
   selector: 'app-timesheet-new',

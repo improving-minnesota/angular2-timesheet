@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 
-import { TimeUnit } from '../shared/TimeUnit';
+import { TimeUnit } from './TimeUnit';
 
 @Component({
   selector: 'app-time-units',

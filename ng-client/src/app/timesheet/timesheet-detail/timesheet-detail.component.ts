@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Router} from '@angular/router';
-import {Timesheet} from '../shared/Timesheet';
+import {Timesheet} from '../Timesheet';
 
 @Component({
   selector: 'app-timesheet-detail',

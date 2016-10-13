@@ -1,4 +1,5 @@
-import {TimeUnit} from './TimeUnit';
+import {TimeUnit} from '../time-units';
+
 export interface TimesheetData {
   _id?: string;
   name?: string;

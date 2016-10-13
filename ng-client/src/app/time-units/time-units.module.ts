@@ -4,18 +4,15 @@ import { MdCardModule, MdListModule } from '@angular/material';
 
 import {TimeUnitsComponent} from './time-units.component'
 
-
 @NgModule({
   declarations: [
     TimeUnitsComponent
   ],
-  exports: [
-    TimeUnitsComponent
-  ],
+  exports: [TimeUnitsComponent],
   imports: [
     CommonModule, MdListModule, MdCardModule
   ],
   providers: [],
-  bootstrap: [TimeUnitsComponent]
+  bootstrap: []
 })
 export class TimeUnitsModule { }

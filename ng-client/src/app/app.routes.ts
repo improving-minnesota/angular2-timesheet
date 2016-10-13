@@ -1,13 +1,10 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TimesheetListComponent } from './timesheet-list';
 import { LoginComponent } from './login';
 import { NavigationComponent } from './navigation';
 import { EmployeeListComponent, EmployeeNewComponent } from './employee';
 import { ProjectNewComponent, ProjectListComponent } from './project';
-import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
-import { TimesheetComponent } from './timesheet/timesheet.component';
-import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
+import { TimesheetComponent, TimesheetNewComponent, TimesheetListComponent, TimesheetEntryComponent } from './timesheet';
 
 
 //TODO: should each component define it's own route?
