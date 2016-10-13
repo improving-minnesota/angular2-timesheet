@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Timesheet} from '../shared/Timesheet';
+import {Timesheet} from '../Timesheet';
 import * as moment from 'moment';
 
 @Pipe({name: 'timesheetComplete'})

@@ -18,7 +18,6 @@ export class EmployeeNewComponent {
   }
 
   save() {
-    console.log('saving', this.employee);
     this.employeeService.save(this.employee).subscribe(() => this.router.navigateByUrl('/home/employees'));
   }
 }

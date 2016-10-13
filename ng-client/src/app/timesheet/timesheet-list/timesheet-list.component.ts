@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TimesheetService, Timesheet } from '../shared';
-import { IdentityService } from '../auth';
+import { TimesheetService } from '../timesheet.service';
+import { IdentityService } from '../../auth';
 import { Router } from '@angular/router';
+import {Timesheet} from '../Timesheet';
 
 @Component({
   selector: 'app-timesheet-list',

@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 import {IdentityService} from '../auth';
-import {TimesheetService} from '../shared';
-import {Timesheet} from '../shared/Timesheet';
-import {TimeUnit} from '../shared/TimeUnit';
+import {TimesheetService} from './timesheet.service';
+import {Timesheet} from './Timesheet';
+import {TimeUnit} from '../time-units';
 
 @Component({
   selector: 'app-timesheet',
