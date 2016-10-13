@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-
-import { Employee, EmployeeService } from '../shared';
+import { EmployeeService } from '../employee.service';
+import { Employee } from '../Employee';
 
 @Component({
   selector: 'app-employee-new',

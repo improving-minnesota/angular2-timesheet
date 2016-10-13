@@ -7,8 +7,7 @@ import { routing } from './app.routes';
 import { AppComponent } from './app.component';
 import {NavigationModule} from './navigation'
 import {ProjectModule} from './project'
-import {EmployeeListModule} from './employee-list'
-import {EmployeeNewModule} from './employee-new'
+import {EmployeeModule} from './employee'
 import {TimesheetListModule} from './timesheet-list'
 import {TimesheetNewModule} from './timesheet-new'
 import {TimesheetModule} from './timesheet'
@@ -27,8 +26,7 @@ import {ResponseHandler} from './auth/responseHandler.service';
     routing,
     NavigationModule,
     ProjectModule,
-    EmployeeListModule,
-    EmployeeNewModule,
+    EmployeeModule,
     TimesheetListModule,
     TimesheetNewModule,
     TimesheetModule,
