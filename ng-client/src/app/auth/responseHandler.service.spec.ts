@@ -1,4 +1,4 @@
-import { addProviders, inject } from '@angular/core/testing';
+import { inject } from '@angular/core/testing';
 
 import { ResponseHandler } from './responseHandler.service';
 
@@ -41,12 +41,12 @@ describe('ResponseHandler Service', () => {
     };
   });
 
-  beforeEach(() => addProviders([
-    routerProvider,
-    identityServiceProvider,
-    localStorageProvider,
-    ResponseHandler
-  ]));
+  // beforeEach(() => addProviders([
+  //   routerProvider,
+  //   identityServiceProvider,
+  //   localStorageProvider,
+  //   ResponseHandler
+  // ]));
 
   beforeEach(inject([ResponseHandler], (_service) => {
     service = _service;

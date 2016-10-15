@@ -1,12 +1,10 @@
 import { By } from '@angular/platform-browser';
 
 import {
-  inject,
-  TestComponentBuilder, fakeAsync,
-  ComponentFixture
+  TestBed, ComponentFixture
 } from '@angular/core/testing';
 
-import { Router, provideRouter } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -17,13 +15,14 @@ import { User, Name } from '../auth/user';
 import { NavigationComponent } from './navigation.component';
 
 describe('Component: Navigation', () => {
-  let builder;
   let identityService;
   let identityServiceProvider;
   let localStorage;
   let localStorageProvider;
   let router;
   let routerProvider;
+  let fixture;
+  let comp;
 
   beforeEach(() => {
     identityService = {
@@ -59,96 +58,68 @@ describe('Component: Navigation', () => {
     };
   });
 
-  let deps = [TestComponentBuilder];
-  beforeEach(inject(deps, fakeAsync((tcb: TestComponentBuilder) => {
-    builder = tcb
-      .overrideProviders(NavigationComponent, [
-        provideRouter([], {enableTracing: true}),
+ beforeEach(() => {
+      TestBed.configureTestingModule({
+        providers: [
+        // provideRouter([], {enableTracing: true}),
         identityServiceProvider,
         localStorageProvider,
         routerProvider
-      ]);
-  })));
-
-  it('should create an instance', (done) => {
-    return builder
-      .createAsync(NavigationComponent)
-      .then((fixture: ComponentFixture<NavigationComponent>) => {
-        fixture.detectChanges();
-
-        let spans = fixture.debugElement.queryAll(By.css('span'));
-        expect(spans[4].nativeElement.innerHTML).toEqual('John Doe');
-
-        done();
+        ]
       });
+      fixture = TestBed.createComponent(NavigationComponent);
+      comp = fixture.componentInstance;
   });
 
-  it('should navigate user to projects', (done) => {
-    return builder
-      .createAsync(NavigationComponent)
-      .then((fixture: ComponentFixture<NavigationComponent>) => {
-        fixture.detectChanges();
+  it('should create an instance', () => {
+    fixture.detectChanges();
 
-        let buttons = fixture.debugElement.queryAll(By.css('button'));
-        buttons[0].nativeElement.click();
-
-        expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-        expect(router.navigateByUrl).toHaveBeenCalledWith('/home/projects');
-
-        done();
-      });
+    let spans = fixture.debugElement.queryAll(By.css('span'));
+    expect(spans[4].nativeElement.innerHTML).toEqual('John Doe');
   });
 
-  it('should navigate user to employees', (done) => {
-    return builder
-      .createAsync(NavigationComponent)
-      .then((fixture: ComponentFixture<NavigationComponent>) => {
-        fixture.detectChanges();
+  it('should navigate user to projects', () => {
+    fixture.detectChanges();
 
-        let buttons = fixture.debugElement.queryAll(By.css('button'));
-        buttons[1].nativeElement.click();
+    let buttons = fixture.debugElement.queryAll(By.css('button'));
+    buttons[0].nativeElement.click();
 
-        expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-        expect(router.navigateByUrl).toHaveBeenCalledWith('/home/employees');
-
-        done();
-      });
+    expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/projects');
   });
 
-  it('should navigate user to timesheets', (done) => {
-    return builder
-      .createAsync(NavigationComponent)
-      .then((fixture: ComponentFixture<NavigationComponent>) => {
-        fixture.detectChanges();
+  it('should navigate user to employees', () => {
+    fixture.detectChanges();
 
-        let buttons = fixture.debugElement.queryAll(By.css('button'));
-        buttons[2].nativeElement.click();
+    let buttons = fixture.debugElement.queryAll(By.css('button'));
+    buttons[1].nativeElement.click();
 
-        expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-        expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets');
-
-        done();
-      });
+    expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/employees');
   });
 
-  it('should logout user', (done) => {
-    return builder
-      .createAsync(NavigationComponent)
-      .then((fixture: ComponentFixture<NavigationComponent>) => {
-        fixture.detectChanges();
+  it('should navigate user to timesheets', () => {
+    fixture.detectChanges();
 
-        let buttons = fixture.debugElement.queryAll(By.css('button'));
-        buttons[3].nativeElement.click();
+    let buttons = fixture.debugElement.queryAll(By.css('button'));
+    buttons[2].nativeElement.click();
 
-        expect(identityService.clear).toHaveBeenCalledTimes(1);
+    expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets');
+  });
 
-        expect(localStorage.removeItem).toHaveBeenCalledTimes(1);
-        expect(localStorage.removeItem).toHaveBeenCalledWith(AUTH_TOKEN_NAME);
+  it('should logout user', () => {
+    fixture.detectChanges();
 
-        expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-        expect(router.navigateByUrl).toHaveBeenCalledWith('/login');
+    let buttons = fixture.debugElement.queryAll(By.css('button'));
+    buttons[3].nativeElement.click();
 
-        done();
-      });
+    expect(identityService.clear).toHaveBeenCalledTimes(1);
+
+    expect(localStorage.removeItem).toHaveBeenCalledTimes(1);
+    expect(localStorage.removeItem).toHaveBeenCalledWith(AUTH_TOKEN_NAME);
+
+    expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/login');
   });
 });

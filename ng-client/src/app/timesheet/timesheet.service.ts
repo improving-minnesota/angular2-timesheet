@@ -6,7 +6,7 @@ import { Timesheet } from './Timesheet';
 import { TimeUnit } from '../time-units';
 
 @Injectable()
-export class TimesheetService {
+export default class TimesheetService {
 
   constructor(private http: ExtHttp) {
   }

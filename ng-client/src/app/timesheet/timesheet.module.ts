@@ -6,7 +6,7 @@ import {MaterialModule} from '@angular/material';
 import {TimeUnitsModule} from '../time-units'
 import {IdentityService} from '../auth'
 
-import {TimesheetService} from './timesheet.service'
+import TimesheetService from './timesheet.service'
 import {TimesheetComponent} from './timesheet.component'
 import {TimesheetNewComponent} from './timesheet-new';
 import {TimesheetListComponent} from './timesheet-list';

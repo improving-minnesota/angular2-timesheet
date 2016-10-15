@@ -1,10 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { provide } from '@angular/core';
 import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
   async, inject
 } from '@angular/core/testing';
 
