@@ -14,7 +14,7 @@ import {EmployeeService} from './employee.service'
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule.forRoot()
   ],
   exports: [
   ],

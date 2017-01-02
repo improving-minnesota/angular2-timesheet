@@ -28,7 +28,7 @@ import {TimeUnitService} from '../time-units';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
     TimeUnitsModule,
     RouterModule,
     TimeUnitsModule

@@ -4,8 +4,8 @@ import {Timesheet} from '../Timesheet';
 
 @Component({
   selector: 'app-timesheet-detail',
-  templateUrl: 'timesheet-detail.component.html',
-  styleUrls: ['timesheet-detail.component.scss']
+  templateUrl: './timesheet-detail.component.html',
+  styleUrls: ['./timesheet-detail.component.scss']
 })
 export class TimesheetDetailComponent implements OnInit {
 

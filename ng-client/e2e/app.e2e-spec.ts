@@ -1,10 +1,10 @@
-import { NgClientPage } from './app.po';
+import { TempPage } from './app.po';
 
-describe('ng-client App', function() {
-  let page: NgClientPage;
+describe('temp App', function() {
+  let page: TempPage;
 
   beforeEach(() => {
-    page = new NgClientPage();
+    page = new TempPage();
   });
 
   it('should display message saying app works', () => {

@@ -8,8 +8,8 @@ import {TimeUnit} from '../time-units';
 
 @Component({
   selector: 'app-timesheet',
-  templateUrl: 'timesheet.component.html',
-  styleUrls: ['timesheet.component.scss'],
+  templateUrl: './timesheet.component.html',
+  styleUrls: ['./timesheet.component.scss'],
   providers: [TimesheetService]
 })
 export class TimesheetComponent implements OnInit {
