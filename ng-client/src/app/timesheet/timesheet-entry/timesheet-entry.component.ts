@@ -12,7 +12,7 @@ import {TimeUnit, TimeUnitService} from '../../time-units';
   templateUrl: './timesheet-entry.component.html',
   styleUrls: ['./timesheet-entry.component.scss']
 })
-export default class TimesheetEntryComponent implements OnInit {
+export class TimesheetEntryComponent implements OnInit {
 
   private DATE_FORMAT: string = 'MM/DD/YYYY';
   timesheetId: string;
