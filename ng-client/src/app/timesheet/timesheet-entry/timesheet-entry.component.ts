@@ -9,8 +9,8 @@ import {Project, ProjectService} from '../../project';
 import {TimeUnit, TimeUnitService} from '../../time-units';
 
 @Component({
-  templateUrl: 'timesheet-entry.component.html',
-  styleUrls: ['timesheet-entry.component.scss']
+  templateUrl: './timesheet-entry.component.html',
+  styleUrls: ['./timesheet-entry.component.scss']
 })
 export default class TimesheetEntryComponent implements OnInit {
 

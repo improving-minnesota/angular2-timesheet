@@ -13,7 +13,7 @@ import {ProjectService} from './project.service'
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule.forRoot()
   ],
   exports: [
   ],

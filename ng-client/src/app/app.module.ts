@@ -12,6 +12,7 @@ import {LoginModule} from './login'
 import {ExtHttp} from './shared/extHttp.service';
 import {ResponseHandler} from './auth/responseHandler.service';
 import {MdIconRegistry} from '@angular/material';
+import 'hammerjs';
 
 @NgModule({
   declarations: [

@@ -6,8 +6,8 @@ import { Employee } from '../Employee';
 
 @Component({
   selector: 'app-employee-new',
-  templateUrl: 'employee-new.component.html',
-  styleUrls: ['employee-new.component.scss']
+  templateUrl: './employee-new.component.html',
+  styleUrls: ['././employee-new.component.scss']
 })
 export class EmployeeNewComponent {
 

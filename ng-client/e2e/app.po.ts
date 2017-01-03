@@ -1,4 +1,6 @@
-export class NgClientPage {
+import { browser, element, by } from 'protractor';
+
+export class TempPage {
   navigateTo() {
     return browser.get('/');
   }

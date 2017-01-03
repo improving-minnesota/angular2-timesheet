@@ -5,8 +5,8 @@ import {LoginService} from './shared/login.service';
 
 @Component({
   selector: 'app-root',
-  styleUrls: ['app.component.scss'],
-  templateUrl: 'app.component.html'
+  styleUrls: ['././app.component.scss'],
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   constructor(private storage: LocalStorage, private loginService: LoginService) {}

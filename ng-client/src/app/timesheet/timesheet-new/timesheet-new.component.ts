@@ -10,8 +10,8 @@ import {IdentityService} from '../../auth';
 
 @Component({
   selector: 'app-timesheet-new',
-  templateUrl: 'timesheet-new.component.html',
-  styleUrls: ['timesheet-new.component.scss'],
+  templateUrl: './timesheet-new.component.html',
+  styleUrls: ['./timesheet-new.component.scss'],
   providers: [TimesheetService]
 })
 export class TimesheetNewComponent implements OnInit {

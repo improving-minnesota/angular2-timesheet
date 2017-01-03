@@ -6,8 +6,8 @@ import { User } from '../auth/user';
 
 @Component({
   selector: 'app-navigation',
-  templateUrl: 'navigation.component.html',
-  styleUrls: ['navigation.component.scss']
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
 
