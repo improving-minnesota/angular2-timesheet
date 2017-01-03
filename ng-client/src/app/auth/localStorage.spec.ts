@@ -1,13 +1,9 @@
-import { addProviders, inject } from '@angular/core/testing';
+import { inject } from '@angular/core/testing';
 
 import { LocalStorage } from './localStorage';
 
 describe('LocalStorage Service', () => {
   let service;
-
-  beforeEach(() => addProviders([
-    LocalStorage
-  ]));
 
   beforeEach(inject([LocalStorage], (_service) => {
     service = _service;

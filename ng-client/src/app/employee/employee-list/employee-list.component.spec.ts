@@ -6,17 +6,14 @@ import {Router} from '@angular/router';
 
 import {Observable} from 'rxjs/Observable';
 
-import { Employee, EmployeeService } from '../shared';
-
-import { MdIconRegistry } from '@angular2-material/icon/icon';
+import { EmployeeService } from '../employee.service';
+import { Employee } from '../Employee';
 
 import {
-  beforeEach, addProviders,
-  describe, ddescribe, xdescribe,
-  expect, it, xit,
   async, inject,
-  TestComponentBuilder, fakeAsync,
-  ComponentFixture
+  fakeAsync,
+  ComponentFixture,
+  TestBed
 } from '@angular/core/testing';
 
 import { EmployeeListComponent } from './employee-list.component';
@@ -27,18 +24,10 @@ describe('Component: EmployeeList', () => {
   let employeeServiceProvider;
   let router;
   let routerProvider;
-  let mdIconRegistry;
-  let mdIconRegistryProvider;
+  let fixture;
+  let comp;
 
   beforeEach(() => {
-    mdIconRegistry = {
-      getDefaultFontSetClass: jasmine.createSpy('getDefaultFontSetClass')
-    };
-    mdIconRegistryProvider = {
-      provide: MdIconRegistry,
-      useFactory: () => mdIconRegistry
-    };
-
     employeeService = {
       getEmployees: jasmine.createSpy('getEmployees')
     };
@@ -58,50 +47,18 @@ describe('Component: EmployeeList', () => {
     };
   });
 
-  let deps = [TestComponentBuilder];
-  beforeEach(inject(deps, fakeAsync((tcb: TestComponentBuilder) => {
-    builder = tcb
-      .overrideProviders(EmployeeListComponent, [
-        mdIconRegistryProvider,
-        employeeServiceProvider,
-        routerProvider
-      ]);
-  })));
-
-  it('should create an initialize component by looking up employees', (done) => {
-    employeeService.getEmployees.and.callFake(() => {
-      return Observable.create((obs) => {
-        obs.next([new Employee({
-          _id: '1',
-          username: 'johndoe',
-          admin: true,
-          email: 'johndoe@email.com',
-          firstName: 'John',
-          lastName: 'Doe',
-          password: '',
-        })]);
+  beforeEach(() => {
+      TestBed.configureTestingModule({
+        providers: [
+          employeeServiceProvider,
+          routerProvider
+        ]
       });
-    });
-
-    return builder
-      .createAsync(EmployeeListComponent)
-      .then((fixture: ComponentFixture<EmployeeListComponent>) => {
-        fixture.detectChanges();
-
-        let employeeListItems = fixture.debugElement.query(By.css('.employee-list-item'));
-        expect(employeeListItems.children.length).toBe(1);
-
-        let timeUnitElement = employeeListItems.children[0];
-        expect(timeUnitElement.query(By.css('.employee-list-item-name')).nativeElement.innerHTML).toEqual('John Doe');
-        expect(timeUnitElement.query(By.css('.employee-list-item-email')).nativeElement.innerHTML).toEqual('johndoe@email.com');
-
-        expect(employeeService.getEmployees).toHaveBeenCalledTimes(1);
-
-        done();
-      });
+      fixture = TestBed.createComponent(EmployeeListComponent);
+      comp = fixture.componentInstance;
   });
 
-  it('should navigate to add employee view', (done) => {
+  it('should create an initialize component by looking up employees', () => {
     employeeService.getEmployees.and.callFake(() => {
       return Observable.create((obs) => {
         obs.next([new Employee({
@@ -116,18 +73,39 @@ describe('Component: EmployeeList', () => {
       });
     });
 
-    return builder
-      .createAsync(EmployeeListComponent)
-      .then((fixture: ComponentFixture<EmployeeListComponent>) => {
-        fixture.detectChanges();
+    fixture.detectChanges();
 
-        let addEmployeeBtn = fixture.debugElement.query(By.css('.add-employee'));
-        addEmployeeBtn.nativeElement.click();
+    let employeeListItems = fixture.debugElement.query(By.css('.employee-list-item'));
+    expect(employeeListItems.children.length).toBe(1);
 
-        expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-        expect(router.navigateByUrl).toHaveBeenCalledWith('/home/employees/new');
+    let timeUnitElement = employeeListItems.children[0];
+    expect(timeUnitElement.query(By.css('.employee-list-item-name')).nativeElement.innerHTML).toEqual('John Doe');
+    expect(timeUnitElement.query(By.css('.employee-list-item-email')).nativeElement.innerHTML).toEqual('johndoe@email.com');
 
-        done();
+    expect(employeeService.getEmployees).toHaveBeenCalledTimes(1);
+  });
+
+  it('should navigate to add employee view', () => {
+    employeeService.getEmployees.and.callFake(() => {
+      return Observable.create((obs) => {
+        obs.next([new Employee({
+          _id: '1',
+          username: 'johndoe',
+          admin: true,
+          email: 'johndoe@email.com',
+          firstName: 'John',
+          lastName: 'Doe',
+          password: '',
+        })]);
       });
+    });
+
+    fixture.detectChanges();
+
+    let addEmployeeBtn = fixture.debugElement.query(By.css('.add-employee'));
+    addEmployeeBtn.nativeElement.click();
+
+    expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/employees/new');
   });
 });

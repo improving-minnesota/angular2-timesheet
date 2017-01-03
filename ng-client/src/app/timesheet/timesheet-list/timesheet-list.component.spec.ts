@@ -1,23 +1,24 @@
 import { By }           from '@angular/platform-browser';
 
 import {
-  inject, TestComponentBuilder, fakeAsync,
-  ComponentFixture
+  TestBed
 } from '@angular/core/testing';
-
-import { MdIconRegistry } from '@angular2-material/icon/icon';
 
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
-import { TimesheetService, Timesheet } from '../shared';
-import { IdentityService, User, Name } from '../auth';
+import { MaterialModule, MdIconRegistry } from '@angular/material';
 
+import TimesheetService from '../timesheet.service';
+import { IdentityService, User, Name } from '../../auth';
+
+import { Timesheet } from '../Timesheet';
 import { TimesheetListComponent } from './timesheet-list.component';
 
 describe('Component: TimesheetList', () => {
-  let builder;
+  let fixture;
+  let comp;
   let mdIconRegistry;
   let mdIconRegistryProvider;
   let timesheetService;
@@ -28,13 +29,6 @@ describe('Component: TimesheetList', () => {
   let routerProvider;
 
   beforeEach(() => {
-    mdIconRegistry = {
-      getDefaultFontSetClass: jasmine.createSpy('getDefaultFontSetClass')
-    };
-    mdIconRegistryProvider = {
-      provide: MdIconRegistry,
-      useFactory: () => mdIconRegistry
-    };
 
     timesheetService = {
       getTimesheets: jasmine.createSpy('getTimesheets')
@@ -66,17 +60,27 @@ describe('Component: TimesheetList', () => {
     };
   });
 
-  let deps = [TestComponentBuilder];
-  beforeEach(inject(deps, fakeAsync((tcb: TestComponentBuilder) => {
-      builder = tcb.overrideProviders(TimesheetListComponent, [
-          mdIconRegistryProvider,
+  beforeEach(() => {
+      TestBed.configureTestingModule({
+        declarations: [ TimesheetListComponent ],
+      });
+
+      TestBed.configureTestingModule({
+        providers: [
           timesheetServiceProvider,
           identityServiceProvider,
-          routerProvider
-      ]);
-  })));
+          routerProvider,
+          MdIconRegistry
+        ],
+        imports: [
+          MaterialModule
+        ]
+      });
+      fixture = TestBed.createComponent(TimesheetListComponent);
+      comp = fixture.componentInstance;
+  });
 
-  it('should list timesheets and timesheets should respond to clicks', (done) => {
+  it('should list timesheets and timesheets should respond to clicks', () => {
     let timesheet = new Timesheet({
       _id: '1',
       name: 'Timesheet',
@@ -88,25 +92,19 @@ describe('Component: TimesheetList', () => {
       });
     });
 
-    return builder
-      .createAsync(TimesheetListComponent)
-      .then((fixture: ComponentFixture<TimesheetListComponent>) => {
-        fixture.detectChanges();
+    fixture.detectChanges();
 
-        let listItems = fixture.debugElement.queryAll(By.css('md-list-item'));
+    let listItems = fixture.debugElement.queryAll(By.css('md-list-item'));
 
-        expect(listItems.length).toBe(2);
-        expect(listItems[1].query(By.css('h3')).nativeElement.innerHTML).toBe('Timesheet');
-        expect(listItems[1].query(By.css('p')).nativeElement.innerHTML).toBe('description');
+    expect(listItems.length).toBe(2);
+    expect(listItems[1].query(By.css('h3')).nativeElement.innerHTML).toBe('Timesheet');
+    expect(listItems[1].query(By.css('p')).nativeElement.innerHTML).toBe('description');
 
-        listItems[1].nativeElement.click();
-        expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets/1');
-
-        done();
-      });
+    listItems[1].nativeElement.click();
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets/1');
   });
 
-  it('should create an instance', (done) => {
+  it('should create an instance', () => {
     let timesheet = new Timesheet({
       name: 'Timesheet',
       description: 'description'
@@ -117,19 +115,13 @@ describe('Component: TimesheetList', () => {
       });
     });
 
-    return builder
-      .createAsync(TimesheetListComponent)
-      .then((fixture: ComponentFixture<TimesheetListComponent>) => {
-        fixture.detectChanges();
+    fixture.detectChanges();
 
-        let addBtn = fixture.debugElement.query(By.css('button'));
+    let addBtn = fixture.debugElement.query(By.css('button'));
 
-        addBtn.nativeElement.click();
+    addBtn.nativeElement.click();
 
-        expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-        expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets/new');
-
-        done();
-      });
+    expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets/new');
   });
 });

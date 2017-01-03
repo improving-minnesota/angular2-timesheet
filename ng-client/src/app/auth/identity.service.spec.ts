@@ -1,14 +1,10 @@
-import { addProviders, inject } from '@angular/core/testing';
+import { inject } from '@angular/core/testing';
 
 import { IdentityService } from './identity.service';
 import { Name, User } from './user';
 
-describe('Identity Service', () => {
+fdescribe('Identity Service', () => {
   let service: IdentityService;
-
-  beforeEach(() => addProviders([
-    IdentityService
-  ]));
 
   beforeEach(inject([IdentityService], (_service) => {
     service = _service;

@@ -1,6 +1,5 @@
 /* tslint:disable:max-line-length */
 import {
-  addProviders,
   inject
 } from '@angular/core/testing';
 
@@ -52,13 +51,6 @@ describe('Login Service', () => {
       useFactory: () => localStorage
     };
   });
-
-  beforeEach(() => addProviders([
-    extHttpProvider,
-    identityServiceProvider,
-    localStorageProvider,
-    LoginService
-  ]));
 
   beforeEach(inject([LoginService], (_service) => {
     service = _service;
