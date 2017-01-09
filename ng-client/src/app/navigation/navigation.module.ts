@@ -16,6 +16,6 @@ import {LocalStorage} from '../auth'
     MdToolbarModule
   ],
   providers: [LocalStorage],
-  bootstrap: [NavigationComponent]
+  bootstrap: []
 })
 export class NavigationModule { }

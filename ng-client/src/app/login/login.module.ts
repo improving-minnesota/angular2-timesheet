@@ -23,6 +23,6 @@ import {IdentityService} from '../auth';
     FormsModule
   ],
   providers: [LoginService, IdentityService],
-  bootstrap: [LoginComponent]
+  bootstrap: []
 })
 export class LoginModule { }
