@@ -33,8 +33,7 @@ import {TimeUnitService} from '../time-units';
     RouterModule,
     TimeUnitsModule
   ],
-  providers: [TimesheetService, IdentityService, TimeUnitService],
-  bootstrap: []
+  providers: [TimesheetService, IdentityService, TimeUnitService]
 })
 export class TimesheetModule {
 }

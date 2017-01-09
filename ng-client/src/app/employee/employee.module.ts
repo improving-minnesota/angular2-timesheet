@@ -5,7 +5,6 @@ import { FormsModule }   from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {MaterialModule} from '@angular/material';
 import {EmployeeService} from './employee.service'
-//import {EmployeeDirective} from './employee-list/employee.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import {EmployeeService} from './employee.service'
   ],
   exports: [
   ],
-  providers: [EmployeeService],
-  bootstrap: []
+  providers: [EmployeeService]
 })
 export class EmployeeModule { }

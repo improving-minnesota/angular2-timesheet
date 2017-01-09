@@ -11,8 +11,6 @@ import {TimeUnitsComponent} from './time-units.component';
   exports: [TimeUnitsComponent],
   imports: [
     CommonModule, MdListModule, MdCardModule
-  ],
-  providers: [],
-  bootstrap: []
+  ]
 })
 export class TimeUnitsModule { }
