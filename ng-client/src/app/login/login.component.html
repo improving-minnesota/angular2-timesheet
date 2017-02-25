@@ -8,20 +8,23 @@
   <md-card-content>
     <form (ngSubmit)="login()" #loginForm="ngForm">
       <div>
-        <md-input placeholder="Username"
-                  required
-                  [(ngModel)]="command.username"
-                  name="username"
-                  dividerColor="warm"
-                  #username="ngModel">
-        </md-input>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Username"
+                    required
+                    [(ngModel)]="command.username"
+                    name="username"
+                    dividerColor="warm"
+                    #username="ngModel">
+        </md-input-container>
         <div [hidden]="username.valid || username.pristine" class="alert">
           Username is required
         </div>
-        <md-input placeholder="Password"
-                  [(ngModel)]="command.password"
-                  ngControl="password"  name="password"
-                  type="password"></md-input>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Password"
+                    [(ngModel)]="command.password"
+                    ngControl="password"  name="password"
+                    type="password">
+        </md-input-container>
       </div>
 
       <div>

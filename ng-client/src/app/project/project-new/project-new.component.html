@@ -3,25 +3,26 @@
   <md-card-content>
     <form (ngSubmit)="save()" #projectForm="ngForm">
       <div>
-        <md-input class="input-full-width"
-                  placeholder="Name"
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Name"
                   required
                   [(ngModel)]="project.name"
                   name="name"
                   dividerColor="warm"
                   #name="ngModel">
-        </md-input>
+        </md-input-container>
         <div [hidden]="name.valid || name.pristine" class="alert">
           Name is required
         </div>
-        <md-input class="input-full-width"
-                  placeholder="Description"
+
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Description"
                   required
                   [(ngModel)]="project.description"
                   name="description"
                   dividerColor="warm"
                   #description="ngModel">
-        </md-input>
+        </md-input-container>
         <div [hidden]="description.valid || description.pristine" class="alert">
           Description is required
         </div>

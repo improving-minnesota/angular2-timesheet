@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import {CommonModule} from '@angular/common'
+import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { MdButtonModule, MdInputModule, MdToolbarModule, MdCardModule } from '@angular/material';
 
-import {LoginComponent} from './login.component'
+import {LoginComponent} from './login.component';
 import { LoginService } from '../shared';
 import {IdentityService} from '../auth';
 

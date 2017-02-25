@@ -13,22 +13,22 @@
       </div> -->
 
       <!-- Date Worked -->
-      <md-input class="input-full-width"
-                placeholder="Date Worked (mm/dd/yyyy)"
+      <md-input-container class="input-full-width">
+          <input mdInput placeholder="Date Worked (mm/dd/yyyy)"
                 formControlName="dateWorked"
                 dividerColor="warm">
-      </md-input>
+      </md-input-container>
       <div [hidden]="dateWorked.valid || dateWorked.pristine" class="alert">
         Date is required in the format: 'mm/dd/yyyy'
       </div>
 
       <!-- Hours Worked -->
-      <md-input type="number"
-                class="input-full-width"
+      <md-input-container class="input-full-width">
+          <input mdInput type="number"
                 placeholder="Hours"
                 formControlName="hoursWorked"
                 dividerColor="warm">
-      </md-input>
+      </md-input-container>
       <div [hidden]="hoursWorked.valid || hoursWorked.pristine" class="alert">
         Hours worked is required and must be between 1 and 24
       </div>

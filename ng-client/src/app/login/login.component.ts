@@ -11,9 +11,8 @@ import {LoginService} from '../shared';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  private command: LoginCommand;
   private error: boolean;
+  command: LoginCommand;
 
   constructor(private router: Router, private loginService: LoginService, private identityService: IdentityService) {}
 
