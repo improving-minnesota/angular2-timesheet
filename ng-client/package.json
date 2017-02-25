@@ -40,11 +40,12 @@
     "karma": "1.2.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",
+    "karma-coverage-istanbul-reporter": "0.2.3",
     "karma-jasmine": "1.0.2",
-    "karma-remap-istanbul": "0.2.1",
+    "karma-jasmine-html-reporter": "0.2.2",
     "protractor": "4.0.13",
     "ts-node": "1.2.1",
     "tslint": "4.0.2",
-    "typescript": "2.0.3"
+    "typescript": "2.2.1"
   }
 }

@@ -6,51 +6,29 @@ import { Router } from '@angular/router';
 import { IdentityService } from'./identity.service';
 import { LocalStorage, AUTH_TOKEN_NAME, } from'./localStorage';
 
-describe('ResponseHandler Service', () => {
+fdescribe('ResponseHandler Service', () => {
   let service: ResponseHandler;
   let router;
-  let routerProvider;
   let identityService;
-  let identityServiceProvider;
   let localStorage;
-  let localStorageProvider;
 
   beforeEach(() => {
     router = {
       navigateByUrl: jasmine.createSpy('navigateByUrl')
     };
-    routerProvider = {
-      provide: Router,
-      useFactory: () => router
-    };
 
     identityService = {
       clear: jasmine.createSpy('clear')
-    };
-    identityServiceProvider = {
-      provide: IdentityService,
-      useFactory: () => identityService
     };
 
     localStorage = {
       removeItem: jasmine.createSpy('removeItem')
     };
-    localStorageProvider = {
-      provide: LocalStorage,
-      useFactory: () => localStorage
-    };
   });
 
-  // beforeEach(() => addProviders([
-  //   routerProvider,
-  //   identityServiceProvider,
-  //   localStorageProvider,
-  //   ResponseHandler
-  // ]));
-
-  beforeEach(inject([ResponseHandler], (_service) => {
-    service = _service;
-  }));
+  beforeEach(() => {
+    service = new ResponseHandler(router, identityService, localStorage);
+  });
 
   it('should handle 401 by logging out', () => {
     service.handle401();
