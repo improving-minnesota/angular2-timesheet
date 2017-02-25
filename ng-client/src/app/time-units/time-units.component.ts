@@ -17,6 +17,9 @@ export class TimeUnitsComponent {
   @Input()
   timesheetId: string;
 
+  @Input()
+  dateFormat: string;
+
   constructor(private router: Router) {
   }
 

@@ -21,7 +21,7 @@ export class TimesheetCompletePipe implements PipeTransform {
 
     let hoursWorked = 0;
 
-    if(totalHours > 0) {
+    if (totalHours > 0) {
       for (let unit of timesheet.timeUnits) {
         hoursWorked += unit.hoursWorked;
       }

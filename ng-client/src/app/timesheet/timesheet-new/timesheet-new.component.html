@@ -3,36 +3,36 @@
   <md-card>
     <md-card-content>
       <form (ngSubmit)="save()" [formGroup]="form">
-        <md-input class="input-full-width"
-                  placeholder="Name"
-                  dividerColor="warm"
-                  formControlName="name">
-        </md-input>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Name"
+                    dividerColor="warm"
+                    formControlName="name">
+        </md-input-container>
         <div [hidden]="name.valid || name.pristine" class="alert">
           Name is required
         </div>
 
-        <md-input class="input-full-width"
-                  placeholder="Description"
-                  dividerColor="warm"
-                  formControlName="description">
-        </md-input>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Description"
+                    dividerColor="warm"
+                    formControlName="description">
+        </md-input-container>
         <div [hidden]="description.valid || description.pristine" class="alert">
           Description is required
         </div>
 
-        <md-input class="input-full-width"
-                  placeholder="Begin Date (mm/dd/yyyy)"
-                  formControlName="beginDate">
-        </md-input>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Begin Date (mm/dd/yyyy)"
+                    formControlName="beginDate">
+        </md-input-container>
         <div [hidden]="beginDate.valid || beginDate.pristine" class="alert" type="date">
           Begin date is required in the format: 'mm/dd/yyyy'
         </div>
 
-        <md-input class="input-full-width"
-                  placeholder="End Date (mm/dd/yyyy)"
-                  formControlName="endDate">
-        </md-input>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="End Date (mm/dd/yyyy)"
+                    formControlName="endDate">
+        </md-input-container>
         <div [hidden]="endDate.valid || endDate.pristine" class="alert">
           Begin date is required in the format: 'mm/dd/yyyy'
         </div>
