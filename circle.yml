@@ -9,7 +9,7 @@ dependencies:
   override:
     - yarn
   post:
-    - yarn install
+    - yarn install --no-progress
 
 test:
   override:
