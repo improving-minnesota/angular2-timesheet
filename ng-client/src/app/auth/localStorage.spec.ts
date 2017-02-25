@@ -2,12 +2,12 @@ import { inject } from '@angular/core/testing';
 
 import { LocalStorage } from './localStorage';
 
-describe('LocalStorage Service', () => {
+fdescribe('LocalStorage Service', () => {
   let service;
 
-  beforeEach(inject([LocalStorage], (_service) => {
-    service = _service;
-  }));
+  beforeEach(() => {
+    service = new LocalStorage();
+  });
 
   it('should initialize a storage backend', () => {
     expect(service.storageBackend).toBeUndefined();

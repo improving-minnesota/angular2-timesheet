@@ -6,9 +6,9 @@ import { Name, User } from './user';
 fdescribe('Identity Service', () => {
   let service: IdentityService;
 
-  beforeEach(inject([IdentityService], (_service) => {
-    service = _service;
-  }));
+  beforeEach(() => {
+    service = new IdentityService();
+  });
 
   it('should create a blank user', () => {
     let user = service.user;

@@ -1,5 +1,7 @@
 # Timesheetz In Angular 2
 
+![build status](https://img.shields.io/circleci/project/github/objectpartners/angular2-timesheet.svg)
+
 ## Prerequisites 
 
     Node 6.x.x (node -v)
