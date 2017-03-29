@@ -4,8 +4,8 @@ import {LocalStorage, AUTH_TOKEN_NAME} from './auth/localStorage';
 import {LoginService} from './shared/login.service';
 
 @Component({
-  selector: 'app-root',
-  styleUrls: ['././app.component.scss'],
+  selector: 'at-root',
+  styleUrls: ['./app.component.scss'],
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {

@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import {
@@ -9,7 +9,7 @@ import {
 
 import { ProjectNewComponent } from './project-new.component';
 
-describe('Component: ProjectNew', () => {
+xdescribe('Component: ProjectNew', () => {
   it('should create an instance', () => {
     // let component = new ProjectNewComponent();
     // expect(component).toBeTruthy();

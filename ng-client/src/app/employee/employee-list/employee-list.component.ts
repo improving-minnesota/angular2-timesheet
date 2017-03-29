@@ -5,14 +5,12 @@ import {Employee} from '../Employee';
 import {EmployeeService} from '../employee.service';
 
 @Component({
-  selector: 'app-employee-list',
+  selector: 'at-employee-list',
   templateUrl: './employee-list.component.html',
-  styleUrls: ['././employee-list.component.scss']
+  styleUrls: ['./employee-list.component.scss'],
 })
 export class EmployeeListComponent implements OnInit {
-
   employees: Employee[];
-
   condition: boolean;
 
   constructor(private employeeService: EmployeeService, private router: Router) {

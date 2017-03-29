@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {Timesheet} from '../Timesheet';
 
 @Component({
-  selector: 'app-timesheet-detail',
+  selector: 'at-timesheet-detail',
   templateUrl: './timesheet-detail.component.html',
   styleUrls: ['./timesheet-detail.component.scss']
 })
@@ -18,12 +18,7 @@ export class TimesheetDetailComponent implements OnInit {
   constructor(private router: Router) {
   }
 
-  ngOnInit() {
-  }
-
-  edit() {
-    console.log('implement edit timesheet');
-  }
+  ngOnInit() {}
 
   cancel() {
     this.router.navigateByUrl('/home/timesheets');

@@ -3,7 +3,7 @@ import { inject } from '@angular/core/testing';
 import { IdentityService } from './identity.service';
 import { Name, User } from './user';
 
-fdescribe('Identity Service', () => {
+describe('Identity Service', () => {
   let service: IdentityService;
 
   beforeEach(() => {
@@ -11,7 +11,7 @@ fdescribe('Identity Service', () => {
   });
 
   it('should create a blank user', () => {
-    let user = service.user;
+    const user = service.user;
 
     expect(user.name.first).toEqual('');
     expect(user.name.last).toEqual('');
@@ -21,8 +21,8 @@ fdescribe('Identity Service', () => {
   });
 
   it('should set the user', () => {
-    let userName = new Name('john', 'doe');
-    let updatedUser = new User({
+    const userName = new Name('john', 'doe');
+    const updatedUser = new User({
       name: userName,
       authenticated: true,
       token: 'token',
@@ -30,7 +30,7 @@ fdescribe('Identity Service', () => {
     });
 
     service.user = updatedUser;
-    let user = service.user;
+    const user = service.user;
 
     expect(user.name).toEqual(userName);
     expect(user.authenticated).toBe(true);
@@ -40,15 +40,15 @@ fdescribe('Identity Service', () => {
   });
 
   it('should return an observable for identity dispatch and receive updates', (done) => {
-    let userName = new Name('john', 'doe');
-    let updatedUser = new User({
+    const userName = new Name('john', 'doe');
+    const updatedUser = new User({
       name: userName,
       authenticated: true,
       token: 'token',
       id: 'id'
     });
 
-    let observable = service.identityDispatch;
+    const observable = service.identityDispatch;
 
     observable.subscribe((user) => {
       expect(user.name).toEqual(userName);
@@ -63,8 +63,8 @@ fdescribe('Identity Service', () => {
   });
 
   it('should clear the user and send a notification to subscribers', (done) => {
-    let userName = new Name('john', 'doe');
-    let updatedUser = new User({
+    const userName = new Name('john', 'doe');
+    const updatedUser = new User({
       name: userName,
       authenticated: true,
       token: 'token',
@@ -73,7 +73,7 @@ fdescribe('Identity Service', () => {
 
     service.user = updatedUser;
 
-    let observable = service.identityDispatch;
+    const observable = service.identityDispatch;
 
     observable
       .subscribe((user) => {

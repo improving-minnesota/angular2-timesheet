@@ -6,7 +6,7 @@ import * as moment from 'moment';
 export class TimesheetCompletePipe implements PipeTransform {
   transform(timesheet: Timesheet): string {
     let current = moment(timesheet.beginDate);
-    let end = moment(timesheet.endDate);
+    const end = moment(timesheet.endDate);
 
     let totalHours = 0;
 
@@ -22,12 +22,12 @@ export class TimesheetCompletePipe implements PipeTransform {
     let hoursWorked = 0;
 
     if (totalHours > 0) {
-      for (let unit of timesheet.timeUnits) {
+      for (const unit of timesheet.timeUnits) {
         hoursWorked += unit.hoursWorked;
       }
     }
 
-    let percentage = hoursWorked / totalHours * 100;
+    const percentage = hoursWorked / totalHours * 100;
 
     return `${percentage}% completed`;
   }

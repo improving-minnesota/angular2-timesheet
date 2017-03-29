@@ -4,7 +4,7 @@ import { ProjectService } from '../project.service';
 import { Project } from '../Project';
 
 @Component({
-  selector: 'app-project-list',
+  selector: 'at-project-list',
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.scss']
 })

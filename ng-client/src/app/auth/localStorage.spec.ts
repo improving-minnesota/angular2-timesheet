@@ -2,7 +2,7 @@ import { inject } from '@angular/core/testing';
 
 import { LocalStorage } from './localStorage';
 
-fdescribe('LocalStorage Service', () => {
+describe('LocalStorage Service', () => {
   let service;
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ fdescribe('LocalStorage Service', () => {
   });
 
   it('should allow interaction', () => {
-    let thingKey = 'thing';
+    const thingKey = 'thing';
     service.initStorage(window.localStorage);
 
     expect(service.getItem(thingKey)).toBeNull();

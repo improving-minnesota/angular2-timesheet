@@ -14,7 +14,7 @@ import {TimeUnit, TimeUnitService} from '../../time-units';
 })
 export class TimesheetEntryComponent implements OnInit {
 
-  private DATE_FORMAT: string = 'MM/DD/YYYY';
+  private DATE_FORMAT = 'MM/DD/YYYY';
   timesheetId: string;
   projects: Project[];
   form: FormGroup;
@@ -38,8 +38,8 @@ export class TimesheetEntryComponent implements OnInit {
       this.timesheetId = params['id'];
     });
 
-    let validateDateWorked = (control: FormControl) => {
-      let m = moment(control.value, this.DATE_FORMAT, true);
+    const validateDateWorked = (control: FormControl) => {
+      const m = moment(control.value, this.DATE_FORMAT, true);
 
       // TODO: Ensure that date is in range.
       return m.isValid() ? null : {value: false};

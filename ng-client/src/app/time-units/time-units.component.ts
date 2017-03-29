@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { TimeUnit } from './TimeUnit';
 
 @Component({
-  selector: 'app-time-units',
+  selector: 'at-time-units',
   templateUrl: './time-units.component.html',
   styleUrls: ['./time-units.component.scss']
 })

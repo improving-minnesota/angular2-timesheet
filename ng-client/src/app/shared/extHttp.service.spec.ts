@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { ExtHttp } from './extHttp.service';
 
-describe('ExtHttp Service', () => {
+xdescribe('ExtHttp Service', () => {
   // let service: ExtHttp;
   //
   // beforeEachProviders(() => [

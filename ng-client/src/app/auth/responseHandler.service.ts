@@ -1,8 +1,8 @@
 
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { IdentityService } from'./identity.service';
-import { LocalStorage, AUTH_TOKEN_NAME } from'./localStorage';
+import { IdentityService } from './identity.service';
+import { LocalStorage, AUTH_TOKEN_NAME } from './localStorage';
 
 @Injectable()
 export class ResponseHandler {

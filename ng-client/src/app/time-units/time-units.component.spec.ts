@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import { TimeUnitsComponent } from './time-units.component';
 import { TimeUnit } from './TimeUnit';
 
-describe('Component: TimeUnits', () => {
+xdescribe('Component: TimeUnits', () => {
   let router;
   let routerProvider;
   let fixture;
@@ -41,17 +41,17 @@ describe('Component: TimeUnits', () => {
   it('should list all provided time units', () => {
     fixture.detectChanges();
 
-    let timeUnitElements = fixture.debugElement.query(By.css('.timeunits-item'));
+    const timeUnitElements = fixture.debugElement.query(By.css('.timeunits-item'));
 
     expect(timeUnitElements.children.length).toBe(1);
 
-    let timeUnitElement = timeUnitElements.children[0];
+    const timeUnitElement = timeUnitElements.children[0];
     expect(timeUnitElement.query(By.css('.timeunits-item-hours')).nativeElement.innerHTML).toEqual('8 Hours: Project');
     expect(timeUnitElement.query(By.css('.timeunits-item-date')).nativeElement.innerHTML).toEqual('Aug 8, 2016');
   });
 
   it('should route user to timesheet entry page when clicking log button', () => {
-    let logTimeBtn = fixture.debugElement.query(By.css('.timeunits-log'));
+    const logTimeBtn = fixture.debugElement.query(By.css('.timeunits-log'));
 
     fixture.detectChanges();
 
@@ -75,5 +75,5 @@ class TestTimeUnitsComponent {
       project: 'Project'
     })
   ];
-  timesheetId: string = '1';
+  timesheetId = '1';
 }
