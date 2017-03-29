@@ -2,14 +2,14 @@
   <md-progress-circle mode="indeterminate"></md-progress-circle>
 </div>
 <div *ngIf="loaded">
-  <app-timesheet-detail
+  <at-timesheet-detail
     [timesheet]="timesheet"
     [dateFormat]="dateFormat"
   >
-  </app-timesheet-detail>
-  <app-time-units
+  </at-timesheet-detail>
+  <at-time-units
     [timesheetId]="timesheetId"
     [timeUnits]="timeUnits"
   >
-  </app-time-units>
+  </at-time-units>
 </div>

@@ -5,9 +5,9 @@ import { IdentityService, LocalStorage, AUTH_TOKEN_NAME } from '../auth';
 import { User } from '../auth/user';
 
 @Component({
-  selector: 'app-navigation',
+  selector: 'at-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['././navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
 

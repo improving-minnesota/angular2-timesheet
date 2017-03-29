@@ -2,13 +2,17 @@
 
 import { By } from '@angular/platform-browser';
 
-import { Component} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
 
 import {
-  async, inject,
-  TestBed, fakeAsync,
-  ComponentFixture
+  TestBed
 } from '@angular/core/testing';
+
+import { DebugElement } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 
@@ -19,59 +23,60 @@ import { EmployeeService } from '../employee.service';
 import { EmployeeNewComponent } from './employee-new.component';
 import { TimeUnit } from '../../time-units/TimeUnit';
 
-describe('Component: EmployeeNew', () => {
+fdescribe('Component: EmployeeNew', () => {
   let employeeService;
-  let employeeServiceProvider;
-  let route;
-  let routerProvider;
-  let comp;
+  let employeeServiceStub;
+  let router;
+  let routerStub;
   let fixture;
+  let component;
 
   beforeEach(() => {
-    employeeService = {
+    employeeServiceStub = {
       save: jasmine.createSpy('save')
     };
 
-    employeeServiceProvider = {
-      provide: EmployeeService,
-      useFactory: () => employeeService
-    };
-
-    route = {
+    routerStub = {
       navigateByUrl: jasmine.createSpy('navigateByUrl')
     };
 
-    routerProvider = {
-      provide: Router,
-        useFactory: () => route
-    };
+    TestBed.configureTestingModule({
+      declarations: [ EmployeeNewComponent ],
+      imports: [
+        CommonModule,
+        FormsModule,
+        MaterialModule.forRoot(),
+      ],
+      providers: [
+        { provide: EmployeeService, useValue: employeeServiceStub },
+        { provide: Router, userValue: routerStub }
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    });
+
+    fixture = TestBed.createComponent(EmployeeNewComponent);
+    component = fixture.componentInstance;
+
+    employeeService = TestBed.get(EmployeeService);
+    router = TestBed.get(Router);
   });
 
-  beforeEach(() => {
-      TestBed.configureTestingModule({
-        providers: [
-        employeeServiceProvider,
-        routerProvider
-        ]
-      });
-      fixture = TestBed.createComponent(EmployeeNewComponent);
-      comp = fixture.componentInstance;
-  });
+  it('should not attempt to save due to validation errors', () => {
+    fixture.detectChanges();
 
-  // it('should not attempt to save due to validation errors', (done) => {
-  //   return builder
-  //     .createAsync(EmployeeNewComponent)
-  //     .then((fixture: ComponentFixture<EmployeeNewComponent>) => {
-  //
-  //     fixture.detectChanges();
-  //
-  //     let instance = fixture.componentInstance;
-  //
-  //     done();
-  //   });
-  // });
+    let saveEmployeeBtn = fixture.debugElement.query(By.css('.save-new-employee-btn'));
+    saveEmployeeBtn.triggerEventHandler('click', null);
+
+    // detect errors
+    console.log(fixture.debugElement.query(By.css('.alert')));
+  });
 
   it('should attempt to save new employee', () => {
+    fixture.detectChanges();
 
+    let saveEmployeeBtn = fixture.debugElement.query(By.css('.save-new-employee-btn'));
+    saveEmployeeBtn.triggerEventHandler('click', null);
+
+    // detect no errors
   });
 });

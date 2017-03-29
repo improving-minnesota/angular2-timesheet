@@ -16,7 +16,7 @@ import {
 
 import { ExtHttp } from './extHttp.service';
 
-fdescribe('Login Service', () => {
+describe('Login Service', () => {
   let service;
   let extHttp;
   let identityService;

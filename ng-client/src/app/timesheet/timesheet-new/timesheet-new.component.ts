@@ -5,18 +5,18 @@ import {Router} from '@angular/router';
 import {Timesheet} from '../Timesheet';
 
 import * as moment from 'moment';
-import TimesheetService from '../timesheet.service';
+import {TimesheetService} from '../timesheet.service';
 import {IdentityService} from '../../auth';
 
 @Component({
-  selector: 'app-timesheet-new',
+  selector: 'at-timesheet-new',
   templateUrl: './timesheet-new.component.html',
   styleUrls: ['./timesheet-new.component.scss'],
   providers: [TimesheetService]
 })
 export class TimesheetNewComponent implements OnInit {
 
-  private DATE_FORMAT: string = 'MM/DD/YYYY';
+  private DATE_FORMAT = 'MM/DD/YYYY';
   endDate: FormControl;
   beginDate: FormControl;
   name: FormControl;
