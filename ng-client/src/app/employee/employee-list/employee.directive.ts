@@ -1,7 +1,7 @@
 import {Directive, Input, ElementRef} from '@angular/core';
 import {Employee} from '../Employee';
 
-@Directive({selector: '[employee]'})
+@Directive({selector: '[atEmployee]'})
 export class EmployeeDirective {
 
   constructor(private el: ElementRef) {
@@ -13,6 +13,5 @@ export class EmployeeDirective {
     const admin = employee.admin ? '<span class="ts-subtext">(admin)</span>' : '';
 
     this.el.nativeElement.innerHTML = `${name} ${admin}`;
-
   }
 }

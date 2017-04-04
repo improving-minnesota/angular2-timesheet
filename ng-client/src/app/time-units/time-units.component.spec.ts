@@ -75,5 +75,5 @@ class TestTimeUnitsComponent {
       project: 'Project'
     })
   ];
-  timesheetId: string = '1';
+  timesheetId = '1';
 }

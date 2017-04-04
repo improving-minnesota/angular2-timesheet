@@ -14,7 +14,7 @@ import {TimeUnit, TimeUnitService} from '../../time-units';
 })
 export class TimesheetEntryComponent implements OnInit {
 
-  private DATE_FORMAT: string = 'MM/DD/YYYY';
+  private DATE_FORMAT = 'MM/DD/YYYY';
   timesheetId: string;
   projects: Project[];
   form: FormGroup;

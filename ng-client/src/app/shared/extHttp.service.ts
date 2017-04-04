@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ExtHttp {
-  private HEADER_PREFIX: string = 'Bearer ';
+  private HEADER_PREFIX = 'Bearer ';
   private urlRoot: string;
   process: Subject<any> = new Subject<any>();
   constructor(private _http: Http,

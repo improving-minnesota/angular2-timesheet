@@ -1,4 +1,3 @@
-import './polyfills.ts';
 import 'hammerjs';
 
 import 'zone.js/dist/long-stack-trace-zone';

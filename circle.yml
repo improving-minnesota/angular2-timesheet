@@ -9,9 +9,9 @@ dependencies:
   override:
     - yarn
   post:
-    - yarn install
+    - yarn install --no-progress
 
 test:
   override:
     - yarn run lint
-    - yarn run test
+    - yarn run test --progress false

@@ -1,65 +1,57 @@
-/* tslint:disable:no-unused-variable */
+import { Router } from '@angular/router';
 
-import { By }           from '@angular/platform-browser';
+import { Observable } from 'rxjs/Observable';
 
-import {Router} from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import {Observable} from 'rxjs/Observable';
+import {
+  TestBed
+} from '@angular/core/testing';
 
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../Employee';
 
-import {
-  async, inject,
-  fakeAsync,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
 import { EmployeeListComponent } from './employee-list.component';
 
-describe('Component: EmployeeList', () => {
+fdescribe('Component: EmployeeList', () => {
   let builder;
+  let employeeServiceStub;
   let employeeService;
-  let employeeServiceProvider;
+  let routerStub;
   let router;
-  let routerProvider;
   let fixture;
-  let comp;
+  let component;
 
   beforeEach(() => {
-    employeeService = {
+    employeeServiceStub = {
       getEmployees: jasmine.createSpy('getEmployees')
     };
 
-    employeeServiceProvider = {
-      provide: EmployeeService,
-      useFactory: () => employeeService
-    };
-
-    router = {
+    routerStub = {
       navigateByUrl: jasmine.createSpy('navigateByUrl')
     };
 
-    routerProvider = {
-      provide: Router,
-      useFactory: () => router
-    };
-  });
-
-  beforeEach(() => {
-      TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
+      declarations: [ EmployeeListComponent ],
         providers: [
-          employeeServiceProvider,
-          routerProvider
-        ]
-      });
-      fixture = TestBed.createComponent(EmployeeListComponent);
-      comp = fixture.componentInstance;
+          { provide: EmployeeService, useValue: employeeServiceStub },
+          { provide: Router, useValue: routerStub }
+        ],
+        schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+    });
+
+    fixture = TestBed.createComponent(EmployeeListComponent);
+    component = fixture.componentInstance;
+
+    employeeService = TestBed.get(EmployeeService);
+    router = TestBed.get(Router);
   });
 
   it('should create an initialize component by looking up employees', () => {
-    employeeService.getEmployees.and.callFake(() => {
+    employeeServiceStub.getEmployees.and.callFake(() => {
       return Observable.create((obs) => {
         obs.next([new Employee({
           _id: '1',
@@ -75,10 +67,10 @@ describe('Component: EmployeeList', () => {
 
     fixture.detectChanges();
 
-    let employeeListItems = fixture.debugElement.query(By.css('.employee-list-item'));
-    expect(employeeListItems.children.length).toBe(1);
+    let employeeListItems = fixture.debugElement.queryAll(By.css('.employee-list-item'));
+    expect(employeeListItems.length).toBe(1);
 
-    let timeUnitElement = employeeListItems.children[0];
+    let timeUnitElement = employeeListItems[0];
     expect(timeUnitElement.query(By.css('.employee-list-item-name')).nativeElement.innerHTML).toEqual('John Doe');
     expect(timeUnitElement.query(By.css('.employee-list-item-email')).nativeElement.innerHTML).toEqual('johndoe@email.com');
 
