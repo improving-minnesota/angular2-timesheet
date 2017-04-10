@@ -5,18 +5,18 @@ import {Router} from '@angular/router';
 import {Timesheet} from '../Timesheet';
 
 import * as moment from 'moment';
-import TimesheetService from '../timesheet.service';
+import {TimesheetService} from '../timesheet.service';
 import {IdentityService} from '../../auth';
 
 @Component({
-  selector: 'app-timesheet-new',
+  selector: 'at-timesheet-new',
   templateUrl: './timesheet-new.component.html',
   styleUrls: ['./timesheet-new.component.scss'],
   providers: [TimesheetService]
 })
 export class TimesheetNewComponent implements OnInit {
 
-  private DATE_FORMAT: string = 'MM/DD/YYYY';
+  private DATE_FORMAT = 'MM/DD/YYYY';
   endDate: FormControl;
   beginDate: FormControl;
   name: FormControl;
@@ -29,8 +29,8 @@ export class TimesheetNewComponent implements OnInit {
   }
 
   ngOnInit() {
-    let validateDate = (control: FormControl) =>  {
-      let m = moment(control.value, this.DATE_FORMAT, true);
+    const validateDate = (control: FormControl) =>  {
+      const m = moment(control.value, this.DATE_FORMAT, true);
       return m.isValid() ? null : {value: false};
     };
 
@@ -48,13 +48,13 @@ export class TimesheetNewComponent implements OnInit {
   }
 
   save() {
-    let data = this.form.value;
+    const data = this.form.value;
 
     data.beginDate = moment(data.beginDate, this.DATE_FORMAT).toDate();
     data.endDate = moment(data.endDate, this.DATE_FORMAT).toDate();
     data.user_id = this.identityService.user.id;
 
-    let timesheet = new Timesheet(data);
+    const timesheet = new Timesheet(data);
 
     this.timesheetService.save(this.identityService.user, timesheet)
       .subscribe(() => this.router.navigate(['/home/timesheets']));

@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {IdentityService} from '../auth';
-import TimesheetService from './timesheet.service';
-import {Timesheet} from './Timesheet';
-import {TimeUnit} from '../time-units';
+import { IdentityService } from '../auth';
+import { TimesheetService } from './timesheet.service';
+import { Timesheet } from './Timesheet';
+import { TimeUnit } from '../time-units';
 
 @Component({
-  selector: 'app-timesheet',
+  selector: 'at-timesheet',
   templateUrl: './timesheet.component.html',
   styleUrls: ['./timesheet.component.scss'],
   providers: [TimesheetService]
@@ -33,7 +33,7 @@ export class TimesheetComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.timesheetId = params['id'];
 
-      let timesheetObservable = this.timesheetService.getTimesheet(this.identityService.user, this.timesheetId);
+      const timesheetObservable = this.timesheetService.getTimesheet(this.identityService.user, this.timesheetId);
 
       timesheetObservable.subscribe((timesheet) => {
           this.timesheet = timesheet;

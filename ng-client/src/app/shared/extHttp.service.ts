@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ExtHttp {
-  private HEADER_PREFIX: string = 'Bearer ';
+  private HEADER_PREFIX = 'Bearer ';
   private urlRoot: string;
   process: Subject<any> = new Subject<any>();
   constructor(private _http: Http,
@@ -14,7 +14,7 @@ export class ExtHttp {
               private identityService: IdentityService) {
     this.urlRoot = 'https://production.com';
 
-    let host = window.location.hostname;
+    const host = window.location.hostname;
 
     if (host === 'localhost') {
       this.urlRoot = 'http://localhost:4000';
@@ -27,7 +27,7 @@ export class ExtHttp {
   }
 
   private _createAuthHeaders(): Headers {
-    let headers = new Headers({
+    const headers = new Headers({
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     });
@@ -56,8 +56,8 @@ export class ExtHttp {
   }
 
   private _request(method: RequestMethod, relativeUrl: string, body?: string, options?: RequestOptionsArgs): Observable<any> {
-    let url = this.urlRoot + relativeUrl;
-    let requestOptions = new RequestOptions(Object.assign({
+    const url = this.urlRoot + relativeUrl;
+    const requestOptions = new RequestOptions(Object.assign({
       method: method,
       url: url,
       body: body,

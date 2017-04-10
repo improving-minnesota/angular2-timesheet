@@ -3,6 +3,6 @@
 import { async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App: NgClient', () => {
+xdescribe('App: NgClient', () => {
 
 });

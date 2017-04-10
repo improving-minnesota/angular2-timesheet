@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import {
@@ -9,7 +9,7 @@ import {
 
 import { TimesheetNewComponent } from './timesheet-new.component';
 
-describe('Component: TimesheetNew', () => {
+xdescribe('Component: TimesheetNew', () => {
   it('should create an instance', () => {
     // let component = new TimesheetNewComponent();
     // expect(component).toBeTruthy();

@@ -6,12 +6,12 @@ import {LoginCommand, User, IdentityService} from '../auth';
 import {LoginService} from '../shared';
 
 @Component({
-  selector: 'app-login',
+  selector: 'at-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  private error: boolean;
+  error: boolean;
   command: LoginCommand;
 
   constructor(private router: Router, private loginService: LoginService, private identityService: IdentityService) {}

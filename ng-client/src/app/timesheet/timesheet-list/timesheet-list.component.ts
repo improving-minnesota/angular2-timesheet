@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import TimesheetService from '../timesheet.service';
+import { TimesheetService } from '../timesheet.service';
 import { IdentityService } from '../../auth';
 import { Router } from '@angular/router';
-import {Timesheet} from '../Timesheet';
+import { Timesheet } from '../Timesheet';
 
 @Component({
-  selector: 'app-timesheet-list',
+  selector: 'at-timesheet-list',
   templateUrl: './timesheet-list.component.html',
   styleUrls: ['./timesheet-list.component.scss']
 })

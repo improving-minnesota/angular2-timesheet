@@ -16,12 +16,12 @@ import {
 
 import { ExtHttp } from './extHttp.service';
 
-fdescribe('Login Service', () => {
+xdescribe('Login Service', () => {
   let service;
   let extHttp;
   let identityService;
   let localStorage;
-  let jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJqb2huIiwibGFzdE5hbWUiOiJkb2UiLCJfaWQiOiIxIn0.A6gUhsto3HuGg7hD9ydE_rsGE9ulhDgMoHkL8jlLRj8';
+  const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJqb2huIiwibGFzdE5hbWUiOiJkb2UiLCJfaWQiOiIxIn0.A6gUhsto3HuGg7hD9ydE_rsGE9ulhDgMoHkL8jlLRj8';
 
   beforeEach(() => {
     extHttp = {
@@ -52,7 +52,7 @@ fdescribe('Login Service', () => {
       });
     });
 
-    let command = new LoginCommand('user', 'password');
+    const command = new LoginCommand('user', 'password');
 
     service.login(command)
       .subscribe((user) => {

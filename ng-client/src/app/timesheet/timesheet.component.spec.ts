@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute } from '@angular/router';
 
 import { IdentityService, User, Name } from '../auth';
-import TimesheetService from './timesheet.service';
+import { TimesheetService } from './timesheet.service';
 import { TimeUnit } from '../time-units';
 import { TimesheetComponent } from './timesheet.component';
 import { TimesheetDetailComponent } from './timesheet-detail/timesheet-detail.component';

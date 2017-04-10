@@ -6,7 +6,7 @@ import { Timesheet } from './Timesheet';
 import { TimeUnit } from '../time-units';
 
 @Injectable()
-export default class TimesheetService {
+export class TimesheetService {
 
   constructor(private http: ExtHttp) {
   }
@@ -30,8 +30,8 @@ export default class TimesheetService {
   getTimeUnits(user: User, timesheetId: string): Observable<any> {
     return Observable.create((observer) => {
       this.http.get(`/users/${user.id}/timesheets/${timesheetId}/timeunits`).subscribe((response) => {
-        let units = response.json().map((data) => {
-          let unit = new TimeUnit(data);
+        const units = response.json().map((data) => {
+          const unit = new TimeUnit(data);
           return unit;
         });
         observer.next(units);

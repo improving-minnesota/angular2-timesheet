@@ -3,10 +3,10 @@ import { inject } from '@angular/core/testing';
 import { ResponseHandler } from './responseHandler.service';
 
 import { Router } from '@angular/router';
-import { IdentityService } from'./identity.service';
-import { LocalStorage, AUTH_TOKEN_NAME, } from'./localStorage';
+import { IdentityService } from './identity.service';
+import { LocalStorage, AUTH_TOKEN_NAME, } from './localStorage';
 
-fdescribe('ResponseHandler Service', () => {
+describe('ResponseHandler Service', () => {
   let service: ResponseHandler;
   let router;
   let identityService;
