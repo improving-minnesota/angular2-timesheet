@@ -1,12 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormControl, Validators, FormGroup} from '@angular/forms';
+import { Component,
+  OnInit
+} from '@angular/core';
+import {
+  ActivatedRoute,
+  Router
+} from '@angular/router';
+import {
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 
 import * as moment from 'moment';
 
-import {IdentityService} from '../../auth';
-import {Project, ProjectService} from '../../project';
-import {TimeUnit, TimeUnitService} from '../../time-units';
+import { IdentityService } from '../../core';
+import {
+  Project,
+  ProjectService
+} from '../../project';
+import {
+  TimeUnit,
+  TimeUnitService
+} from '../../time-units';
 
 @Component({
   templateUrl: './timesheet-entry.component.html',

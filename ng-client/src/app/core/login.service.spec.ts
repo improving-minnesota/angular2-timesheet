@@ -7,12 +7,12 @@ import { Observable } from 'rxjs/Observable';
 
 import { LoginService } from './login.service';
 
+import { IdentityService } from './identity.service';
 import {
   AUTH_TOKEN_NAME,
-  IdentityService,
-  LocalStorage,
-  LoginCommand
-} from '../auth';
+  LocalStorage
+} from './localStorage';
+import { LoginCommand } from './LoginCommand';
 
 import { ExtHttp } from './extHttp.service';
 

@@ -4,15 +4,29 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
-import {NavigationModule} from './navigation';
-import {ProjectModule} from './project';
-import {EmployeeModule} from './employee';
-import {TimesheetModule} from './timesheet';
-import {LoginModule} from './login';
-import {ExtHttp} from './shared/extHttp.service';
-import {ResponseHandler} from './auth/responseHandler.service';
-import 'hammerjs';
+import { NavigationModule } from './navigation';
+import { ProjectModule } from './project';
+import { EmployeeModule } from './employee';
+import { TimesheetModule } from './timesheet';
+import { LoginModule } from './login';
+import { CoreModule } from './core';
+
 import { MaterialModule } from '@angular/material';
+
+import { ExtHttpConfig } from './core/ExtHttpConfig';
+
+import 'hammerjs';
+
+const host = window.location.hostname;
+let baseUrl = 'https://localhost:8080';
+
+if (host === 'localhost') {
+  baseUrl = 'http://localhost:4000';
+}
+
+const extHttpConfig = {
+  url: baseUrl
+};
 
 @NgModule({
   declarations: [
@@ -28,8 +42,8 @@ import { MaterialModule } from '@angular/material';
     ProjectModule,
     routing,
     TimesheetModule,
+    CoreModule.forRoot(extHttpConfig),
   ],
-  providers: [ExtHttp, ResponseHandler],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { ExtHttp } from '../shared';
-import { User } from '../auth';
+import {
+  ExtHttp,
+  User
+ } from '../core';
 import { Timesheet } from './Timesheet';
 import { TimeUnit } from '../time-units';
 

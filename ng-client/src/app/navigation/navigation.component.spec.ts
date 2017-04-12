@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
-import { IdentityService, LocalStorage, AUTH_TOKEN_NAME } from '../auth';
+import { IdentityService, LocalStorage, AUTH_TOKEN_NAME } from '../core';
 
-import { User, Name } from '../auth/user';
+import { User, Name } from '../core/user';
 
 import { NavigationComponent } from './navigation.component';
 

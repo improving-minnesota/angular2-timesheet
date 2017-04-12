@@ -1,12 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, Validators, FormGroup} from '@angular/forms';
-import {Router} from '@angular/router';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
+import { Router } from '@angular/router';
 
-import {Timesheet} from '../Timesheet';
+import { Timesheet } from '../Timesheet';
 
 import * as moment from 'moment';
-import {TimesheetService} from '../timesheet.service';
-import {IdentityService} from '../../auth';
+import { TimesheetService } from '../timesheet.service';
+import { IdentityService } from '../../core';
 
 @Component({
   selector: 'at-timesheet-new',

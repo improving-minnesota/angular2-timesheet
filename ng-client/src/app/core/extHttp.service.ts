@@ -1,29 +1,35 @@
-import {Injectable} from '@angular/core';
-import {ResponseHandler, IdentityService} from '../auth';
-import {Http, Headers, RequestOptions, RequestOptionsArgs, RequestMethod, Request} from '@angular/http';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import {
+  ResponseHandler,
+  IdentityService
+} from '../core';
+import {
+  Headers,
+  Http,
+  Request,
+  RequestMethod,
+  RequestOptions,
+  RequestOptionsArgs
+} from '@angular/http';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+
+import { ExtHttpConfig } from './ExtHttpConfig';
 
 @Injectable()
 export class ExtHttp {
-  private HEADER_PREFIX = 'Bearer ';
+  private HEADER_PREFIX = 'Bearer';
   private urlRoot: string;
   process: Subject<any> = new Subject<any>();
   constructor(private _http: Http,
               private serverHandler: ResponseHandler,
-              private identityService: IdentityService) {
-    this.urlRoot = 'https://production.com';
-
-    const host = window.location.hostname;
-
-    if (host === 'localhost') {
-      this.urlRoot = 'http://localhost:4000';
-    }
-
+              private identityService: IdentityService,
+              private config: ExtHttpConfig) {
+    this.urlRoot = config.url;
   }
 
   private _generateToken(): string {
-    return this.HEADER_PREFIX + this.identityService.user.token;
+    return `${this.HEADER_PREFIX} ${this.identityService.user.token}`;
   }
 
   private _createAuthHeaders(): Headers {

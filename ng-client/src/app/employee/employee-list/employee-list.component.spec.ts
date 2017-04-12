@@ -4,9 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import {
-  TestBed
-} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../Employee';
@@ -35,11 +33,11 @@ describe('Component: EmployeeList', () => {
 
     TestBed.configureTestingModule({
       declarations: [ EmployeeListComponent ],
-        providers: [
-          { provide: EmployeeService, useValue: employeeServiceStub },
-          { provide: Router, useValue: routerStub }
-        ],
-        schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [
+        { provide: EmployeeService, useValue: employeeServiceStub },
+        { provide: Router, useValue: routerStub }
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     });
 
     fixture = TestBed.createComponent(EmployeeListComponent);
