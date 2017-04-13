@@ -2,9 +2,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
-  margin: 0;
   background-color: #f2f2f2;
   font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  margin: 0;
 }
 
 .main-container {
@@ -41,4 +41,10 @@ body {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+
+.empty-list-message {
+  color: #c3c3c3;
+  font-style: italic;
+  text-align: center;
 }
