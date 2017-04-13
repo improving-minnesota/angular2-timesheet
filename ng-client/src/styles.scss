@@ -1,6 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
   margin: 0;
+  background-color: #f2f2f2;
+  font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+}
+
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  position: relative;
+}
+
+.header {
+  font-size: large;
+  font-weight: 600;
+
+  .fill-remaining {
+    flex: 1 1 auto;
+  }
+}
+
+.secondary-text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.control-bar {
+  position: absolute;
+  right: 20px;
+  top: -20px;
+}
+
+.section-heading {
+  margin-bottom: 10px;
+}
+
+.add-item-control {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }

@@ -7,7 +7,7 @@ export class EmployeeDirective {
   constructor(private el: ElementRef) {
   }
 
-  @Input() set employee(employee: Employee) {
+  @Input() set atEmployee(employee: Employee) {
     const name = `<span class="ts-strong employee-name">${employee.firstName} ${employee.lastName}</span>`;
 
     const admin = employee.admin ? '<span class="ts-subtext employee-title">(admin)</span>' : '';

@@ -1,18 +1,17 @@
 <div class="employees">
-  <md-list>
-    <md-list-item>
-      <div class="header">
-        Employees
-        <!--<span class="fill-remaining"></span>-->
-        <button md-fab (click)="add()">
-          <md-icon class="add-employee">add</md-icon>
-        </button>
+  <md-card>
+    <md-list>
+      <h3 md-subheader>Employees</h3>
+      <div class="add-item-control">
+        <a md-fab (click)="add()" class="add-employee-btn">
+          <md-icon>add</md-icon>
+        </a>
       </div>
-    </md-list-item>
-    <md-list-item *ngFor="let employee of employees" class="employee-list-item">
-      <p md-line><span atEmployee="employee"></span></p>
-      <p md-line class="employee-list-item-name">{{employee.firstName}} {{employee.lastName}}</p>
-      <p md-line class="demo-secondary-text employee-list-item-email">{{employee.email}}</p>
-    </md-list-item>
-  </md-list>
+      <md-list-item *ngFor="let employee of employees" class="employee-list-item">
+        <md-icon md-list-icon>face</md-icon>
+        <h4 md-line class="employee-list-item-name" [atEmployee]="employee">{{employee.firstName}} {{employee.lastName}}</h4>
+        <p md-line class="employee-list-item-email">{{employee.email}}</p>
+      </md-list-item>
+    </md-list>
+  </md-card>
 </div>
