@@ -5,6 +5,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { IdentityService } from './identity.service';
 import { ResponseHandler } from './responseHandler.service';
@@ -15,6 +16,7 @@ import { ExtHttpConfig } from './ExtHttpConfig';
   imports: [
     CommonModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     ExtHttp,
@@ -28,7 +30,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        { provide: ExtHttpConfig, useValue: config }
+        { provide: ExtHttpConfig, useValue: config },
       ]
     };
   }

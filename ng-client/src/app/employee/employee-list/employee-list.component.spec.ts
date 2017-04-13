@@ -6,12 +6,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { TestBed } from '@angular/core/testing';
 
-import { EmployeeService } from '../employee.service';
-import { Employee } from '../Employee';
-
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { CoreModule } from '../../core/core.module';
+import { EmployeeService } from '../employee.service';
+import { Employee } from '../Employee';
+import { EmployeeDirective } from './employee.directive';
 import { EmployeeListComponent } from './employee-list.component';
 
 describe('Component: EmployeeList', () => {
@@ -32,7 +33,11 @@ describe('Component: EmployeeList', () => {
     };
 
     TestBed.configureTestingModule({
-      declarations: [ EmployeeListComponent ],
+      imports: [ CoreModule ],
+      declarations: [
+        EmployeeDirective,
+        EmployeeListComponent
+      ],
       providers: [
         { provide: EmployeeService, useValue: employeeServiceStub },
         { provide: Router, useValue: routerStub }
@@ -68,7 +73,11 @@ describe('Component: EmployeeList', () => {
     expect(employeeListItems.length).toBe(1);
 
     const timeUnitElement = employeeListItems[0];
-    expect(timeUnitElement.query(By.css('.employee-list-item-name')).nativeElement.innerHTML).toEqual('John Doe');
+    const expectedEmployeeName = `
+      <span class="ts-strong employee-name">John Doe</span> <span class="ts-subtext employee-title">(admin)</span>
+    `.trim();
+    // TODO: This is the ugly result of not appending span elements but rather just text.
+    expect(timeUnitElement.query(By.css('.employee-list-item-name')).nativeElement.innerHTML).toEqual(expectedEmployeeName);
     expect(timeUnitElement.query(By.css('.employee-list-item-email')).nativeElement.innerHTML).toEqual('johndoe@email.com');
 
     expect(employeeService.getEmployees).toHaveBeenCalledTimes(1);
@@ -91,7 +100,7 @@ describe('Component: EmployeeList', () => {
 
     fixture.detectChanges();
 
-    const addEmployeeBtn = fixture.debugElement.query(By.css('.add-employee'));
+    const addEmployeeBtn = fixture.debugElement.query(By.css('.add-employee-btn'));
     addEmployeeBtn.nativeElement.click();
 
     expect(router.navigateByUrl).toHaveBeenCalledTimes(1);

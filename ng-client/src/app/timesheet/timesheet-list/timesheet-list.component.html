@@ -1,22 +1,20 @@
 <div class="timesheets">
-  <div>
-    <md-nav-list>
-      <md-list-item>
-        <div class="header">
-          Timesheets
-          <!--<span class="fill-remaining"></span>-->
-          <button md-fab (click)="add()">
-            <md-icon>add</md-icon>
-          </button>
-        </div>
-      </md-list-item>
+  <md-card>
+    <md-list>
+      <h3 md-subheader>Timesheets</h3>
+      <div class="add-item-control">
+        <a md-fab (click)="add()">
+          <md-icon>add</md-icon>
+        </a>
+      </div>
       <md-list-item *ngFor="let timesheet of timesheets" (click)="openTimesheet(timesheet)">
-        <h3 md-line>{{timesheet.name}}</h3>
-        <p md-line>{{timesheet.description}}</p>
-        <p md-line class="secondary-text">
+        <md-icon md-list-icon>access_time</md-icon>
+        <h4 md-line class="timesheet-list-item-name">{{timesheet.name}}</h4>
+        <p md-line class="timesheet-list-item-description">{{timesheet.description}}</p>
+        <p md-line class="timesheet-list-item-dates secondary-text">
           {{timesheet.beginDate | date:format}} - {{timesheet.endDate | date:format}}
         </p>
       </md-list-item>
-    </md-nav-list>
-  </div>
+    </md-list>
+  </md-card>
 </div>
