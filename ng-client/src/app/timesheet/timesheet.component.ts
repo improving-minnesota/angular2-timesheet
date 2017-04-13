@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { IdentityService } from '../auth';
+import { IdentityService } from '../core';
 import { TimesheetService } from './timesheet.service';
 import { Timesheet } from './Timesheet';
 import { TimeUnit } from '../time-units';

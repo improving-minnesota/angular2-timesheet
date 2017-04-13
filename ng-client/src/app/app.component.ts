@@ -1,7 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
-import {LocalStorage, AUTH_TOKEN_NAME} from './auth/localStorage';
-import {LoginService} from './shared/login.service';
+import {
+  AUTH_TOKEN_NAME,
+  LocalStorage
+} from './core/localStorage';
+import { LoginService } from './core/login.service';
 
 @Component({
   selector: 'at-root',

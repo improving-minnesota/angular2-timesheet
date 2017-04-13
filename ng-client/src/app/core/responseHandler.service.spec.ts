@@ -4,7 +4,10 @@ import { ResponseHandler } from './responseHandler.service';
 
 import { Router } from '@angular/router';
 import { IdentityService } from './identity.service';
-import { LocalStorage, AUTH_TOKEN_NAME, } from './localStorage';
+import {
+  AUTH_TOKEN_NAME,
+  LocalStorage
+} from './localStorage';
 
 describe('ResponseHandler Service', () => {
   let service: ResponseHandler;

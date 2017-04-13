@@ -9,7 +9,7 @@ import {
   LoginCommand,
   Name,
   User
-} from '../auth';
+} from '../core';
 
 import { ExtHttp } from './extHttp.service';
 

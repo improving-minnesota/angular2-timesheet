@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 import { MaterialModule, MdIconRegistry } from '@angular/material';
 
 import { TimesheetService } from '../timesheet.service';
-import { IdentityService, User, Name } from '../../auth';
+import { IdentityService, User, Name } from '../../core';
 
 import { Timesheet } from '../Timesheet';
 import { TimesheetListComponent } from './timesheet-list.component';

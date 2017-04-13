@@ -1,7 +1,10 @@
 import { inject } from '@angular/core/testing';
 
 import { IdentityService } from './identity.service';
-import { Name, User } from './user';
+import {
+  Name,
+  User
+} from './user';
 
 describe('Identity Service', () => {
   let service: IdentityService;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TimesheetService } from '../timesheet.service';
-import { IdentityService } from '../../auth';
+import { IdentityService } from '../../core';
 import { Router } from '@angular/router';
 import { Timesheet } from '../Timesheet';
 

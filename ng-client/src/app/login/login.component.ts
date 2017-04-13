@@ -1,9 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
-import {LoginCommand, User, IdentityService} from '../auth';
-import {LoginService} from '../shared';
+import {
+  IdentityService,
+  LoginCommand,
+  LoginService,
+  User
+} from '../core';
 
 @Component({
   selector: 'at-login',

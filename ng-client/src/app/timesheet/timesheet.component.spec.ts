@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { ActivatedRoute } from '@angular/router';
 
-import { IdentityService, User, Name } from '../auth';
+import { IdentityService, User, Name } from '../core';
 import { TimesheetService } from './timesheet.service';
 import { TimeUnit } from '../time-units';
 import { TimesheetComponent } from './timesheet.component';
