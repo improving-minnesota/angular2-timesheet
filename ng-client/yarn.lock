@@ -133,9 +133,9 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
-"@types/jasmine@2.5.38":
-  version "2.5.38"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.38.tgz#a4379124c4921d4e21de54ec74669c9e9b356717"
+"@types/jasmine@2.5.45":
+  version "2.5.45"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.45.tgz#58928a621d014ce6ab59c5a9c41071f7328b0ca9"
 
 "@types/node@6.0.60", "@types/node@^6.0.46":
   version "6.0.60"
