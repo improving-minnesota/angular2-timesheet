@@ -10,4 +10,8 @@ describe('New Employee', () => {
   beforeEach(() => {
     page = new EmployeeListPage();
   });
+
+  it('displays a list of employees', () => {
+    expect(element.all(by.css('.employee-list-item')).count()).toBeGreaterThan(0);
+  });
 });
