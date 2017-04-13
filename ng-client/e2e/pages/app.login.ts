@@ -1,15 +1,23 @@
-import { element, by } from 'protractor';
+import { by, element } from 'protractor';
 
 import { BasePage } from './app.base';
 
 export class LoginPage extends BasePage {
   constructor() {
     super();
+    this.navigateTo('login');
   }
 
-  makeValid() {
-    this.userInput.sendKeys('admin');
-    this.passwordInput.sendKeys('password');
+  public login(fail: boolean = false) {
+    if ( fail ) {
+      this.userInput.sendKeys('NOT_A_REAL_USER');
+      this.passwordInput.sendKeys('HUNTER2');
+    } else {
+      this.userInput.sendKeys('admin');
+      this.passwordInput.sendKeys('password');
+    }
+
+    return this.submitButton.click();
   }
 
   get alert() {

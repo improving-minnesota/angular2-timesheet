@@ -1,5 +1,5 @@
 import {} from 'jasmine'; // to get jasmine typescript hints
-import { element, browser, by, Key } from 'protractor';
+import { browser, by, element } from 'protractor';
 
 import { LoginPage } from './pages/app.login';
 
@@ -8,18 +8,23 @@ describe('Login', function() {
 
   beforeEach(() => {
     page = new LoginPage();
-    page.navigateTo('login');
   });
 
   it('should contain a header containing "Login"', () => {
     expect(page.toolbar.getText()).toEqual('Login');
   });
 
+  // note: these credentials will not work, which is desired
   it('does not display username hint if form is valid', () => {
-    page.makeValid();
-
-    page.submitButton.click();
+    page.login(true);
 
     expect(page.alert.getAttribute('hidden')).toBeTruthy();
+  });
+
+  it('shows an incorrect warning if credentials are not accepted', () => {
+    page.login(true);
+
+    expect(page.error).toBeDefined();
+    expect(page.error.getText()).toContain('incorrect');
   });
 });
