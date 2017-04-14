@@ -99,7 +99,7 @@ xdescribe('Component: TimesheetList', () => {
     expect(listItems[1].query(By.css('p')).nativeElement.innerHTML).toBe('description');
 
     listItems[1].nativeElement.click();
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets/1');
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/timesheets/1');
   });
 
   it('should create an instance', () => {
@@ -120,6 +120,6 @@ xdescribe('Component: TimesheetList', () => {
     addBtn.nativeElement.click();
 
     expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets/new');
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/timesheets/new');
   });
 });

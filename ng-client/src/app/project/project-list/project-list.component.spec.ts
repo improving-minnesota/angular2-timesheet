@@ -91,6 +91,6 @@ xdescribe('Component: ProjectList', () => {
     addBtn.nativeElement.click();
 
     expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/projects/new');
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/projects/new');
   });
 });

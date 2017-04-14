@@ -85,7 +85,7 @@ xdescribe('Component: Navigation', () => {
     buttons[0].nativeElement.click();
 
     expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/projects');
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/projects');
   });
 
   it('should navigate user to employees', () => {
@@ -95,7 +95,7 @@ xdescribe('Component: Navigation', () => {
     buttons[1].nativeElement.click();
 
     expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/employees');
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/employees');
   });
 
   it('should navigate user to timesheets', () => {
@@ -105,7 +105,7 @@ xdescribe('Component: Navigation', () => {
     buttons[2].nativeElement.click();
 
     expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/timesheets');
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/timesheets');
   });
 
   it('should logout user', () => {

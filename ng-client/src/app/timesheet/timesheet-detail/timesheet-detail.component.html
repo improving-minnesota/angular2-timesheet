@@ -1,5 +1,4 @@
-
-<md-card>
+<div>
   <md-card-subtitle>Timesheet Details</md-card-subtitle>
   <md-card-title>{{timesheet.name}} </md-card-title>
   <md-card-content>
@@ -8,7 +7,7 @@
     <p>{{timesheet | timesheetComplete}}</p>
   </md-card-content>
   <md-card-actions>
-    <button md-button (click)="edit()">Edit</button>
+    <button md-button (click)="edit()" disabled>Edit</button>
     <button md-button (click)="cancel()">Cancel</button>
   </md-card-actions>
-</md-card>
+</div>

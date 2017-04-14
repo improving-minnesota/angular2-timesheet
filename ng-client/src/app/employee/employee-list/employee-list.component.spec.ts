@@ -82,28 +82,4 @@ describe('Component: EmployeeList', () => {
 
     expect(employeeService.getEmployees).toHaveBeenCalledTimes(1);
   });
-
-  it('should navigate to add employee view', () => {
-    employeeService.getEmployees.and.callFake(() => {
-      return Observable.create((obs) => {
-        obs.next([new Employee({
-          _id: '1',
-          username: 'johndoe',
-          admin: true,
-          email: 'johndoe@email.com',
-          firstName: 'John',
-          lastName: 'Doe',
-          password: '',
-        })]);
-      });
-    });
-
-    fixture.detectChanges();
-
-    const addEmployeeBtn = fixture.debugElement.query(By.css('.add-employee-btn'));
-    addEmployeeBtn.nativeElement.click();
-
-    expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/home/employees/new');
-  });
 });

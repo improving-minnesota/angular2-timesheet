@@ -1,10 +1,11 @@
-import {NgModule} from '@angular/core';
-import {ProjectNewComponent} from './project-new';
-import {ProjectListComponent} from './project-list';
-import {FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {MaterialModule} from '@angular/material';
-import {ProjectService} from './project.service';
+import { NgModule } from '@angular/core';
+import { ProjectNewComponent } from './project-new';
+import { ProjectListComponent } from './project-list';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
+import { ProjectService } from './project.service';
+import { ProjectRoutingModule } from './project-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,11 @@ import {ProjectService} from './project.service';
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    ProjectRoutingModule,
   ],
   exports: [],
-  providers: [ProjectService]
+  providers: [ ProjectService ]
 })
 export class ProjectModule {
 }

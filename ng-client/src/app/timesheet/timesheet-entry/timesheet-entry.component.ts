@@ -75,7 +75,7 @@ export class TimesheetEntryComponent implements OnInit {
   }
 
   cancel(): boolean {
-    this.router.navigateByUrl(`/home/timesheets/${this.timesheetId}`);
+    this.router.navigateByUrl(`/timesheets/${this.timesheetId}`);
     return false;
   }
 
@@ -88,7 +88,7 @@ export class TimesheetEntryComponent implements OnInit {
     });
 
     this.timeUnitService.create(this.identityService.user, timeUnit).subscribe((result) => {
-      this.router.navigateByUrl(`/home/timesheets/${this.timesheetId}`);
+      this.router.navigateByUrl(`/timesheets/${this.timesheetId}`);
     });
   }
 }

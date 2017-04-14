@@ -4,16 +4,18 @@ import { Observable } from 'rxjs/Observable';
 
 import {
   AUTH_TOKEN_NAME,
-  IdentityService,
   LocalStorage,
-  LoginCommand,
+} from './localStorage';
+import { IdentityService } from './identity.service';
+import { LoginCommand } from './LoginCommand';
+import {
   Name,
-  User
-} from '../core';
+  User,
+} from './user';
 
 import { ExtHttp } from './extHttp.service';
 
-import {JwtHelper} from 'angular2-jwt';
+import { JwtHelper } from 'angular2-jwt';
 
 @Injectable()
 export class LoginService {

@@ -20,6 +20,6 @@ export class EmployeeNewComponent implements OnInit {
   }
 
   save() {
-    this.employeeService.save(this.employee).subscribe(() => this.router.navigateByUrl('/home/employees'));
+    this.employeeService.save(this.employee).subscribe(() => this.router.navigateByUrl('/employees'));
   }
 }

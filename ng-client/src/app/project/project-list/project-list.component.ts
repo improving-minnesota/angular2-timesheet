@@ -21,9 +21,4 @@ export class ProjectListComponent implements OnInit {
       this.projects = projects;
     });
   }
-
-  add() {
-    this.router.navigateByUrl('/home/projects/new');
-  }
-
 }
