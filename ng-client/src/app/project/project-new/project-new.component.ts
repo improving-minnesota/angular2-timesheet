@@ -21,7 +21,7 @@ export class ProjectNewComponent implements OnInit {
   }
 
   save() {
-    this.projectService.save(this.project).subscribe(() => this.router.navigate(['/home/projects']));
+    this.projectService.save(this.project).subscribe(() => this.router.navigate(['/projects']));
   }
 
 }

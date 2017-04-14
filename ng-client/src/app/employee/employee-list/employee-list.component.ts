@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
-import {Employee} from '../Employee';
-import {EmployeeService} from '../employee.service';
+import { Employee } from '../Employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'at-employee-list',
@@ -11,20 +13,14 @@ import {EmployeeService} from '../employee.service';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[];
-  condition: boolean;
 
-  constructor(private employeeService: EmployeeService, private router: Router) {
+  constructor(private employeeService: EmployeeService) {
+    this.employees = [];
   }
 
   ngOnInit() {
     this.employeeService.getEmployees().subscribe((employees) => {
       this.employees = employees;
     });
-    this.condition = false;
   }
-
-  add() {
-    this.router.navigateByUrl('/home/employees/new');
-  }
-
 }

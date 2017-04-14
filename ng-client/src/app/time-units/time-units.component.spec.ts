@@ -58,7 +58,7 @@ xdescribe('Component: TimeUnits', () => {
     logTimeBtn.nativeElement.click();
 
     expect(router.navigateByUrl).toHaveBeenCalledTimes(1);
-    expect(router.navigateByUrl).toHaveBeenCalledWith(`/home/timesheets/1/entry`);
+    expect(router.navigateByUrl).toHaveBeenCalledWith(`/timesheets/1/entry`);
   });
 });
 

@@ -2,12 +2,16 @@
   <md-progress-circle mode="indeterminate"></md-progress-circle>
 </div>
 <div *ngIf="loaded">
-  <at-timesheet-detail
-    [timesheet]="timesheet"
-    [dateFormat]="dateFormat">
-  </at-timesheet-detail>
-  <at-time-units
-    [timesheetId]="timesheetId"
-    [timeUnits]="timeUnits">
-  </at-time-units>
+  <md-card>
+    <at-timesheet-detail
+      [timesheet]="timesheet"
+      [dateFormat]="dateFormat">
+    </at-timesheet-detail>
+  </md-card>
+  <md-card>
+    <at-time-units
+      [timesheetId]="timesheetId"
+      [timeUnits]="timeUnits">
+    </at-time-units>
+  </md-card>
 </div>

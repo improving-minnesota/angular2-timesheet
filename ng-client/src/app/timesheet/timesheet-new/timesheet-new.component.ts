@@ -64,6 +64,6 @@ export class TimesheetNewComponent implements OnInit {
     const timesheet = new Timesheet(data);
 
     this.timesheetService.save(this.identityService.user, timesheet)
-      .subscribe(() => this.router.navigate(['/home/timesheets']));
+      .subscribe(() => this.router.navigate(['/timesheets']));
   }
 }

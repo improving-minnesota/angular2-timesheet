@@ -18,6 +18,7 @@ import { TimesheetEntryComponent } from './timesheet-entry';
 import { TimesheetCompletePipe } from './timesheet-detail/timesheet-complete.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TimeUnitService } from '../time-units';
+import { TimesheetRoutingModule } from './timesheet-routing.module';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,9 @@ import { TimeUnitService } from '../time-units';
     CommonModule,
     MaterialModule.forRoot(),
     ReactiveFormsModule,
-    RouterModule,
     TimeUnitsModule,
     TimeUnitsModule,
+    TimesheetRoutingModule,
   ],
   providers: [
     IdentityService,

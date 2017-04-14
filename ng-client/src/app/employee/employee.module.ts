@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 import { EmployeeService } from './employee.service';
+import { EmployeeRoutingModule } from './employee-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,9 @@ import { EmployeeService } from './employee.service';
     CommonModule,
     FormsModule,
     MaterialModule.forRoot(),
+    EmployeeRoutingModule,
   ],
-  exports: [
-  ],
+  exports: [],
   providers: [
     EmployeeService
   ],

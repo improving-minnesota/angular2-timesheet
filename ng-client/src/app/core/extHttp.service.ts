@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  ResponseHandler,
-  IdentityService
-} from '../core';
+import { ResponseHandler } from './responseHandler.service';
+import { IdentityService } from './identity.service';
 import {
   Headers,
   Http,

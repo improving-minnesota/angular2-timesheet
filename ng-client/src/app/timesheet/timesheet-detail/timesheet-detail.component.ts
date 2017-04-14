@@ -20,8 +20,12 @@ export class TimesheetDetailComponent implements OnInit {
 
   ngOnInit() {}
 
+  edit() {
+
+  }
+
   cancel() {
-    this.router.navigateByUrl('/home/timesheets');
+    this.router.navigateByUrl('/timesheets');
   }
 
 

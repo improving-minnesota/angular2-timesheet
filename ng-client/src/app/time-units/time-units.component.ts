@@ -24,6 +24,6 @@ export class TimeUnitsComponent {
   }
 
   logTime() {
-    this.router.navigateByUrl(`/home/timesheets/${this.timesheetId}/entry`);
+    this.router.navigateByUrl(`/timesheets/${this.timesheetId}/entry`);
   }
 }
