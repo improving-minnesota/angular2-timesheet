@@ -8,9 +8,17 @@ import { PageNotFoundComponent } from './core/not-found.component';
 
 const appRoutes: Routes = [
   {
+    path: 'employees',
+    loadChildren: './employee/employee.module#EmployeeModule',
+  },
+  {
+    path: 'projects',
+    loadChildren: './project/project.module#ProjectModule',
+  },
+  {
     path: '',
     redirectTo: '/projects',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   { path: '**', component: PageNotFoundComponent },
 ];
@@ -18,6 +26,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes)
   ],
+  declarations: [ PageNotFoundComponent ],
   exports: [
     RouterModule
   ]

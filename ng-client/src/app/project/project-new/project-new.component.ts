@@ -5,7 +5,6 @@ import { ProjectService } from '../project.service';
 import { Project } from '../Project';
 
 @Component({
-  selector: 'at-project-new',
   templateUrl: './project-new.component.html',
   styleUrls: ['./project-new.component.scss']
 })

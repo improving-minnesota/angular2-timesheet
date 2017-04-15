@@ -1,21 +1,43 @@
-<div class="nav-toolbar">
-  <md-toolbar color="primary">
-    Angular Timesheets
-
-    <span class="nav-fill-remaining"></span>
-
-    <span>{{user.name.first}} {{user.name.last}}</span>
-    <button md-icon-button [mdMenuTriggerFor]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
-    <md-menu #menu="mdMenu">
-      <button md-menu-item (click)="logout()">
-        <md-icon>exit_to_app</md-icon>
-        <span>Logout</span>
-      </button>
-    </md-menu>
-  </md-toolbar>
-</div>
 <div class="main-container">
-  <router-outlet></router-outlet>
+    <div class="nav-toolbar">
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenav.toggle()" *ngIf="user.authenticated">
+        <md-icon>menu</md-icon>
+      </button>
+      Angular Timesheets
+
+      <span class="nav-fill-remaining"></span>
+      <ng-container *ngIf="user.authenticated">
+        <span>{{user?.name.first}} {{user?.name.last}}</span>
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+          <md-icon>more_vert</md-icon>
+        </button>
+        <md-menu #menu="mdMenu">
+          <button md-menu-item (click)="logout()">
+            <md-icon>exit_to_app</md-icon>
+            <span>Logout</span>
+          </button>
+        </md-menu>
+      </ng-container>
+    </md-toolbar>
+  </div>
+<md-sidenav-container class="side-nav-container">
+  <md-sidenav #sidenav class="side-nav-content" mode="side">
+    <ul class="side-nav-items">
+      <li class="side-nav-item">
+        <a routerLink="/projects">Projects</a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="/timesheets">Timesheets</a>
+      </li>
+      <li class="side-nav-item">
+        <a routerLink="/employees">Employees</a>
+      </li>
+    </ul>
+  </md-sidenav>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
 </div>
