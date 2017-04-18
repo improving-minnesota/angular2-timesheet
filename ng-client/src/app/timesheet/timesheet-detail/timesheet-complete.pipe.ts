@@ -29,6 +29,8 @@ export class TimesheetCompletePipe implements PipeTransform {
 
     const percentage = hoursWorked / totalHours * 100;
 
-    return `${percentage}% completed`;
+    const rounded = isNaN(percentage) ? 0 : Math.round(percentage * 100) / 100;
+
+    return `${rounded}% completed`;
   }
 }

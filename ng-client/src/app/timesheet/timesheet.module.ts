@@ -5,9 +5,10 @@ import {
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { TimeUnitsModule } from '../time-units';
-import { IdentityService } from '../core';
+import { TimeUnitsModule, TimeUnitService } from '../time-units/';
+import { IdentityService } from '../core/';
 
 import { TimesheetService } from './timesheet.service';
 import { TimesheetComponent } from './timesheet.component';
@@ -16,8 +17,6 @@ import { TimesheetListComponent } from './timesheet-list';
 import { TimesheetDetailComponent } from './timesheet-detail';
 import { TimesheetEntryComponent } from './timesheet-entry';
 import { TimesheetCompletePipe } from './timesheet-detail/timesheet-complete.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
-import { TimeUnitService } from '../time-units';
 import { TimesheetRoutingModule } from './timesheet-routing.module';
 
 @NgModule({
