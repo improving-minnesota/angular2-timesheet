@@ -7,14 +7,14 @@ import { Observable } from 'rxjs/Observable';
 
 import { LoginService } from './login.service';
 
-import { IdentityService } from './identity.service';
+import { IdentityService } from '../identity.service';
 import {
   AUTH_TOKEN_NAME,
   LocalStorage
-} from './localStorage';
+} from '../localStorage';
 import { LoginCommand } from './LoginCommand';
 
-import { ExtHttp } from './extHttp.service';
+import { ExtHttp } from '../extHttp.service';
 
 xdescribe('Login Service', () => {
   let service;
