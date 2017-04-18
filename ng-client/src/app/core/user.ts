@@ -21,10 +21,10 @@ export class User {
   id: string;
   authenticated: boolean;
 
-  constructor(userData: UserData) {
-    this.name = userData.name;
-    this.token = userData.token;
-    this.authenticated = userData.authenticated;
-    this.id = userData.id;
+  constructor({ authenticated, id, name, token }: UserData) {
+    this.authenticated = authenticated;
+    this.id = id;
+    this.name = name;
+    this.token = token;
   }
 }

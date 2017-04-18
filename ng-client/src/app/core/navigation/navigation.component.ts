@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { IdentityService, LocalStorage, AUTH_TOKEN_NAME } from '../core';
-import { User } from '../core/user';
+import { IdentityService, LocalStorage, AUTH_TOKEN_NAME } from '../';
+import { User } from '../user';
 
 @Component({
   selector: 'at-navigation',

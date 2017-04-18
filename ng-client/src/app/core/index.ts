@@ -6,9 +6,9 @@ export * from './identity.service';
 export * from './localStorage';
 export * from './responseHandler.service';
 export * from './user';
-export * from './LoginCommand';
+export * from './login/LoginCommand';
 export * from './extHttp.service';
-export * from './login.service';
+export * from './login/login.service';
 
 export const APP_AUTH_PROVIDERS = [
   IdentityService, LocalStorage, ResponseHandler

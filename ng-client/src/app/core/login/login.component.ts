@@ -10,7 +10,7 @@ import {
   LoginCommand,
   LoginService,
   User
-} from '../core';
+} from '../';
 
 @Component({
   selector: 'at-login',

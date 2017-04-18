@@ -5,15 +5,15 @@ import { Observable } from 'rxjs/Observable';
 import {
   AUTH_TOKEN_NAME,
   LocalStorage,
-} from './localStorage';
-import { IdentityService } from './identity.service';
+} from '../localStorage';
+import { IdentityService } from '../identity.service';
 import { LoginCommand } from './LoginCommand';
 import {
   Name,
   User,
-} from './user';
+} from '../user';
 
-import { ExtHttp } from './extHttp.service';
+import { ExtHttp } from '../extHttp.service';
 
 import { JwtHelper } from 'angular2-jwt';
 

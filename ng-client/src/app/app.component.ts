@@ -7,7 +7,7 @@ import {
   AUTH_TOKEN_NAME,
   LocalStorage
 } from './core/localStorage';
-import { LoginService } from './core/login.service';
+import { LoginService } from './core/login/login.service';
 
 @Component({
   selector: 'at-root',
