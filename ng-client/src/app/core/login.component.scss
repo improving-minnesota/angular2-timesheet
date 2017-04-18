@@ -10,4 +10,17 @@
   color: $app-warn;
 }
 
+md-input-container {
+  display: block;
+}
 
+.login-button {
+  float: right;
+}
+
+@media only (min-width: 480px) {
+  md-card {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
