@@ -21,10 +21,11 @@ import { MaterialModule } from '@angular/material';
 import { ExtHttpConfig } from './core/ExtHttpConfig';
 
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './core/login.component';
-import { LoginRoutingModule } from './core/login-routing.module';
-import { PageNotFoundComponent } from './core/not-found.component';
-import { NavigationComponent } from './core/navigation.component';
+import { LoginComponent } from './core/login/login.component';
+import { LoginRoutingModule } from './core/login/login-routing.module';
+import { NotFoundComponent } from './core/not-found/not-found.component';
+import { NotFoundRoutingModule } from './core/not-found/not-found-routing.module';
+import { NavigationComponent } from './core/navigation/navigation.component';
 import { TimesheetModule } from './timesheet/timesheet.module';
 
 const host = window.location.hostname;
@@ -46,6 +47,7 @@ const extHttpConfig = {
     FormsModule,
     CoreModule.forRoot(extHttpConfig),
     EmployeeModule,
+    NotFoundRoutingModule,
     ProjectModule,
     TimesheetModule,
     LoginRoutingModule,
@@ -54,8 +56,8 @@ const extHttpConfig = {
   declarations: [
     AppComponent,
     LoginComponent,
-    PageNotFoundComponent,
     NavigationComponent,
+    NotFoundComponent,
   ],
   bootstrap: [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

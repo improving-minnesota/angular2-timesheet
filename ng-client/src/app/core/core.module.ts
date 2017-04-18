@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { IdentityService } from './identity.service';
 import { LocalStorage } from './localStorage';
-import { LoginService } from './login.service';
+import { LoginService } from './login/login.service';
 import { ResponseHandler } from './responseHandler.service';
 import { ExtHttp } from './extHttp.service';
 import { ExtHttpConfig } from './ExtHttpConfig';

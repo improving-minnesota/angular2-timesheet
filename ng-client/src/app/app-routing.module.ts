@@ -4,15 +4,16 @@ import {
   RouterModule,
 } from '@angular/router';
 
-import { PageNotFoundComponent } from './core/not-found.component';
-
 const appRoutes: Routes = [
   {
     path: '',
     redirectTo: '/projects',
     pathMatch: 'full'
   },
-  { path: '**', component: PageNotFoundComponent },
+  {
+    path: '**',
+    redirectTo: '/404'
+  }
 ];
 @NgModule({
   imports: [
