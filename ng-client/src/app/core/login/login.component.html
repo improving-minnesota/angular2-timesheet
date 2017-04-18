@@ -4,6 +4,9 @@
       Username/Password combination is incorrect
     </div>
   </div>
+  <md-card-title>
+    Hello! Please login
+  </md-card-title>
   <md-card-content>
     <form (ngSubmit)="login()" #loginForm="ngForm">
       <div>
@@ -26,9 +29,9 @@
         </md-input-container>
       </div>
 
-      <div>
-        <button type="submit" md-raised-button color="primary">Login</button>
-      </div>
+      <md-card-actions>
+        <button type="submit" class="login-button" md-raised-button color="primary">Login</button>
+      </md-card-actions>
     </form>
   </md-card-content>
 </md-card>
