@@ -1,14 +1,20 @@
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
   NgModule
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+  MdListModule,
+  MdIconModule,
+  MdInputModule,
+  MdOptionModule,
+  MdButtonModule,
+  MdCardModule,
+  MdProgressSpinnerModule,
+} from '@angular/material';
 
-import { TimeUnitsModule, TimeUnitService } from '../time-units/';
-import { IdentityService } from '../core/';
+import { TimeUnitsModule } from '../time-units';
+import { IdentityService } from '../core';
 
 import { TimesheetService } from './timesheet.service';
 import { TimesheetComponent } from './timesheet.component';
@@ -17,6 +23,8 @@ import { TimesheetListComponent } from './timesheet-list';
 import { TimesheetDetailComponent } from './timesheet-detail';
 import { TimesheetEntryComponent } from './timesheet-entry';
 import { TimesheetCompletePipe } from './timesheet-detail/timesheet-complete.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TimeUnitService } from '../time-units';
 import { TimesheetRoutingModule } from './timesheet-routing.module';
 
 @NgModule({
@@ -30,17 +38,21 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule.forRoot(),
+    MdListModule,
+    MdInputModule,
+    MdOptionModule,
+    MdIconModule,
+    MdButtonModule,
+    MdCardModule,
+    MdProgressSpinnerModule,
     ReactiveFormsModule,
     TimeUnitsModule,
     TimeUnitsModule,
     TimesheetRoutingModule,
   ],
   providers: [
-    IdentityService,
     TimesheetService,
     TimeUnitService,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class TimesheetModule {}
