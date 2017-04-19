@@ -4,22 +4,38 @@ import {
   RouterModule,
 } from '@angular/router';
 
+import { AuthGuard } from '../core/auth-guard.service';
+
+import { TimesheetRootComponent } from './timesheet-root/timesheet-root.component';
 import { TimesheetListComponent } from './timesheet-list/timesheet-list.component';
 import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
 import { TimesheetComponent } from './timesheet.component';
 import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
 
-const employeeRoutes: Routes = [
-  { path: 'timesheets', component: TimesheetListComponent},
-  { path: 'timesheets/new', component: TimesheetNewComponent },
-  { path: 'timesheets/:id', component: TimesheetComponent },
-  { path: 'timesheets/:id/entry', component: TimesheetEntryComponent }
+const timesheetRoutes: Routes = [
+  {
+    path: 'timesheets',
+    component: TimesheetRootComponent,
+    canActivate: [ AuthGuard ],
+    children: [
+      {
+        path: '',
+        children: [
+          { path: '', component: TimesheetListComponent },
+          { path: 'new', component: TimesheetNewComponent },
+          { path: ':id', component: TimesheetComponent },
+          { path: ':id/entry', component: TimesheetEntryComponent },
+        ]
+      }
+    ]
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(employeeRoutes)
+    RouterModule.forChild(timesheetRoutes)
   ],
+  declarations: [ TimesheetRootComponent ],
   exports: [
     RouterModule
   ]

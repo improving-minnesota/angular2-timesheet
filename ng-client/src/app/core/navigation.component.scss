@@ -3,3 +3,33 @@
     flex: 1 1 auto;
   }
 }
+
+.side-nav-content {
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+  width: 200px;
+}
+
+.side-nav-items {
+  margin: 0;
+  padding: 0;
+}
+.side-nav-item {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: rgba(0,0,0,.06);
+}
+
+.side-nav-item:last-child {
+  border-color: transparent;
+}
+
+.side-nav-item > a {
+  color: rgba(0,0,0,.54);
+  display: block;
+  padding: 1.5em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #fafafa;
+  }
+}

@@ -7,7 +7,6 @@ import { Employee } from '../Employee';
 import { EmployeeService } from '../employee.service';
 
 @Component({
-  selector: 'at-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.scss'],
 })

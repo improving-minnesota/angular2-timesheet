@@ -1,9 +1,18 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+
+import {
+  MdListModule,
+  MdIconModule,
+  MdInputModule,
+  MdOptionModule,
+  MdButtonModule,
+  MdCardModule,
+} from '@angular/material';
+
 import { EmployeeNewComponent } from './employee-new';
 import { EmployeeListComponent, EmployeeDirective } from './employee-list';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
 import { EmployeeService } from './employee.service';
 import { EmployeeRoutingModule } from './employee-routing.module';
 
@@ -16,13 +25,15 @@ import { EmployeeRoutingModule } from './employee-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule.forRoot(),
     EmployeeRoutingModule,
+    MdIconModule,
+    MdButtonModule,
+    MdCardModule,
+    MdInputModule,
   ],
   exports: [],
   providers: [
     EmployeeService
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class EmployeeModule { }
