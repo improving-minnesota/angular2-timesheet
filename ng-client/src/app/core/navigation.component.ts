@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { IdentityService, LocalStorage, AUTH_TOKEN_NAME } from '../core';
@@ -10,6 +10,8 @@ import { User } from '../core/user';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  @ViewChild('sidenav')
+  sideNav: ViewChild;
 
   user: User;
 
@@ -30,6 +32,7 @@ export class NavigationComponent implements OnInit {
   logout() {
     this.identityService.clear();
     this.storage.removeItem(AUTH_TOKEN_NAME);
+    (this.sideNav as any).close();
     this.router.navigateByUrl('/login');
   }
 }
