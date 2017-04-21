@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdCardModule, MdListModule } from '@angular/material';
 
-import {TimeUnitsComponent} from './time-units.component';
+import {
+  MdCardModule,
+  MdListModule,
+  MdButtonModule,
+} from '@angular/material';
+
+import { TimeUnitsComponent } from './time-units.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +15,10 @@ import {TimeUnitsComponent} from './time-units.component';
   ],
   exports: [TimeUnitsComponent],
   imports: [
-    CommonModule, MdListModule, MdCardModule
+    CommonModule,
+    MdListModule,
+    MdCardModule,
+    MdButtonModule
   ]
 })
 export class TimeUnitsModule { }
