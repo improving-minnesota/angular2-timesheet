@@ -7,10 +7,10 @@ import {
   MdListModule,
   MdIconModule,
   MdInputModule,
-  MdOptionModule,
   MdButtonModule,
   MdCardModule,
   MdProgressSpinnerModule,
+  MdSelectModule
 } from '@angular/material';
 
 import { TimeUnitsModule } from '../time-units';
@@ -40,15 +40,14 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
     CommonModule,
     MdListModule,
     MdInputModule,
-    MdOptionModule,
     MdIconModule,
     MdButtonModule,
     MdCardModule,
     MdProgressSpinnerModule,
     ReactiveFormsModule,
     TimeUnitsModule,
-    TimeUnitsModule,
     TimesheetRoutingModule,
+    MdSelectModule
   ],
   providers: [
     TimesheetService,

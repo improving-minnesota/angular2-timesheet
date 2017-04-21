@@ -7,10 +7,15 @@ import {
   MdOptionModule,
   MdButtonModule,
   MdCardModule,
+  MdCheckboxModule,
+  MdSelectModule,
 } from '@angular/material';
 
 import { EmployeeNewComponent } from './employee-new';
-import { EmployeeListComponent, EmployeeDirective } from './employee-list';
+import {
+  EmployeeDirective,
+  EmployeeListComponent,
+} from './employee-list';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EmployeeService } from './employee.service';
@@ -30,6 +35,8 @@ import { EmployeeRoutingModule } from './employee-routing.module';
     MdButtonModule,
     MdCardModule,
     MdInputModule,
+    MdCheckboxModule,
+    MdSelectModule,
   ],
   exports: [],
   providers: [

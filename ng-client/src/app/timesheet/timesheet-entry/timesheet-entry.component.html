@@ -4,13 +4,10 @@
     <form (ngSubmit)="logTime()" [formGroup]="form">
 
       <div>
-        <md-select formControlName="selectedProject" placeholder="Project">
+        <md-select formControlName="selectedProject" placeholder="Project" class="input-full-width">
           <md-option *ngFor="let project of projects" [value]="project">{{project.name}}</md-option>
         </md-select>
       </div>
-      <!-- <div [hidden]="selectedProject.valid || selectedProject.pristine" class="alert">
-        Project is required
-      </div> -->
 
       <!-- Date Worked -->
       <md-input-container class="input-full-width">
