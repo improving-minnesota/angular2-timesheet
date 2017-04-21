@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import {
   MdListModule,
@@ -8,10 +11,9 @@ import {
   MdCardModule,
 } from '@angular/material';
 
+import { ProjectRootComponent } from './project-root/project-root.component';
 import { ProjectNewComponent } from './project-new';
 import { ProjectListComponent } from './project-list';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { ProjectService } from './project.service';
 import { ProjectRoutingModule } from './project-routing.module';
 
@@ -29,6 +31,7 @@ import { ProjectRoutingModule } from './project-routing.module';
     MdListModule,
     MdButtonModule,
     MdCardModule,
+    RouterModule,
   ],
   exports: [],
   providers: []

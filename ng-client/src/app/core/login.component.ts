@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       if (user.authenticated === false) {
         this.error = true;
       } else {
-        this.router.navigateByUrl('/projects');
+        this.router.navigateByUrl('/');
       }
     });
   }
