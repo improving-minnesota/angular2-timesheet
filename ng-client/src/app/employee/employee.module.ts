@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import {
   MdListModule,
@@ -11,13 +14,11 @@ import {
   MdSelectModule,
 } from '@angular/material';
 
-import { EmployeeNewComponent } from './employee-new';
-import {
-  EmployeeDirective,
-  EmployeeListComponent,
-} from './employee-list';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { EmployeeRootComponent} from './employee-root/employee-root.component';
+import { EmployeeNewComponent } from './employee-new/employee-new.component';
+import { EmployeeDirective } from './employee-list/employee.directive';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+
 import { EmployeeService } from './employee.service';
 import { EmployeeRoutingModule } from './employee-routing.module';
 
@@ -37,6 +38,8 @@ import { EmployeeRoutingModule } from './employee-routing.module';
     MdInputModule,
     MdCheckboxModule,
     MdSelectModule,
+    MdListModule,
+    RouterModule,
   ],
   exports: [],
   providers: [

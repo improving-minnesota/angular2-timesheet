@@ -1,6 +1,4 @@
-import {
-  NgModule
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
@@ -10,7 +8,7 @@ import {
   MdButtonModule,
   MdCardModule,
   MdProgressSpinnerModule,
-  MdSelectModule
+  MdSelectModule,
 } from '@angular/material';
 
 import { TimeUnitsModule } from '../time-units';
@@ -47,7 +45,7 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
     ReactiveFormsModule,
     TimeUnitsModule,
     TimesheetRoutingModule,
-    MdSelectModule
+    MdSelectModule,
   ],
   providers: [
     TimesheetService,
