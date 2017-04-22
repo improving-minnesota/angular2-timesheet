@@ -21,8 +21,6 @@ export class TimesheetService {
     });
   }
 
-  getTimesheet(user: User, timesheetId: string): Observable<Timesheet> {
-    return this.http.get(`/users/${user.id}/timesheets/${timesheetId}`)
-      .map((response) => response.json() as Timesheet);
-  }
+  // add getTimesheet method that requests an individual timesheet for a given user and timesheetId
+  // Path: /users/${userId}/timesheets/${timesheetId}
 }

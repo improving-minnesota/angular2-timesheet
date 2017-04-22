@@ -5,6 +5,7 @@ import { IdentityService } from '../core';
 import { TimesheetService } from './timesheet.service';
 import { Timesheet } from './Timesheet';
 import { TimeUnit } from '../time-units/TimeUnit';
+import { TimeUnitService } from '../time-units/timeunit.service';
 
 @Component({
   selector: 'at-timesheet',
@@ -23,7 +24,8 @@ export class TimesheetComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private identityService: IdentityService,
-              private timesheetService: TimesheetService) {
+              private timesheetService: TimesheetService,
+              private timeUnitService: TimeUnitService) {
   }
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class TimesheetComponent implements OnInit {
           this.timesheet = timesheet;
         });
 
-      this.timesheetService.getTimeUnits(this.identityService.user, this.timesheetId)
+      this.timeUnitService.getTimeUnits(this.identityService.user, this.timesheetId)
         .subscribe((timeUnits) => {
           this.timeUnits = timeUnits;
           timesheetObservable.subscribe(() => {

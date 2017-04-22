@@ -7,20 +7,21 @@ import {
   MdButtonModule,
 } from '@angular/material';
 
-import { TimeUnitsComponent } from './time-units.component';
 import { TimeUnitService } from './timeunit.service';
 
 @NgModule({
   declarations: [
-    TimeUnitsComponent
+    // declare your new components
   ],
-  exports: [ TimeUnitsComponent ],
+  exports: [
+    // export any new components that other modules might need
+  ],
   imports: [
     CommonModule,
     MdListModule,
     MdCardModule,
     MdButtonModule
   ],
-  providers:[ TimeUnitService ]
+  providers: [ TimeUnitService ]
 })
 export class TimeUnitsModule { }
