@@ -1,1 +1,1 @@
-// create a new component that request a list of projects from project services and displays a list of those projects
+// create a new component containing a hard-cded list of projects that display in the web page

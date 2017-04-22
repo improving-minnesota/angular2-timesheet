@@ -6,17 +6,6 @@ import { AppComponent } from './app.component';
 
 // import new dependencies
 
-const host = window.location.hostname;
-let baseUrl = 'https://localhost:8080';
-
-if (host === 'localhost') {
-  baseUrl = 'http://localhost:4000';
-}
-
-const extHttpConfig = {
-  url: baseUrl
-};
-
 @NgModule({
   imports: [
     BrowserModule,

@@ -1,1 +1,1 @@
-// create a new project module with appropriate configurations for services and components
+// create a new project module with appropriate configurations for components
