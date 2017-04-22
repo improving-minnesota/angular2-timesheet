@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../project.service';
 import { Project } from '../Project';
 
 @Component({
@@ -11,11 +10,24 @@ export class ProjectListComponent implements OnInit {
 
   projects: Project[];
 
-  constructor(private projectService: ProjectService) {
+  constructor() {
     this.projects = [];
   }
 
   ngOnInit() {
-    this.projects = this.projectService.getProjects();
+    this.projects = [
+      new Project({
+        name: 'Great Project',
+        description: 'A great project!'
+      }),
+      new Project({
+        name: 'Good Project',
+        description: 'A pretty good project.'
+      }),
+      new Project({
+        name: 'The Worst Project',
+        description: 'Nobody wants to work on this.'
+      })
+    ];
   }
 }

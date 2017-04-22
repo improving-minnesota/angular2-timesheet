@@ -9,8 +9,7 @@ import {
   MdCardModule,
 } from '@angular/material';
 
-import { ProjectListComponent } from './project-list';
-import { ProjectService } from './project.service';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +26,7 @@ import { ProjectService } from './project.service';
   exports: [
     ProjectListComponent
   ],
-  providers: [
-    ProjectService
-  ]
+  providers: []
 })
 export class ProjectModule {
 }
