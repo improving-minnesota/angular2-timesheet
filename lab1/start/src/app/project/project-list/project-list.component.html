@@ -1,0 +1,18 @@
+<md-card>
+  <md-list>
+    <h3 md-subheader>Projects</h3>
+    <div class="add-item-control">
+      <a md-fab  href="#" class="add-project-btn">
+        <md-icon>add</md-icon>
+      </a>
+    </div>
+    <md-list-item *ngIf="projects.length === 0">
+      <p md-line class="empty-list-message">You don't have any projects yet!</p>
+    </md-list-item>
+    <md-list-item class="project" *ngFor="let project of projects">
+      <md-icon md-list-icon>business</md-icon>
+      <h4 md-line class="project-list-item-name">{{project.name}}</h4>
+      <p md-line class="project-list-item-description">{{project.description}}</p>
+    </md-list-item>
+  </md-list>
+</md-card>
