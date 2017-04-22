@@ -1,0 +1,6 @@
+<md-list>
+  <md-list-item *ngFor="let unit of timeUnits" class="timeunits-item">
+    <h3 md-line class="timeunits-item-hours">{{unit.hoursWorked}} Hours: {{unit.project}}</h3>
+    <p md-line class="secondary-text timeunits-item-date">{{unit.dateWorked | date: dateFormat}}</p>
+  </md-list-item>
+</md-list>
