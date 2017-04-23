@@ -16,8 +16,5 @@ export class EmployeeService {
     });
   }
 
-  save(employee: Employee) {
-    this.http.post('/users', employee)
-      .map((response) => response.json() as Employee);
-  }
+  // add a new method to persist an employee
 }

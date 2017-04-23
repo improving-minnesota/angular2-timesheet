@@ -16,7 +16,6 @@ import { IdentityService } from '../core';
 
 import { TimesheetService } from './timesheet.service';
 import { TimesheetComponent } from './timesheet.component';
-import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
 import { TimesheetListComponent } from './timesheet-list/timesheet-list.component';
 import { TimesheetDetailComponent } from './timesheet-detail/timesheet-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +26,6 @@ import { TimeUnitService } from '../time-units/timeunit.service';
     TimesheetComponent,
     TimesheetDetailComponent,
     TimesheetListComponent,
-    TimesheetNewComponent,
   ],
   imports: [
     CommonModule,
