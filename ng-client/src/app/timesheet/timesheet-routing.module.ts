@@ -14,7 +14,7 @@ import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.compo
 
 const timesheetRoutes: Routes = [
   {
-    path: 'timesheets',
+    path: '',
     component: TimesheetRootComponent,
     canActivate: [ AuthGuard ],
     children: [
