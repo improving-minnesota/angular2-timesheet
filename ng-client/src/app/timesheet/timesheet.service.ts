@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import {
   ExtHttp,
   User
- } from '../core';
+} from '../core';
 import { Timesheet } from './Timesheet';
 import { TimeUnit } from '../time-units';
 
@@ -14,38 +14,22 @@ export class TimesheetService {
   }
 
   getTimesheets(user: User): Observable<Timesheet[]> {
-    return Observable.create((observer) => {
-      this.http.get(`/users/${user.id}/timesheets`).subscribe((response) => {
-        observer.next(response.json());
-      });
-    });
+    return this.http.get(`/users/${user.id}/timesheets`)
+      .map((response) => response.json() as Timesheet[]);
   }
 
   getTimesheet(user: User, timesheetId: string): Observable<Timesheet> {
-    return Observable.create((observer) => {
-      this.http.get(`/users/${user.id}/timesheets/${timesheetId}`).subscribe((response) => {
-        observer.next(new Timesheet(response.json()));
-      });
-    });
+    return this.http.get(`/users/${user.id}/timesheets/${timesheetId}`)
+      .map((response) => response.jsoin() as Timesheet);
   }
 
-  getTimeUnits(user: User, timesheetId: string): Observable<any> {
-    return Observable.create((observer) => {
-      this.http.get(`/users/${user.id}/timesheets/${timesheetId}/timeunits`).subscribe((response) => {
-        const units = response.json().map((data) => {
-          const unit = new TimeUnit(data);
-          return unit;
-        });
-        observer.next(units);
-      });
-    });
+  getTimeUnits(user: User, timesheetId: string): Observable<TimeUnit[]> {
+    return this.http.get(`/users/${user.id}/timesheets/${timesheetId}/timeunits`)
+      .map((response) => response.json() as TimeUnit[]);
   }
 
-  save(user: User, timesheet: Timesheet) {
-    return Observable.create((observer) => {
-      this.http.post(`/users/${user.id}/timesheets`, timesheet).subscribe((response) => {
-        observer.next(response.json());
-      });
-    });
+  save(user: User, timesheet: Timesheet): Observable<Timesheet> {
+    return this.http.post(`/users/${user.id}/timesheets`, timesheet)
+      .map((response) => response.json() as Timesheet);
   }
 }

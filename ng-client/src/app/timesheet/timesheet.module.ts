@@ -46,6 +46,7 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
     TimeUnitsModule,
     TimesheetRoutingModule,
     MdSelectModule,
+    RouterModule,
   ],
   providers: [
     TimesheetService,

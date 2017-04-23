@@ -9,18 +9,12 @@ export class ProjectService {
   constructor(private http: ExtHttp) {}
 
   getProjects(): Observable<Project[]> {
-    return Observable.create((observer) => {
-      this.http.get('/projects').subscribe((response) => {
-        observer.next(response.json());
-      });
-    });
+    return this.http.get('/projects')
+      .map((response) => response.json() as Project[]);
   }
 
-  save(project: Project) {
-    return Observable.create((observer) => {
-      this.http.post('/projects', project).subscribe((response) => {
-        observer.next(response.json());
-      });
-    });
+  save(project: Project): Observable<Project> {
+    return this.http.post('/projects', project)
+      .map((response) => response.json() as Project);
   }
 }
