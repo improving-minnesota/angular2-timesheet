@@ -9,7 +9,6 @@ import { EmployeeNewComponent } from './employee/employee-new/employee-new.compo
 
 import { TimesheetListComponent } from './timesheet/timesheet-list/timesheet-list.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
-import { TimesheetNewComponent } from './timesheet/timesheet-new/timesheet-new.component';
 
 
 import { ProjectListComponent } from './project/project-list/project-list.component';
@@ -22,7 +21,6 @@ const appRoutes: Routes = [
   { path: 'employees/new', component: EmployeeNewComponent },
 
   { path: 'timesheets', component: TimesheetListComponent },
-  { path: 'timesheets/new', component: TimesheetNewComponent },
   { path: 'timesheets/:id', component: TimesheetComponent },
 
   { path: 'projects', component: ProjectListComponent },

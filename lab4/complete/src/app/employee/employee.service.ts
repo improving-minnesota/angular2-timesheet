@@ -16,8 +16,8 @@ export class EmployeeService {
     });
   }
 
-  save(employee: Employee) {
-    this.http.post('/users', employee)
+  save(employee: Employee): Observable<Employee> {
+    return this.http.post('/users', employee)
       .map((response) => response.json() as Employee);
   }
 }
