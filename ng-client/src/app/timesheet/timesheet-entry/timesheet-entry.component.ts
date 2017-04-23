@@ -14,14 +14,10 @@ import {
 import * as moment from 'moment';
 
 import { IdentityService } from '../../core';
-import {
-  Project,
-  ProjectService
-} from '../../project';
-import {
-  TimeUnit,
-  TimeUnitService
-} from '../../time-units';
+import { Project } from '../../project/Project';
+import { ProjectService } from '../../project/project.service';
+import { TimeUnitService } from '../../time-units/timeunit.service';
+import { TimeUnit } from '../../time-units/TimeUnit';
 
 @Component({
   templateUrl: './timesheet-entry.component.html',

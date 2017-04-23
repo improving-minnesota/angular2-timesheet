@@ -11,11 +11,9 @@ import {
   MdCardModule,
 } from '@angular/material';
 
-import { ProjectRootComponent } from './project-root/project-root.component';
-import { ProjectNewComponent } from './project-new';
-import { ProjectListComponent } from './project-list';
+import { ProjectNewComponent } from './project-new/project-new.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectService } from './project.service';
-import { ProjectRoutingModule } from './project-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +23,6 @@ import { ProjectRoutingModule } from './project-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    ProjectRoutingModule,
     MdIconModule,
     MdInputModule,
     MdListModule,
@@ -33,7 +30,7 @@ import { ProjectRoutingModule } from './project-routing.module';
     MdCardModule,
     RouterModule,
   ],
-  exports: [],
+  exports: [ ],
   providers: []
 })
 export class ProjectModule {

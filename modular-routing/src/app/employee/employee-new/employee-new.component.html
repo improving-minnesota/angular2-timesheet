@@ -1,0 +1,85 @@
+<md-card>
+  <h2 class="title">New Employee</h2>
+  <md-card-content>
+    <form (ngSubmit)="save()" #employeeForm="ngForm">
+      <div>
+        <md-input-container class="input-full-width">
+          <input mdInput
+                    placeholder="First Name"
+                    required
+                    [(ngModel)]="employee.firstName"
+                    name="firstName"
+                    dividerColor="warm"
+                    #firstName="ngModel">
+        </md-input-container>
+        <div [hidden]="firstName.valid || firstName.pristine" class="alert">
+          First Name is required
+        </div>
+
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Last Name"
+                    required
+                    [(ngModel)]="employee.lastName"
+                    name="lastName"
+                    dividerColor="warm"
+                    #lastName="ngModel">
+        </md-input-container>
+        <div [hidden]="lastName.valid || lastName.pristine" class="alert">
+          Last Name is required
+        </div>
+
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Email"
+                    required
+                    [(ngModel)]="employee.email"
+                    name="email"
+                    dividerColor="warm"
+                    #email="ngModel">
+        </md-input-container>
+        <div [hidden]="email.valid || email.pristine" class="alert">
+          Email is required
+        </div>
+
+        <md-checkbox
+          [(ngModel)]="employee.admin"
+          name="admin"
+          #admin="ngModel">
+          Admin
+        </md-checkbox>
+
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Username"
+                    required
+                    [(ngModel)]="employee.username"
+                    name="username"
+                    dividerColor="warm"
+                    #username="ngModel">
+        </md-input-container>
+        <div [hidden]="username.valid || username.pristine" class="alert">
+          Username is required
+        </div>
+
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Password"
+                    required
+                    [(ngModel)]="employee.password"
+                    name="password"
+                    dividerColor="warm"
+                    #password="ngModel">
+        </md-input-container>
+        <div [hidden]="password.valid || password.pristine" class="alert">
+          Password is required
+        </div>
+
+      </div>
+
+      <br>
+      <div>
+        <button type="submit"
+               class="save-new-employee-btn"
+               [disabled]="!employeeForm.valid"
+               md-raised-button color="primary">Save</button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>
