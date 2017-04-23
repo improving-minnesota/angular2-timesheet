@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import {
   MdListModule,
   MdIconModule,
@@ -21,7 +23,6 @@ import { TimesheetListComponent } from './timesheet-list';
 import { TimesheetDetailComponent } from './timesheet-detail';
 import { TimesheetEntryComponent } from './timesheet-entry';
 import { TimesheetCompletePipe } from './timesheet-detail/timesheet-complete.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
 import { TimeUnitService } from '../time-units';
 import { TimesheetRoutingModule } from './timesheet-routing.module';
 

@@ -16,6 +16,10 @@ const appRoutes: Routes = [
     loadChildren: './project/project.module#ProjectModule',
   },
   {
+    path: 'timesheets',
+    loadChildren: './timesheet/timesheet.module.ts#TimesheetModule'
+  },
+  {
     path: '',
     redirectTo: '/projects',
     pathMatch: 'full',
