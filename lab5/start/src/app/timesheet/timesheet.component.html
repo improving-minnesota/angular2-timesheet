@@ -1,0 +1,17 @@
+<div *ngIf="!loaded">
+  <md-progress-spinner mode="indeterminate"></md-progress-spinner>
+</div>
+<div *ngIf="loaded">
+  <md-card>
+    <at-timesheet-detail
+      [timesheet]="timesheet"
+      [dateFormat]="dateFormat">
+    </at-timesheet-detail>
+  </md-card>
+  <md-card>
+    <at-time-units
+      [timesheetId]="timesheetId"
+      [timeUnits]="timeUnits">
+    </at-time-units>
+  </md-card>
+</div>
