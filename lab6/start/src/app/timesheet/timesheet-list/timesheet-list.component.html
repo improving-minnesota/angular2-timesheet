@@ -1,0 +1,22 @@
+<md-card>
+  <md-list>
+    <h3 md-subheader>Timesheets</h3>
+    <div class="add-item-control">
+      <a md-fab routerLink="/timesheets/new">
+        <md-icon>add</md-icon>
+      </a>
+    </div>
+    <md-list-item *ngIf="timesheets?.length === 0">
+      <p md-line class="empty-list-message">You don't have any timesheets yet!</p>
+    </md-list-item>
+    <md-list-item *ngFor="let timesheet of timesheets" (click)="openTimesheet(timesheet)">
+      <md-icon md-list-icon>access_time</md-icon>
+      <h4 md-line class="timesheet-list-item-name">{{timesheet.name}}</h4>
+      <p md-line class="timesheet-list-item-description">{{timesheet.description}}</p>
+      <p md-line class="timesheet-list-item-dates secondary-text">
+        {{timesheet.beginDate | date:format}} - {{timesheet.endDate | date:format}}
+      </p>
+      <p md-line>Status: NOT YET IMPLEMENTED</p>
+    </md-list-item>
+  </md-list>
+</md-card>
