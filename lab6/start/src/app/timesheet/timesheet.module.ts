@@ -31,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TimesheetEntryComponent,
     TimesheetListComponent,
     TimesheetNewComponent,
+    // declare the TimesheetStatusPipe
   ],
   imports: [
     CommonModule,
