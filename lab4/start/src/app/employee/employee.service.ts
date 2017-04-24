@@ -6,15 +6,15 @@ import { ExtHttp } from '../core/extHttp.service';
 @Injectable()
 export class EmployeeService {
 
-  constructor(private http: ExtHttp) {}
+  constructor(private http: ExtHttp) { }
 
   getEmployees(): Observable<Employee[]> {
-    return this.http.get('/users')
-      .map(response => response.json() as Employee[]);
+    return Observable.create((observer) => {
+      this.http.get('/users').subscribe((response) => {
+        observer.next(response.json());
+      });
+    });
   }
 
-  save(employee: Employee): Observable<Employee> {
-    return this.http.post('/users', employee)
-      .map((response) => response.json() as Employee);
-  }
+  // implement method to post/sava an Employee
 }
