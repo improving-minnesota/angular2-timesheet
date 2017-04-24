@@ -1,0 +1,37 @@
+<md-card>
+  <div class="alert-container">
+    <div class="alert-content" *ngIf="error">
+      Username/Password combination is incorrect
+    </div>
+  </div>
+  <md-card-title>
+    Hello! Please login
+  </md-card-title>
+  <md-card-content>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Username"
+                    required
+                    [(ngModel)]="command.username"
+                    name="username"
+                    dividerColor="warm"
+                    #username="ngModel">
+        </md-input-container>
+        <div [hidden]="username.valid || username.pristine" class="alert">
+          Username is required
+        </div>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Password"
+                    [(ngModel)]="command.password"
+                    ngControl="password"  name="password"
+                    type="password">
+        </md-input-container>
+      </div>
+
+      <md-card-actions>
+        <button type="submit" class="login-button" md-raised-button color="primary">Login</button>
+      </md-card-actions>
+    </form>
+  </md-card-content>
+</md-card>

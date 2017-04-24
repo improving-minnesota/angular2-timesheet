@@ -1,0 +1,12 @@
+<div>
+  <md-card-subtitle>Timesheet Details</md-card-subtitle>
+  <md-card-title>{{timesheet.name}} </md-card-title>
+  <md-card-content>
+    <p>{{timesheet.beginDate | date:dateFormat}} - {{timesheet.endDate | date:dateFormat}}</p>
+    <p>{{timesheet.description}}</p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="edit()" disabled>Edit</button>
+    <button md-button (click)="cancel()">Cancel</button>
+  </md-card-actions>
+</div>
