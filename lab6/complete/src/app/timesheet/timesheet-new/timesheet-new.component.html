@@ -1,0 +1,45 @@
+<md-card>
+  <h2>New Timesheet</h2>
+  <md-card-content>
+    <form (ngSubmit)="save()" [formGroup]="form">
+      <md-input-container class="input-full-width">
+        <input mdInput placeholder="Name"
+                  dividerColor="warm"
+                  formControlName="name">
+      </md-input-container>
+      <div [hidden]="name.valid || name.pristine" class="alert">
+        Name is required
+      </div>
+
+      <md-input-container class="input-full-width">
+        <input mdInput placeholder="Description"
+                  dividerColor="warm"
+                  formControlName="description">
+      </md-input-container>
+      <div [hidden]="description.valid || description.pristine" class="alert">
+        Description is required
+      </div>
+
+      <md-input-container class="input-full-width">
+        <input mdInput placeholder="Begin Date (mm/dd/yyyy)"
+                  formControlName="beginDate">
+      </md-input-container>
+      <div [hidden]="beginDate.valid || beginDate.pristine" class="alert" type="date">
+        Begin date is required in the format: 'mm/dd/yyyy'
+      </div>
+
+      <md-input-container class="input-full-width">
+        <input mdInput placeholder="End Date (mm/dd/yyyy)"
+                  formControlName="endDate">
+      </md-input-container>
+      <div [hidden]="endDate.valid || endDate.pristine" class="alert">
+        Begin date is required in the format: 'mm/dd/yyyy'
+      </div>
+
+      <div>
+        <button [disabled]="!form.valid" type="submit" md-raised-button color="primary">Save</button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>
+

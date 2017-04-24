@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-
 import {
   MdListModule,
   MdIconModule,
@@ -13,18 +11,18 @@ import {
   MdSelectModule,
 } from '@angular/material';
 
-import { TimeUnitsModule } from '../time-units';
+import { TimeUnitsModule } from '../time-units/time-units.module';
+import { TimeUnitService } from '../time-units/timeunit.service';
 import { IdentityService } from '../core';
 
 import { TimesheetService } from './timesheet.service';
 import { TimesheetComponent } from './timesheet.component';
-import { TimesheetNewComponent } from './timesheet-new';
-import { TimesheetListComponent } from './timesheet-list';
-import { TimesheetDetailComponent } from './timesheet-detail';
-import { TimesheetEntryComponent } from './timesheet-entry';
+import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
+import { TimesheetListComponent } from './timesheet-list/timesheet-list.component';
+import { TimesheetDetailComponent } from './timesheet-detail/timesheet-detail.component';
+import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
 import { TimesheetCompletePipe } from './timesheet-detail/timesheet-complete.pipe';
-import { TimeUnitService } from '../time-units';
-import { TimesheetRoutingModule } from './timesheet-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,8 +43,8 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
     MdProgressSpinnerModule,
     ReactiveFormsModule,
     TimeUnitsModule,
-    TimesheetRoutingModule,
     MdSelectModule,
+    RouterModule,
   ],
   providers: [
     TimesheetService,

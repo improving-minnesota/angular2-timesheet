@@ -1,0 +1,37 @@
+<md-card>
+  <h2>New Project</h2>
+  <md-card-content>
+    <form (ngSubmit)="save()" #projectForm="ngForm">
+      <div>
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Name"
+                  required
+                  [(ngModel)]="project.name"
+                  name="name"
+                  dividerColor="warm"
+                  #name="ngModel">
+        </md-input-container>
+        <div [hidden]="name.valid || name.pristine" class="alert">
+          Name is required
+        </div>
+
+        <md-input-container class="input-full-width">
+          <input mdInput placeholder="Description"
+                  required
+                  [(ngModel)]="project.description"
+                  name="description"
+                  dividerColor="warm"
+                  #description="ngModel">
+        </md-input-container>
+        <div [hidden]="description.valid || description.pristine" class="alert">
+          Description is required
+        </div>
+      </div>
+
+      <div>
+        <button type="button" md-raised-button color="secondary" routerLink="/projects">Cancel</button>
+        <button [disabled]="!projectForm.valid" type="submit" md-raised-button color="primary">Save</button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>
