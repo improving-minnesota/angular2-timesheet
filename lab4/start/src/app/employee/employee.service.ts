@@ -6,7 +6,7 @@ import { ExtHttp } from '../core/extHttp.service';
 @Injectable()
 export class EmployeeService {
 
-  constructor(private http: ExtHttp) {}
+  constructor(private http: ExtHttp) { }
 
   getEmployees(): Observable<Employee[]> {
     return Observable.create((observer) => {
@@ -16,6 +16,5 @@ export class EmployeeService {
     });
   }
 
-  // add a new method to persist an employee using the endpoint included below
-  //  /users
+  // implement method to post/sava an Employee
 }
