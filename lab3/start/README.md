@@ -1,28 +1,40 @@
-# Timesheetz In Angular 2
+## Instructions
 
-## Prerequisites 
+Pre-reqs: a running server
 
-    Node 6.x.x (node -v)
-    npm 3.x.x (npm -v)
+Goal: Add a timesheet detail page, that shows the detail view for a particular timesheet
 
-## Install and Run
+```
+cd lab3/start
+yarn || npm install
+yarn start || npm start
+```
 
-### API
+Instructions:
 
-    cd api
-    npm install
-    npm start
+(Note: make sure to import services/components appropriately in the respective modules (e.g. `timesheet.module` and `app.module`)
 
-### Client
-    cd ng-client
-    npm install
-    npm start
+- Add a method to the timesheet service to get a particular timesheet `src/app/timesheet/timesheet.service.ts`
+- Create a `TimesheetComponent` in `src/app/timesheet/timesheet.component`
+ - This component will be the "container" that displays the Timesheet
+ - Note: inject `ActivatedRoute` from `@angular/router`, and inject into controller
+ - Note: you can get the id via `this.route.params.subscribe(params => // do something)`
+ - Note: inject `TimesheetService` so you can call the `getTimesheet()` method
+ - Note: inject `TimeUnitService` (`src/app/time-units/timeuit.service.ts`), so you can get timeunits and pass to components
+- Create a `TimesheetDetailComponent` in `src/app/timesheet/timesheet-detail/timesheet-detail.component.ts`
+ - This component will contain an `Input` of timesheet, passed via `timesheet.component`
+- Add a route for the new timesheets detail component `timesheets/:id` in `src/app/app-routing.module.ts`
+- Route to timesheets/:id on `(click)` (i.e. create controller function to call on timesheet click) in `src/app/timesheet/timesheet-list` (controller and template)
+ - `Hint`: `this.router.navigateByUrl` is helpful
+- Import the `TimesheetModule` into `src/app/app.module.ts`
 
-    
-### FAQ/Troubleshooting
-##### I'm on a different version of Node. Or, I don't want to fully commit to Node 6 on this machine.
-Use [nvm](https://github.com/creationix/nvm#install-script) on Mac for Node versioning.
+## Files
 
-Use [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.1/nvm-setup.zip) on Windows for Node versioning
-
-**NOTE**: Usage of these packages allow for easy transitioning between node versions, but they do 'takeover' your npm directory, so you may need to redo any globally installed packages that you've installed
+- `src/app/app-routing.module.ts`
+- `src/app/timesheet/timesheet-detail/timesheet-detail.component.html`
+- `src/app/timesheet/timesheet-detail/timesheet-detail.component.ts`
+- `src/app/timesheet/timesheet-list/timesheet-list.component.html`
+- `src/app/timesheet/timesheet-list/timesheet-list.component.ts`
+- `src/app/timesheet/timesheet.component.ts`
+- `src/app/timesheet/timesheet.module.ts`
+- `src/app/timesheet/timesheet.service.ts`

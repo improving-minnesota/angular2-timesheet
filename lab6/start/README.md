@@ -1,28 +1,12 @@
-# Timesheetz In Angular 2
+# Lab 6 - Instructions
 
-## Prerequisites 
+- Implement the `TimesheetStatusPipe` in `src/app/timesheet/timesheet-list/timesheet-status.pipe.ts`
+ - Note `moment` is helpful here (`isBefore`, `isAfter`)
+- Import the `TimesheetStatusPipe` in `src/app/timesheet/timesheet.module.ts`
+- Call the pipe from the template in `src/app/timesheet/timesheet-list/timesheet-list.component.html`
 
-    Node 6.x.x (node -v)
-    npm 3.x.x (npm -v)
+## Files
 
-## Install and Run
-
-### API
-
-    cd api
-    npm install
-    npm start
-
-### Client
-    cd ng-client
-    npm install
-    npm start
-
-    
-### FAQ/Troubleshooting
-##### I'm on a different version of Node. Or, I don't want to fully commit to Node 6 on this machine.
-Use [nvm](https://github.com/creationix/nvm#install-script) on Mac for Node versioning.
-
-Use [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.1/nvm-setup.zip) on Windows for Node versioning
-
-**NOTE**: Usage of these packages allow for easy transitioning between node versions, but they do 'takeover' your npm directory, so you may need to redo any globally installed packages that you've installed
+- `src/app/timesheet/timesheet-list/timesheet-list.component.html`
+- `src/app/timesheet/timesheet-list/timesheet-status.pipe.ts`
+- `src/app/timesheet/timesheet.module.ts`

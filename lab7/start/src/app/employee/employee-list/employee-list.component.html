@@ -1,0 +1,19 @@
+<md-card>
+  <md-list>
+    <h3 md-subheader>Employees</h3>
+    <div class="add-item-control">
+      <a md-fab routerLink="/employees/new" class="add-employee-btn">
+        <md-icon>add</md-icon>
+      </a>
+    </div>
+    <md-list-item *ngIf="employees?.length === 0">
+      <p md-line class="empty-list-message">You don't have any employees yet!</p>
+    </md-list-item>
+    <md-list-item *ngFor="let employee of employees" class="employee-list-item">
+      <md-icon md-list-icon>face</md-icon>
+      <!-- add the employee directive here -->
+      <h4 md-line class="employee-list-item-name">{{employee.firstName}} {{employee.lastName}}</h4>
+      <p md-line class="employee-list-item-email">{{employee.email}}</p>
+    </md-list-item>
+  </md-list>
+</md-card>

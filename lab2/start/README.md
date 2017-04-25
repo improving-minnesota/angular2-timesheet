@@ -1,28 +1,21 @@
-# Timesheetz In Angular 2
+## Instructions
 
-## Prerequisites 
+Open up `localhost:4200`, and begin developing (we will detail which files to edit, and general process)
 
-    Node 6.x.x (node -v)
-    npm 3.x.x (npm -v)
+1. Start by creating a service in `src/app/employee/employee.service.ts`
+2. Import `EmployeeService` in `src/app/employee/employee.module.ts`
+3. Create an employee list component (that injects EmployeeService) in `src/app/employee-list/employee-list.component.ts` (that calls the EmployeeService to get employees)
+4. Import `EmployeeListComponent` from `src/app/employee-list/employee.module.ts`
+5. Create a template in employee list, `src/app/employee-list/employee-list.component.html`
+6. Add a route to `src/app/app-routing.module.ts`
+7. Import employee module to the app module `src/app/app.module.ts`
 
-## Install and Run
+## Files
 
-### API
-
-    cd api
-    npm install
-    npm start
-
-### Client
-    cd ng-client
-    npm install
-    npm start
-
-    
-### FAQ/Troubleshooting
-##### I'm on a different version of Node. Or, I don't want to fully commit to Node 6 on this machine.
-Use [nvm](https://github.com/creationix/nvm#install-script) on Mac for Node versioning.
-
-Use [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.1/nvm-setup.zip) on Windows for Node versioning
-
-**NOTE**: Usage of these packages allow for easy transitioning between node versions, but they do 'takeover' your npm directory, so you may need to redo any globally installed packages that you've installed
+- `src/app/app-routing.module.ts`
+- `src/app/app.module.ts`
+- `src/app/employee/Employee.ts`
+- `src/app/employee/employee-list/employee-list.component.html`
+- `src/app/employee/employee-list/employee-list.component.ts`
+- `src/app/employee/employee.module.ts`
+- `src/app/employee/employee.service.ts`

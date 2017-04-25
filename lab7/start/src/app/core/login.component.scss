@@ -1,0 +1,26 @@
+@import "../app.colors";
+
+.alert-container {
+  height: 60px;
+}
+
+.alert-content {
+  padding: 10px;
+  background-color: $app-warn-background;
+  color: $app-warn;
+}
+
+md-input-container {
+  display: block;
+}
+
+.login-button {
+  float: right;
+}
+
+@media only (min-width: 480px) {
+  md-card {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}

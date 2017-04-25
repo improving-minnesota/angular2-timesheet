@@ -16,6 +16,7 @@
       <p md-line class="timesheet-list-item-dates secondary-text">
         {{timesheet.beginDate | date:format}} - {{timesheet.endDate | date:format}}
       </p>
+      <p md-line>Status: {{ timesheet | timesheetStatus }}</p>
     </md-list-item>
   </md-list>
 </md-card>
