@@ -18,6 +18,7 @@ import { TimesheetService } from './timesheet.service';
 import { TimesheetComponent } from './timesheet.component';
 import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
 import { TimesheetListComponent } from './timesheet-list/timesheet-list.component';
+import { TimesheetStatusPipe } from './timesheet-list/timesheet-status.pipe';
 import { TimesheetDetailComponent } from './timesheet-detail/timesheet-detail.component';
 import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
 import { TimesheetCompletePipe } from './timesheet-detail/timesheet-complete.pipe';
@@ -33,6 +34,7 @@ import { TimesheetRoutingModule } from './timesheet-routing.module';
     TimesheetEntryComponent,
     TimesheetListComponent,
     TimesheetNewComponent,
+    TimesheetStatusPipe,
   ],
   imports: [
     CommonModule,
