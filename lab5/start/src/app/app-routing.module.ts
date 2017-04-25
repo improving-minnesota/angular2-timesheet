@@ -26,8 +26,7 @@ const appRoutes: Routes = [
   { path: 'timesheets', component: TimesheetListComponent },
   { path: 'timesheets/new', component: TimesheetNewComponent },
   { path: 'timesheets/:id', component: TimesheetComponent },
-
-  // add a new route for time sheet entries that includes a timesheet id parameter
+  { path: 'timesheets/:id/entry', component: TimesheetEntryComponent },
 
   { path: 'employees', component: EmployeeListComponent },
   { path: 'employees/new', component: EmployeeNewComponent },

@@ -1,3 +1,31 @@
-<!-- add template markup for the model driven form -->
+<md-card>
+  <h2>Log Time</h2>
+  <md-card-content>
+    <!-- add a new form element and inform it of our model based formGroup -->
+    <form name="timesheetEntryForm">
 
-<p>There should be a form here!</p>
+      <!-- add an option selector of projects to allow project selection -->
+      <div>
+        <select name="selectedProject">
+          <option></option>
+        </select>
+      </div>
+
+      <!-- add a date worked input and add its form control -->
+      <div>
+        <input type="text" name="dateWorked">
+      </div>
+
+      <!-- add an hours worked input and add its form control -->
+      <div>
+        <input type="text" name="hoursWorked">
+      </div>
+
+      <div class="timesheet-entry-time-controls">
+        <!-- enable/disable submit based on form state -->
+        <button type="submit" md-raised-button color="primary">Save</button>
+        <button md-raised-button color="secondary" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>

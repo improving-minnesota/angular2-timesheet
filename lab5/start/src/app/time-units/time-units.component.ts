@@ -24,6 +24,6 @@ export class TimeUnitsComponent {
   }
 
   logTime() {
-    // navigate to the timesheet entry route, including the timesheet parameter
+    this.router.navigateByUrl(`/timesheets/${this.timesheetId}/entry`);
   }
 }

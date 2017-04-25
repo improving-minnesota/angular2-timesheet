@@ -28,7 +28,10 @@ export class TimesheetEntryComponent implements OnInit {
   private DATE_FORMAT = 'MM/DD/YYYY';
   timesheetId: string;
   projects: Project[];
-  // add class properties for the form controls and the form group that they belong to
+  form: FormGroup;
+  selectedProject: FormControl;
+  dateWorked: FormControl;
+  hoursWorked: FormControl;
 
   constructor(private identityService: IdentityService,
               private projectService: ProjectService,
@@ -38,26 +41,34 @@ export class TimesheetEntryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projectService.getProjects().subscribe((projects) => {
-      this.projects = projects;
-    });
+    // use the project service to retrieve a list of all known projects so the user can log time to a project
+    // retrieve the timesheet id from the route parameters of this route
 
-    // retrieve the timesheet id from the route params
+    /**
+     * create a validateDateWorked method to validate that the value of dateWorked is exists between the timesheet
+     * start and end
+     */
+    const validateDateWorked = (control: FormControl) => {
 
-    // add a date validator to ensure the date worked is valid (between timesheet start and end)
+    };
 
-    // add an hours validator to ensure that no one is working more than 24 hours a day
+    /**
+     * create a validateHours function to validate that the number off hours is less than 24
+     */
+    function validateHours(control: FormControl) {
 
-    // add form controls for dateWorked, hoursWorked, and selectedProject
+    }
 
-    // lastly create a new form group and include the new form controls
+    // create new form controls for each of our form fields, including validation
+    // create a new form group, including our new form controls
   }
 
   cancel() {
-    // redirect the user to timesheet details on cancel
+    // redirect the user to the timesheet details view /timesheets/:id
   }
 
   logTime() {
-    // looup field values, format the dates correctly and persist with the timeunit service
+    // create a new TimeUnit instance based on the properties of this component
+    // persist the new TimeUnit using the TimeUnitService.create() method.
   }
 }

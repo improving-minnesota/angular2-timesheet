@@ -9,6 +9,8 @@ import { User } from '../core';
 export class TimeUnitService {
   constructor(private http: ExtHttp) {}
 
-  // add a new service method to persist time units using the endpoint included below.
-  // /users/${userId}/timesheets/${timesheetId}/timeunits
+  create(user: User, timeUnit: TimeUnit): Observable<TimeUnit> {
+    return this.http.post(`/users/${user.id}/timesheets/${timeUnit.timesheet_id}/timeunits`, timeUnit)
+      .map((response) => response.json() as TimeUnit);
+  }
 }

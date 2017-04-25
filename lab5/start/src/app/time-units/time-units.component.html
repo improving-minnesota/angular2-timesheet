@@ -1,6 +1,6 @@
 <md-list>
   <md-list-item>
-    <!-- add a button to jump to log time -->
+    <button md-button (click)="logTime()" class="timeunits-log">Log Time</button>
   </md-list-item>
   <md-list-item *ngFor="let unit of timeUnits" class="timeunits-item">
     <h3 md-line class="timeunits-item-hours">{{unit.hoursWorked}} Hours: {{unit.project}}</h3>
