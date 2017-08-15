@@ -15,6 +15,7 @@
 
 ### Client
     cd ng-client
+    npm run setup
     npm install
     npm start
 
