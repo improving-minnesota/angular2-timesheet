@@ -6,6 +6,13 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MdInputModule,
+  MdCardModule,
+  MdToolbarModule,
+  MdIconModule,
+  MdButtonModule
+} from '@angular/material';
 
 import 'hammerjs';
 
@@ -24,6 +31,11 @@ import { ProjectService } from '../project/project.service';
     FormsModule,
     BrowserAnimationsModule,
     HttpModule,
+    MdInputModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdButtonModule,
   ],
   exports: [
     CommonModule,

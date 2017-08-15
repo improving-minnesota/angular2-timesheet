@@ -12,7 +12,7 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   imports: [
-    RouterModule.forChild(appRoutes)
+    RouterModule.forChild(appRoutes),
   ],
   exports: [
     RouterModule
