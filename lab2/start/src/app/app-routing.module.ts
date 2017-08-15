@@ -1,3 +1,10 @@
+/**
+ * TODO: Add new route that maps to our employee list component.
+ *
+ * 1. Import employee list component.
+ * 2. Add a new route that maps to the employeel ist component.
+ */
+
 import { NgModule } from '@angular/core';
 import {
   Routes,
@@ -6,13 +13,14 @@ import {
 
 import { PageNotFoundComponent } from './core/not-found.component';
 import { ProjectListComponent } from './project/project-list/project-list.component';
+// TODO: #1
 
 const appRoutes: Routes = [
   {
     path: 'projects',
     component: ProjectListComponent,
   },
-  // add employee routing
+  // TODO: #2
   {
     path: '',
     redirectTo: '/projects',

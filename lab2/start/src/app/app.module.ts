@@ -1,3 +1,10 @@
+/**
+ * TODO: Import the new EmployeeModule an add it to the module configuration.
+ *
+ * 1. Import the employee module.
+ * 2. Add the employee module to as a module dependency.
+ */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material';
@@ -19,12 +26,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavigationComponent } from './core/navigation.component';
 import { ProjectModule } from './project/project.module';
 import { LoginRoutingModule } from './core/login-routing.module';
+// TODO #1
 
 @NgModule({
   imports: [
     BrowserModule,
     ProjectModule,
-    // import the new employee module
+    // TODO #2
     LoginRoutingModule,
     AppRoutingModule,
     BrowserAnimationsModule,
