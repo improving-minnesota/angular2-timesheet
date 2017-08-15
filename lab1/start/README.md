@@ -1,5 +1,0 @@
-- `src/app/app.component.html`
-- `src/app/app.module.ts`
-- `src/app/project/project-list/project-list.component.html`
-- `src/app/project/project-list/project-list.component.ts`
-- `src/app/project/project.module.ts`
