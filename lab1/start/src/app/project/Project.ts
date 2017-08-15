@@ -1,5 +1,5 @@
 /**
- * TODO: create a project class that accepts a project data parameter in its constructor.
+ * TODO: Create a Project class that accepts a project data parameter in its constructor.
  *
  * 1. Define the project interface named ProjectData for use in our constructor.
  *    Properties:

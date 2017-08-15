@@ -6,7 +6,7 @@
  * 2. Import the Project model.
  * 3. Create a new class annotated as a component that matches the selector 'at-project-list'.
  * 4. Add a class property of projects that will be assigned a list of Project instances.
- * 5. Add an ngOnInit method that assigns a value toe the projects property.
+ * 5. Add an ngOnInit method that assigns a value to the projects property.
  */
 
 // TODO: #1
