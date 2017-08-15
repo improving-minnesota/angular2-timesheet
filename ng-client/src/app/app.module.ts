@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '@angular/material';
 
 import {
   Router
@@ -10,6 +9,22 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 
 import { ExtHttpConfig } from './core/ExtHttpConfig';
+
+// import {
+//   MdCardModule,
+//   MdInputModule
+// } from '@angular/material';
+
+
+import {
+  MdInputModule,
+  MdCardModule,
+  MdToolbarModule,
+  MdIconModule,
+  MdButtonModule,
+  MdMenuModule,
+  MdSidenavModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './core/login.component';
@@ -32,8 +47,16 @@ const extHttpConfig = {
     BrowserModule,
     CoreModule.forRoot(extHttpConfig),
     LoginRoutingModule,
-    AppRoutingModule,
-    MaterialModule.forRoot(),
+    MdCardModule,
+    MdInputModule,
+    MdInputModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdButtonModule,
+    MdMenuModule,
+    MdSidenavModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,

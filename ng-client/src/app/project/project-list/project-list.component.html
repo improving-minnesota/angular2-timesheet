@@ -1,11 +1,11 @@
 <md-card>
+  <div class="add-item-control">
+    <a md-fab  routerLink="/projects/new" class="add-project-btn">
+      <md-icon>add</md-icon>
+    </a>
+  </div>
   <md-list>
     <h3 md-subheader>Projects</h3>
-    <div class="add-item-control">
-      <a md-fab  routerLink="/projects/new" class="add-project-btn">
-        <md-icon>add</md-icon>
-      </a>
-    </div>
     <md-list-item *ngIf="projects.length === 0">
       <p md-line class="empty-list-message">You don't have any projects yet!</p>
     </md-list-item>
