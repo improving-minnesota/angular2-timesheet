@@ -1,3 +1,11 @@
+/**
+ * TODO: Add routing functionality that allows a user to click on a Timesheet instance and route the user to a timesheet
+ * detail view.
+ *
+ * 1. Add the Angular router as a component dependency.
+ * 2. Add a click handler to route the user to details view for the selected Timesheet instance.
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { TimesheetService } from '../timesheet.service';
 import { IdentityService } from '../../core';
@@ -14,7 +22,7 @@ export class TimesheetListComponent implements OnInit {
   timesheets: Timesheet[];
   format: string;
 
-  // add depending for router navigation
+  // TODO #1
   constructor(private timesheetService: TimesheetService,
               private identityService: IdentityService) {
     this.timesheets = [];
@@ -27,5 +35,5 @@ export class TimesheetListComponent implements OnInit {
     });
   }
 
-  // add function to assign as click handler to navigate to timesheet
+  // TODO #2
 }

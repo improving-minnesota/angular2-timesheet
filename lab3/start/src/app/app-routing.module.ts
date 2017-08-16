@@ -16,8 +16,7 @@ const appRoutes: Routes = [
   { path: 'employees', component: EmployeeListComponent },
 
   { path: 'timesheets', component: TimesheetListComponent },
-
-  // add new route to view an individual timesheet
+  // { path: 'timesheets/:id', component: TimesheetComponent },
 
   { path: 'projects', component: ProjectListComponent },
   {

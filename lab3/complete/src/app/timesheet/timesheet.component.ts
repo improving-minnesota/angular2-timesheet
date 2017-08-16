@@ -39,14 +39,14 @@ export class TimesheetComponent implements OnInit {
 
       timesheetObservable.subscribe((timesheet) => {
           this.timesheet = timesheet;
-        });
 
-      this.timeUnitService.getTimeUnits(this.identityService.user, this.timesheetId)
-        .subscribe((timeUnits) => {
-          this.timeUnits = timeUnits;
-          timesheetObservable.subscribe(() => {
-            this.timesheet.timeUnits = this.timeUnits;
-            this.loaded = true;
+        this.timeUnitService.getTimeUnits(this.identityService.user, this.timesheetId)
+          .subscribe((timeUnits) => {
+            this.timeUnits = timeUnits;
+            timesheetObservable.subscribe(() => {
+              this.timesheet.timeUnits = this.timeUnits;
+              this.loaded = true;
+            });
           });
         });
     });
