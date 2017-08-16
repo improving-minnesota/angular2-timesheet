@@ -1,3 +1,10 @@
+/**
+ * TODO: Add a method that retrieves a Timesheet instance.
+ *
+ * 1. Add a getTimesheet method that receives a user and a timesheetId argument and returns an observable that emits a
+ *    Timesheet instance. The target API endpoint is /users/${userId}/timesheets/${timesheetId}.
+ */
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
@@ -21,6 +28,5 @@ export class TimesheetService {
     });
   }
 
-  // add getTimesheet method that requests an individual timesheet for a given user and timesheetId
-  // Path: /users/${userId}/timesheets/${timesheetId}
+  // TODO #1
 }

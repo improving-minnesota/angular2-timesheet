@@ -1,3 +1,10 @@
+/**
+ * TODO: Add the ability to lookup all timesheet entries (timeunits) for a provided user and timesheetId.
+ *
+ * 1. Add a method named getTimeUnits that accepts user and timesheetId arguments and returns an observable that emits a list of timeunits. The API endpoint for this is '/users/${userId}/timesheets/${timesheetId}'.
+ */
+
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
@@ -17,6 +24,5 @@ export class TimeUnitService {
     });
   }
 
-  // add getTimeUnits method that request timeunits for a given user and timesheetId
-  // Path: /users/${userId}/timesheets/${timesheetId}
+  // TODO #1
 }

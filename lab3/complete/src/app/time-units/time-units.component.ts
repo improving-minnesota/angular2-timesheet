@@ -13,9 +13,6 @@ export class TimeUnitsComponent {
   timeUnits: TimeUnit[];
 
   @Input()
-  timesheetId: string;
-
-  @Input()
   dateFormat: string;
 
   constructor() {

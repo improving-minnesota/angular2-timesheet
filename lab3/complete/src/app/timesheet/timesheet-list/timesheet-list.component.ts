@@ -21,7 +21,7 @@ export class TimesheetListComponent implements OnInit {
     this.format = 'MM/dd/yy';
   }
 
-  ngOnInit() {
+ngOnInit() {
     this.timesheetService.getTimesheets(this.identityService.user).subscribe((timesheets) => {
       this.timesheets = timesheets;
     });

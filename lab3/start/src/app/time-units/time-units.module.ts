@@ -1,3 +1,11 @@
+/**
+ * TODO: Add routing for the newly added components.
+ *
+ * 1. Import new dependencies.
+ * 2. Add new components to declarations so that they are available for use.
+ * 3. Export components that will be used in other modules.
+ */
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,12 +17,14 @@ import {
 
 import { TimeUnitService } from './timeunit.service';
 
+// TODO #1
+
 @NgModule({
   declarations: [
-    // declare your new components
+    // TODO #2
   ],
   exports: [
-    // export any new components that other modules might need
+    // TODO #3
   ],
   imports: [
     CommonModule,
