@@ -1,3 +1,6 @@
+/*
+ * GOAL: To import the TimesheetStatusPipe and declare it so it usable throughout the module
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -21,7 +24,7 @@ import { TimesheetNewComponent } from './timesheet-new/timesheet-new.component';
 import { TimesheetListComponent } from './timesheet-list/timesheet-list.component';
 import { TimesheetDetailComponent } from './timesheet-detail/timesheet-detail.component';
 import { TimesheetEntryComponent } from './timesheet-entry/timesheet-entry.component';
-// import the TimesheetStatusPipe
+// TODO 1 - import the TimesheetStatusPipe
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -31,7 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TimesheetEntryComponent,
     TimesheetListComponent,
     TimesheetNewComponent,
-    // declare the TimesheetStatusPipe
+    // TODO 2 - declare the TimesheetStatusPipe
   ],
   imports: [
     CommonModule,
