@@ -1,6 +1,9 @@
+<!--
+  Add an <a [routerLink]></a> to the timesheet entry for this time unit
+-->
 <md-list>
   <md-list-item>
-    <!-- add a button to jump to log time -->
+    <!-- TODO 1: add a link to jump to timesheet entry -->
   </md-list-item>
   <md-list-item *ngFor="let unit of timeUnits" class="timeunits-item">
     <h3 md-line class="timeunits-item-hours">{{unit.hoursWorked}} Hours: {{unit.project}}</h3>

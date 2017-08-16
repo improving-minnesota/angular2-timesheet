@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
-
 
 import { TimeUnit } from './TimeUnit';
 
@@ -19,11 +17,4 @@ export class TimeUnitsComponent {
 
   @Input()
   dateFormat: string;
-
-  constructor(private router: Router) {
-  }
-
-  logTime() {
-    // navigate to the timesheet entry route, including the timesheet parameter
-  }
 }

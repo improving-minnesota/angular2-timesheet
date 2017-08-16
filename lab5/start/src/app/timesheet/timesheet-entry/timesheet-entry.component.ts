@@ -58,6 +58,6 @@ export class TimesheetEntryComponent implements OnInit {
   }
 
   logTime() {
-    // looup field values, format the dates correctly and persist with the timeunit service
+    // lookup field values, format the dates correctly and persist with the timeunit service
   }
 }

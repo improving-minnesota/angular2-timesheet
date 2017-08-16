@@ -4,9 +4,12 @@
 Create a new service named EmployeeService that communicates with a remote API to list employees. Configure this new service for use in Angular via dependency injection. Create a new EmployeeListComponent that retrieves an instance of EmployeeService by defining it as a dependency. Add a new route to access our employee list. 
 
 ## Imports
-import { OnInit, Injectable, NgModule, Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { ExtHttp } from '../core/extHttp.service';
+
+`import { OnInit, Injectable, NgModule, Component } from '@angular/core';`
+
+`import { Observable } from 'rxjs/Observable';`
+
+`import { ExtHttp } from '../core/extHttp.service';`
 
 ## Example
 ### Project Service

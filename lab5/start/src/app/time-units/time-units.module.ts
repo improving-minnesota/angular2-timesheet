@@ -1,3 +1,6 @@
+/*
+ * Import RouterModule so we can use routerLink directive
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -19,6 +22,7 @@ import { TimeUnitsComponent } from './time-units.component';
     MdListModule,
     MdCardModule,
     MdButtonModule
+    // TODO 1: Add RouterModule
   ]
 })
 export class TimeUnitsModule { }

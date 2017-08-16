@@ -1,6 +1,6 @@
 <md-list>
   <md-list-item>
-    <button md-button (click)="logTime()" class="timeunits-log">Log Time</button>
+    <a md-button [routerLink]="['/timesheets', timesheetId, 'entry']" class="timeunits-log">Log Time</a>
   </md-list-item>
   <md-list-item *ngFor="let unit of timeUnits" class="timeunits-item">
     <h3 md-line class="timeunits-item-hours">{{unit.hoursWorked}} Hours: {{unit.project}}</h3>
