@@ -3,6 +3,9 @@ import { Observable } from 'rxjs/Observable';
 import { Employee } from './Employee';
 import { ExtHttp } from '../core/extHttp.service';
 
+/*
+ * TODO: Implement a save method that POSTs and creates a user
+ */
 @Injectable()
 export class EmployeeService {
 
@@ -16,5 +19,5 @@ export class EmployeeService {
     });
   }
 
-  // implement method to post/sava an Employee
+  // TODO 1: implement save method here
 }

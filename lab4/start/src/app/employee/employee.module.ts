@@ -1,3 +1,6 @@
+/*
+ * TODO: Import and declare EmployeeNewComponent
+ */
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -14,7 +17,7 @@ import {
   MdSelectModule,
 } from '@angular/material';
 
-// import your new components
+// TODO 1: Import EmployeeNewComponent
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 import { EmployeeService } from './employee.service';
@@ -22,7 +25,7 @@ import { EmployeeService } from './employee.service';
 @NgModule({
   declarations: [
     EmployeeListComponent,
-    // declare new components
+    // TODO 2: Declare EmployeeNewComponent
   ],
   imports: [
     CommonModule,
