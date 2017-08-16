@@ -11,7 +11,7 @@
     </md-list-item>
     <md-list-item *ngFor="let employee of employees" class="employee-list-item">
       <md-icon md-list-icon>face</md-icon>
-      <h4 md-line class="employee-list-item-name" [atEmployee]="employee">{{employee.firstName}} {{employee.lastName}}</h4>
+      <h4 md-line class="employee-list-item-name" [atEmployee]="employee"></h4>
       <p md-line class="employee-list-item-email">{{employee.email}}</p>
     </md-list-item>
   </md-list>
