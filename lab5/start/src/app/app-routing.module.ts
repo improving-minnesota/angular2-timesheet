@@ -1,3 +1,6 @@
+/*
+ * TODO: Add routing for a specific time sheet `entry` 
+ */
 import { NgModule } from '@angular/core';
 import {
   Routes,
@@ -27,7 +30,7 @@ const appRoutes: Routes = [
   { path: 'timesheets/new', component: TimesheetNewComponent },
   { path: 'timesheets/:id', component: TimesheetComponent },
 
-  // add a new route for time sheet entries that includes a timesheet id parameter
+  // TODO 1 - add a new route for new time sheet entries, and set the component to TimesheetEntryComponent
 
   { path: 'employees', component: EmployeeListComponent },
   { path: 'employees/new', component: EmployeeNewComponent },

@@ -1,3 +1,7 @@
+/*
+ * Goal to add a service that persists a time unit
+ * Note: This service will be used by ../timesheet/timesheet-entry/timesheet-entry.component.ts
+ */
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
@@ -9,6 +13,6 @@ import { User } from '../core';
 export class TimeUnitService {
   constructor(private http: ExtHttp) {}
 
-  // add a new service method to persist time units using the endpoint included below.
-  // /users/${userId}/timesheets/${timesheetId}/timeunits
+  // TODO 1: Add a new service method to persist time units using the endpoint included below.
+  // /users/${userId}/timesheets/
 }

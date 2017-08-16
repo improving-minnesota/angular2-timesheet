@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import {
   MdCardModule,
@@ -16,6 +17,7 @@ import { TimeUnitsComponent } from './time-units.component';
   exports: [TimeUnitsComponent],
   imports: [
     CommonModule,
+    RouterModule,    
     MdListModule,
     MdCardModule,
     MdButtonModule
