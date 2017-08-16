@@ -1,7 +1,7 @@
 # Embedded Components
 
 ## Lab Goal
-Create a new service method to retrieve Timesheet instances. Create a new component to display to display the timesheet
+Create a new service method to retrieve Timesheet instances. Create a new component to display the timesheet
 details for a single timesheet instance. Add a new service method to the timeunits service that can retrieve a list of
 time sheet entries (timeunits) for a given Timesheet. Create a new component named TimesheetDetailComponent that
 receives inputs and displays and renders timesheet details. Create a new component named TimeUnitsComponent that will
